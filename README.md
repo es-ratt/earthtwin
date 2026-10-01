@@ -1,4 +1,4 @@
-# 🌍 EarthTwin
+# EarthTwin
 
 **Where on Earth is the Moon and Mars?**
 EarthTwin finds Earth locations that closely match Moon and Mars mission targets, and ranks them with an explainable score.
@@ -6,11 +6,11 @@ EarthTwin finds Earth locations that closely match Moon and Mars mission targets
 **Team PLANEX | NASA Space Apps Challenge**
 **Challenge:** Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars
 
-🔗 **Live demo:** https://es-ratt.github.io/earthtwin/
+**Live demo:** https://es-ratt.github.io/earthtwin/
 
 ---
 
-## 📌 Overview
+## Overview
 
 Before going to the Moon or Mars, engineers test rovers, ice drills, habitats, and crew operations in places on Earth that feel similar. Choosing those places is slow and manual, and the data is spread across many sources.
 
@@ -21,21 +21,21 @@ EarthTwin makes it simple:
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎯 **Mission setup wizard:** 4 mission types, 4 targets, 4 priority presets plus custom sliders
-- 🔍 **Earth Scan:** ranks candidate sites by Analog Match Index (AMI) and confidence
-- 🗺️ **Interactive map:** ranked markers, click to select
-- 📄 **Site profiles:** strengths, limitations, and potential applications
-- 💡 **Explainable scores:** plain-language "Why did this site score X%?"
-- ⚖️ **Site comparison:** compare up to 3 sites side by side
-- 📅 **Seasonal analysis:** monthly chart and best testing window
-- 🧾 **Mission report:** print or save as PDF, or download as HTML
-- 🌗 **Light and dark theme**, mobile friendly, keyboard accessible
+- **Mission setup wizard:** 4 mission types, 4 targets, 4 priority presets plus custom sliders
+- **Earth Scan:** ranks candidate sites by Analog Match Index (AMI) and confidence
+- **Interactive map:** ranked markers, click to select
+- **Site profiles:** strengths, limitations, and potential applications
+- **Explainable scores:** plain-language "Why did this site score X%?"
+- **Site comparison:** compare up to 3 sites side by side
+- **Seasonal analysis:** monthly chart and best testing window
+- **Mission report:** print or save as PDF, or download as HTML
+- **Light and dark theme**, mobile friendly, keyboard accessible
 
 ---
 
-## 🧭 How It Works
+## How It Works
 
 | Step | What happens |
 |------|--------------|
@@ -47,18 +47,18 @@ EarthTwin makes it simple:
 
 ---
 
-## 🌕 Targets
+## Targets
 
 | Target | Body | Environment | Key characteristics |
 |--------|------|-------------|---------------------|
 | Lunar South Pole | Moon | Extreme cold, permanent shadow, changing illumination | Shadowed ice, highland anorthosite, high resource potential |
 | Mare Tranquillitatis | Moon | Basaltic plain, large day-night thermal swing | Low slope, basalt mare, ilmenite |
-| Mars Landing Zone | Mars | Dusty basaltic plain, thin CO₂ atmosphere | Basalt, clay and delta deposits, moderate resources |
+| Mars Landing Zone | Mars | Dusty basaltic plain, thin CO2 atmosphere | Basalt, clay and delta deposits, moderate resources |
 | Arcadia Planitia | Mars | Mid-latitude ice plains, cold, smooth | Shallow subsurface ice, volcanic plains |
 
----
+--
 
-## 📐 Scoring Model
+## Scoring Model
 
 Each Earth site gets a similarity score (0 to 100) for four factors:
 
@@ -71,13 +71,13 @@ Each Earth site gets a similarity score (0 to 100) for four factors:
 
 **Analog Match Index (AMI)**
 ```
-AMI = (Terrain × wT + Geology × wG + Environment × wE + Resources × wR) / 100
+AMI = (Terrain x wT + Geology x wG + Environment x wE + Resources x wR) / 100
 ```
 Weights `w` come from the preset or the sliders and always add up to 100%.
 
 **Confidence**
 ```
-Confidence = site data confidence − 0.3 × spread between the four factor scores
+Confidence = site data confidence - 0.3 x spread between the four factor scores
 ```
 Confidence goes down when the factors disagree strongly. It is a heuristic, not a statistical probability.
 
@@ -101,7 +101,7 @@ Confidence goes down when the factors disagree strongly. It is a heuristic, not 
 
 ---
 
-## 🌐 Candidate Earth Sites (12)
+## Candidate Earth Sites (12)
 
 | # | Site | Country | Lat, Lon | Why it is a candidate |
 |---|------|---------|----------|-----------------------|
@@ -120,7 +120,7 @@ Confidence goes down when the factors disagree strongly. It is a heuristic, not 
 
 ---
 
-## 🛰️ Data
+## Data
 
 ### Data status in this prototype
 
@@ -156,7 +156,7 @@ These cover all four factors.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Part | Choice |
 |------|--------|
@@ -168,7 +168,7 @@ These cover all four factors.
 
 ---
 
-## 🚀 Run Locally
+## Run Locally
 
 ```bash
 git clone https://github.com/es-ratt/earthtwin.git
@@ -178,17 +178,17 @@ Then open `index.html` in any modern browser.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 earthtwin/
-├── index.html   # complete app (UI, scoring, data, charts)
-└── README.md
+|-- index.html   # complete app (UI, scoring, data, charts)
+|-- README.md
 ```
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 - Earth cannot reproduce lunar or Martian **gravity, vacuum, atmosphere, or radiation**. Every site profile says so.
 - This is a **frontend prototype using illustrative data**. Results are not scientific mission recommendations and are not validated NASA analysis.
@@ -197,7 +197,7 @@ earthtwin/
 
 ---
 
-## 🔮 Roadmap
+## Roadmap
 
 - [ ] Replace illustrative values with real NASA dataset values (LOLA, Diviner, MOLA, THEMIS, SRTM, MODIS, ASTER)
 - [ ] Add real site imagery
@@ -207,7 +207,7 @@ earthtwin/
 
 ---
 
-## 👥 Team PLANEX
+## Team PLANEX
 
 Built for the NASA Space Apps Challenge.
 
