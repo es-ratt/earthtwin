@@ -1,0 +1,8 @@
+fastapi==0.146.0
+uvicorn==0.54.0
+python-multipart==0.0.32
+pydantic==2.14.1
+numpy==2.5.4
+rasterio==1.5.2
+pyproj==3.8.0
+reportlab==5.0.1

@@ -1,0 +1,46 @@
+# Deploying EarthTwin
+
+EarthTwin is one Python process (FastAPI + Uvicorn) that serves the API and the static frontend, plus one persistent
+data directory (`EARTHTWIN_DATA_DIR`) holding the SQLite database, uploaded files, layers and exports.
+
+> The previous prototype ran on GitHub Pages. The new version needs a server because imports, raster processing,
+> persistence and PDF generation run on the backend. GitHub Pages cannot host it.
+
+## Local
+```bash
+python3 -m venv .venv && source .venv/bin/activate     # Python 3.11+ (tested with 3.13)
+pip install -r requirements-dev.txt
+python run.py                                           # http://127.0.0.1:8000
+```
+The first start creates `data/`, applies migrations, seeds the curated catalogue and demonstration measurements through
+the import pipeline, and prints the admin token (stored in `data/admin_token.txt` unless `EARTHTWIN_ADMIN_TOKEN` is set).
+
+## Docker
+```bash
+docker build -t earthtwin .
+docker run -p 8000:8000 -v earthtwin-data:/data -e EARTHTWIN_ADMIN_TOKEN=$(openssl rand -hex 24) earthtwin
+```
+
+## Hosted (Render, Fly.io, Railway, a VM…)
+* Start command: `python run.py --host 0.0.0.0 --port $PORT`
+* **Attach a persistent disk/volume** and point `EARTHTWIN_DATA_DIR` at it. Without it, imported data are lost on redeploy.
+* Set `EARTHTWIN_ADMIN_TOKEN` as a secret. Never commit it; it is never sent to the browser except when typed by an admin.
+* Put the service behind HTTPS (the platforms above do this by default).
+* Raster uploads can be large: set `EARTHTWIN_MAX_RASTER_MB` to fit the disk and the platform's request-size limit.
+
+## Configuration
+See `.env.example`. All settings are environment variables; `run.py` also reads a `.env` file.
+
+## Backups
+Stop the server (or use `sqlite3 data/earthtwin.sqlite3 ".backup backup.sqlite3"`) and copy the whole data directory.
+Restoring = putting the directory back.
+
+## Moving to PostgreSQL/PostGIS
+The schema is plain SQL in `backend/app/migrations`; `backend/app/db.py` is the only module that opens connections.
+A PostGIS port needs translated migrations and a psycopg connection in `db.py`; spatial queries are currently done in
+Python (pyproj) so no PostGIS functions are required yet.
+
+## Tests
+```bash
+cd backend && ../.venv/bin/python -m pytest -q
+```

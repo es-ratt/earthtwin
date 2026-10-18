@@ -1,0 +1,2374 @@
+{
+ "earthtwin_bundle": "1.0",
+ "dataset": {
+  "name": "EarthTwin demonstration measurements",
+  "publisher": "PLANEX (EarthTwin team)",
+  "description": "DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT. Illustrative placeholder values used to demonstrate scoring, charts and reports before verified datasets are imported. Deactivate this dataset in the Data Center once verified data are available.",
+  "data_class": "demo",
+  "version": "2026.1",
+  "provenance": "Team-chosen order-of-magnitude placeholders; see backend/seed/build_demo_measurements.py.",
+  "license": "CC0 (illustrative values)",
+  "body": "mixed"
+ },
+ "observations": [
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "local_relief_m",
+   "value": 900,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "mean_slope_deg",
+   "value": 12,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "slope_std_deg",
+   "value": 8,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "lithology",
+   "value": "granitic;sedimentary_clastic;gravel;permafrost;ice",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "mean_surface_temp_k",
+   "value": 253,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "surface_temp_range_k",
+   "value": 25,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "annual_precip_mm",
+   "value": 50,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "ground_ice",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "accessibility",
+   "value": "low",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mcmurdo-dry-valleys",
+   "variable": "analog_heritage",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "local_relief_m",
+   "value": 200,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "mean_slope_deg",
+   "value": 5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "slope_std_deg",
+   "value": 4,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "lithology",
+   "value": "impact_breccia;carbonate;gravel;permafrost",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "impact_structure",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "mean_surface_temp_k",
+   "value": 257,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "surface_temp_range_k",
+   "value": 15,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "annual_precip_mm",
+   "value": 150,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "vegetation_fraction",
+   "value": 0.03,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "ground_ice",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "accessibility",
+   "value": "low",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "haughton-impact-structure",
+   "variable": "analog_heritage",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "local_relief_m",
+   "value": 600,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "mean_slope_deg",
+   "value": 14,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "slope_std_deg",
+   "value": 9,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "lithology",
+   "value": "basalt;glacial_till;carbonate;permafrost",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "mean_surface_temp_k",
+   "value": 265,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "surface_temp_range_k",
+   "value": 10,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "annual_precip_mm",
+   "value": 300,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "vegetation_fraction",
+   "value": 0.1,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "ground_ice",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "accessibility",
+   "value": "low",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "bockfjorden-svalbard",
+   "variable": "analog_heritage",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "local_relief_m",
+   "value": 300,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "mean_slope_deg",
+   "value": 6,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "slope_std_deg",
+   "value": 5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "lithology",
+   "value": "basalt;tephra;glacial_till",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "mean_surface_temp_k",
+   "value": 271,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "surface_temp_range_k",
+   "value": 10,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "annual_precip_mm",
+   "value": 450,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "vegetation_fraction",
+   "value": 0.05,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "accessibility",
+   "value": "medium",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-highlands",
+   "variable": "analog_heritage",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-lava-tubes",
+   "variable": "local_relief_m",
+   "value": 60,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-lava-tubes",
+   "variable": "mean_slope_deg",
+   "value": 3,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-lava-tubes",
+   "variable": "slope_std_deg",
+   "value": 2,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-lava-tubes",
+   "variable": "lithology",
+   "value": "basalt",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-lava-tubes",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-lava-tubes",
+   "variable": "lava_tube",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-lava-tubes",
+   "variable": "mean_surface_temp_k",
+   "value": 277,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-lava-tubes",
+   "variable": "surface_temp_range_k",
+   "value": 8,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-lava-tubes",
+   "variable": "annual_precip_mm",
+   "value": 1200,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-lava-tubes",
+   "variable": "vegetation_fraction",
+   "value": 0.4,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "icelandic-lava-tubes",
+   "variable": "accessibility",
+   "value": "high",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "local_relief_m",
+   "value": 700,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "mean_slope_deg",
+   "value": 10,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "slope_std_deg",
+   "value": 6,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "lithology",
+   "value": "basalt;tephra;regolith_fine",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "mean_surface_temp_k",
+   "value": 278,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "surface_temp_range_k",
+   "value": 20,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "annual_precip_mm",
+   "value": 300,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "vegetation_fraction",
+   "value": 0.02,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "accessibility",
+   "value": "medium",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mauna-kea",
+   "variable": "analog_heritage",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "local_relief_m",
+   "value": 150,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "mean_slope_deg",
+   "value": 5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "slope_std_deg",
+   "value": 5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "lithology",
+   "value": "basalt;tephra",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "lava_tube",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "mean_surface_temp_k",
+   "value": 280,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "surface_temp_range_k",
+   "value": 25,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "annual_precip_mm",
+   "value": 380,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "vegetation_fraction",
+   "value": 0.1,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "accessibility",
+   "value": "high",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "craters-of-the-moon",
+   "variable": "analog_heritage",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "local_relief_m",
+   "value": 120,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "mean_slope_deg",
+   "value": 4,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "slope_std_deg",
+   "value": 3,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "lithology",
+   "value": "basalt",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "lava_tube",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "mean_surface_temp_k",
+   "value": 283,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "surface_temp_range_k",
+   "value": 20,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "annual_precip_mm",
+   "value": 380,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "vegetation_fraction",
+   "value": 0.3,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "ground_ice",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "accessibility",
+   "value": "high",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lava-beds",
+   "variable": "analog_heritage",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "local_relief_m",
+   "value": 250,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "mean_slope_deg",
+   "value": 4,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "slope_std_deg",
+   "value": 3,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "lithology",
+   "value": "evaporite;sulfates;sedimentary_clastic;gravel;iron_oxides",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "mean_surface_temp_k",
+   "value": 292,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "surface_temp_range_k",
+   "value": 30,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "annual_precip_mm",
+   "value": 2,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "accessibility",
+   "value": "medium",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "atacama-yungay",
+   "variable": "analog_heritage",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "local_relief_m",
+   "value": 200,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "mean_slope_deg",
+   "value": 6,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "slope_std_deg",
+   "value": 6,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "lithology",
+   "value": "sedimentary_clastic;clay_minerals;evaporite;sand_dunes",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "mean_surface_temp_k",
+   "value": 285,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "surface_temp_range_k",
+   "value": 25,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "annual_precip_mm",
+   "value": 150,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "vegetation_fraction",
+   "value": 0.05,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "accessibility",
+   "value": "high",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "mdrs-utah",
+   "variable": "analog_heritage",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "local_relief_m",
+   "value": 400,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "mean_slope_deg",
+   "value": 4,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "slope_std_deg",
+   "value": 4,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "lithology",
+   "value": "evaporite;sedimentary_clastic;gravel",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "mean_surface_temp_k",
+   "value": 302,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "surface_temp_range_k",
+   "value": 25,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "annual_precip_mm",
+   "value": 60,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "vegetation_fraction",
+   "value": 0.03,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "death-valley",
+   "variable": "accessibility",
+   "value": "high",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "local_relief_m",
+   "value": 170,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "mean_slope_deg",
+   "value": 6,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "slope_std_deg",
+   "value": 7,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "lithology",
+   "value": "impact_breccia;sedimentary_clastic;carbonate",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "impact_structure",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "mean_surface_temp_k",
+   "value": 288,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "surface_temp_range_k",
+   "value": 25,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "annual_precip_mm",
+   "value": 250,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "vegetation_fraction",
+   "value": 0.1,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "accessibility",
+   "value": "high",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "meteor-crater",
+   "variable": "analog_heritage",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "local_relief_m",
+   "value": 150,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "mean_slope_deg",
+   "value": 7,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "slope_std_deg",
+   "value": 7,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "lithology",
+   "value": "basalt;impact_breccia;impact_melt",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "impact_structure",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "mean_surface_temp_k",
+   "value": 300,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "surface_temp_range_k",
+   "value": 15,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "annual_precip_mm",
+   "value": 750,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "vegetation_fraction",
+   "value": 0.35,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "lonar-crater",
+   "variable": "accessibility",
+   "value": "high",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "local_relief_m",
+   "value": 200,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "mean_slope_deg",
+   "value": 8,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "slope_std_deg",
+   "value": 6,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "lithology",
+   "value": "sulfates;iron_oxides;clay_minerals",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "mean_surface_temp_k",
+   "value": 292,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "surface_temp_range_k",
+   "value": 18,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "annual_precip_mm",
+   "value": 600,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "vegetation_fraction",
+   "value": 0.3,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "accessibility",
+   "value": "high",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "rio-tinto",
+   "variable": "analog_heritage",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "local_relief_m",
+   "value": 500,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "mean_slope_deg",
+   "value": 9,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "slope_std_deg",
+   "value": 7,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "lithology",
+   "value": "basalt;tephra",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "mean_surface_temp_k",
+   "value": 283,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "surface_temp_range_k",
+   "value": 15,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "annual_precip_mm",
+   "value": 400,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "vegetation_fraction",
+   "value": 0.05,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "teide-tenerife",
+   "variable": "accessibility",
+   "value": "high",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "local_relief_m",
+   "value": 80,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "mean_slope_deg",
+   "value": 2,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "slope_std_deg",
+   "value": 1.5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "lithology",
+   "value": "gravel;sand_dunes;granitic",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "mean_surface_temp_k",
+   "value": 295,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "surface_temp_range_k",
+   "value": 20,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "annual_precip_mm",
+   "value": 20,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "vegetation_fraction",
+   "value": 0.02,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "namib-gravel-plains",
+   "variable": "accessibility",
+   "value": "medium",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "local_relief_m",
+   "value": 60,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "mean_slope_deg",
+   "value": 3,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "slope_std_deg",
+   "value": 3,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "lithology",
+   "value": "evaporite;sulfates;iron_oxides",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "mean_surface_temp_k",
+   "value": 308,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "surface_temp_range_k",
+   "value": 12,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "annual_precip_mm",
+   "value": 150,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "earth_site",
+   "subject_id": "dallol-danakil",
+   "variable": "accessibility",
+   "value": "low",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "lunar-south-pole-shackleton",
+   "variable": "local_relief_m",
+   "value": 3000,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "lunar-south-pole-shackleton",
+   "variable": "mean_slope_deg",
+   "value": 15,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "lunar-south-pole-shackleton",
+   "variable": "slope_std_deg",
+   "value": 9,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "lunar-south-pole-shackleton",
+   "variable": "lithology",
+   "value": "anorthosite;regolith_fine;impact_breccia;ice",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "lunar-south-pole-shackleton",
+   "variable": "impact_structure",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "lunar-south-pole-shackleton",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "lunar-south-pole-shackleton",
+   "variable": "mean_surface_temp_k",
+   "value": 110,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "lunar-south-pole-shackleton",
+   "variable": "surface_temp_range_k",
+   "value": 150,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "lunar-south-pole-shackleton",
+   "variable": "annual_precip_mm",
+   "value": 0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "lunar-south-pole-shackleton",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "lunar-south-pole-shackleton",
+   "variable": "ground_ice",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "mare-tranquillitatis-apollo11",
+   "variable": "local_relief_m",
+   "value": 150,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "mare-tranquillitatis-apollo11",
+   "variable": "mean_slope_deg",
+   "value": 3,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "mare-tranquillitatis-apollo11",
+   "variable": "slope_std_deg",
+   "value": 2.5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "mare-tranquillitatis-apollo11",
+   "variable": "lithology",
+   "value": "basalt;regolith_fine",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "mare-tranquillitatis-apollo11",
+   "variable": "impact_structure",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "mare-tranquillitatis-apollo11",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "mare-tranquillitatis-apollo11",
+   "variable": "mean_surface_temp_k",
+   "value": 250,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "mare-tranquillitatis-apollo11",
+   "variable": "surface_temp_range_k",
+   "value": 280,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "mare-tranquillitatis-apollo11",
+   "variable": "annual_precip_mm",
+   "value": 0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "mare-tranquillitatis-apollo11",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "mare-tranquillitatis-apollo11",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "marius-hills-pit",
+   "variable": "local_relief_m",
+   "value": 300,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "marius-hills-pit",
+   "variable": "mean_slope_deg",
+   "value": 6,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "marius-hills-pit",
+   "variable": "slope_std_deg",
+   "value": 5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "marius-hills-pit",
+   "variable": "lithology",
+   "value": "basalt;regolith_fine",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "marius-hills-pit",
+   "variable": "lava_tube",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "marius-hills-pit",
+   "variable": "mean_surface_temp_k",
+   "value": 250,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "marius-hills-pit",
+   "variable": "surface_temp_range_k",
+   "value": 280,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "marius-hills-pit",
+   "variable": "annual_precip_mm",
+   "value": 0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "marius-hills-pit",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "marius-hills-pit",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "hadley-rille-apollo15",
+   "variable": "local_relief_m",
+   "value": 1200,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "hadley-rille-apollo15",
+   "variable": "mean_slope_deg",
+   "value": 10,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "hadley-rille-apollo15",
+   "variable": "slope_std_deg",
+   "value": 8,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "hadley-rille-apollo15",
+   "variable": "lithology",
+   "value": "basalt;regolith_fine;anorthosite",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "hadley-rille-apollo15",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "hadley-rille-apollo15",
+   "variable": "lava_tube",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "hadley-rille-apollo15",
+   "variable": "mean_surface_temp_k",
+   "value": 245,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "hadley-rille-apollo15",
+   "variable": "surface_temp_range_k",
+   "value": 270,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "hadley-rille-apollo15",
+   "variable": "annual_precip_mm",
+   "value": 0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "hadley-rille-apollo15",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "hadley-rille-apollo15",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "jezero-crater",
+   "variable": "local_relief_m",
+   "value": 600,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "jezero-crater",
+   "variable": "mean_slope_deg",
+   "value": 5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "jezero-crater",
+   "variable": "slope_std_deg",
+   "value": 5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "jezero-crater",
+   "variable": "lithology",
+   "value": "basalt;clay_minerals;carbonate;sedimentary_clastic",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "jezero-crater",
+   "variable": "impact_structure",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "jezero-crater",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "jezero-crater",
+   "variable": "mean_surface_temp_k",
+   "value": 215,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "jezero-crater",
+   "variable": "surface_temp_range_k",
+   "value": 80,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "jezero-crater",
+   "variable": "annual_precip_mm",
+   "value": 0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "jezero-crater",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "jezero-crater",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "gale-crater",
+   "variable": "local_relief_m",
+   "value": 2000,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "gale-crater",
+   "variable": "mean_slope_deg",
+   "value": 8,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "gale-crater",
+   "variable": "slope_std_deg",
+   "value": 7,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "gale-crater",
+   "variable": "lithology",
+   "value": "sedimentary_clastic;clay_minerals;sulfates;basalt",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "gale-crater",
+   "variable": "impact_structure",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "gale-crater",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "gale-crater",
+   "variable": "mean_surface_temp_k",
+   "value": 220,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "gale-crater",
+   "variable": "surface_temp_range_k",
+   "value": 85,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "gale-crater",
+   "variable": "annual_precip_mm",
+   "value": 0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "gale-crater",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "gale-crater",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "arcadia-planitia",
+   "variable": "local_relief_m",
+   "value": 100,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "arcadia-planitia",
+   "variable": "mean_slope_deg",
+   "value": 1.5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "arcadia-planitia",
+   "variable": "slope_std_deg",
+   "value": 1.5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "arcadia-planitia",
+   "variable": "lithology",
+   "value": "basalt;regolith_fine;ice",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "arcadia-planitia",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "arcadia-planitia",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "arcadia-planitia",
+   "variable": "mean_surface_temp_k",
+   "value": 190,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "arcadia-planitia",
+   "variable": "surface_temp_range_k",
+   "value": 70,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "arcadia-planitia",
+   "variable": "annual_precip_mm",
+   "value": 0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "arcadia-planitia",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "arcadia-planitia",
+   "variable": "ground_ice",
+   "value": true,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "elysium-insight",
+   "variable": "local_relief_m",
+   "value": 50,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "elysium-insight",
+   "variable": "mean_slope_deg",
+   "value": 1,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "elysium-insight",
+   "variable": "slope_std_deg",
+   "value": 1,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "elysium-insight",
+   "variable": "lithology",
+   "value": "basalt;regolith_fine",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "elysium-insight",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "elysium-insight",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "elysium-insight",
+   "variable": "mean_surface_temp_k",
+   "value": 215,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "elysium-insight",
+   "variable": "surface_temp_range_k",
+   "value": 80,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "elysium-insight",
+   "variable": "annual_precip_mm",
+   "value": 0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "elysium-insight",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "elysium-insight",
+   "variable": "ground_ice",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "utopia-zhurong",
+   "variable": "local_relief_m",
+   "value": 80,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "m"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "utopia-zhurong",
+   "variable": "mean_slope_deg",
+   "value": 1.5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "utopia-zhurong",
+   "variable": "slope_std_deg",
+   "value": 1.5,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "deg"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "utopia-zhurong",
+   "variable": "lithology",
+   "value": "basalt;regolith_fine;sedimentary_clastic",
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "utopia-zhurong",
+   "variable": "impact_structure",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "utopia-zhurong",
+   "variable": "lava_tube",
+   "value": false,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "utopia-zhurong",
+   "variable": "mean_surface_temp_k",
+   "value": 210,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "utopia-zhurong",
+   "variable": "surface_temp_range_k",
+   "value": 75,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "K"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "utopia-zhurong",
+   "variable": "annual_precip_mm",
+   "value": 0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "mm/yr"
+  },
+  {
+   "subject_type": "target_region",
+   "subject_id": "utopia-zhurong",
+   "variable": "vegetation_fraction",
+   "value": 0.0,
+   "method": "Illustrative placeholder (DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT)",
+   "unit": "fraction"
+  }
+ ]
+}

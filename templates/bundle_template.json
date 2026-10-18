@@ -1,0 +1,23 @@
+{
+  "earthtwin_bundle": "1.0",
+  "dataset": {
+    "name": "Example verified dataset",
+    "publisher": "Organisation that produced the values",
+    "source_url": "https://example.org/dataset-landing-page",
+    "identifier": "DOI or product ID",
+    "license": "Licence terms",
+    "data_class": "verified",
+    "version": "v1",
+    "body": "earth",
+    "description": "What the values are and how they were produced",
+    "provenance": "Processing steps applied before upload",
+    "citation": {"text": "Author, A. (Year). Title. Publisher.", "doi": ""}
+  },
+  "options": {"lon_convention": "east_180", "lat_type": "planetocentric"},
+  "earth_sites": [],
+  "target_regions": [],
+  "observations": [
+    {"subject_type": "earth_site", "subject_id": "atacama-yungay", "variable": "mean_slope_deg", "value": 3.1, "unit": "deg", "method": "describe method"}
+  ],
+  "citations": []
+}

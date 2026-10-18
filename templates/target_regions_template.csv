@@ -1,0 +1,2 @@
+target_id,name,body,latitude,longitude,region_type,description,geologic_context,mission_relevance,tags,mean_slope_deg,mean_surface_temp_k,lithology
+example-mars-plain,Example Martian plain,mars,10.0,150.0,Volcanic plain,Replace with description,Replace with context,Landing reference,landing site;plains,1.5,215,basalt;regolith_fine

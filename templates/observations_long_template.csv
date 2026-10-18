@@ -1,0 +1,4 @@
+subject_id,variable,value,unit,method,uncertainty,observed_start,observed_end,notes
+atacama-yungay,mean_slope_deg,3.1,deg,NASADEM 30 m window statistics,0.3,2000-02-11,2000-02-22,example row
+atacama-yungay,annual_precip_mm,1.5,mm/yr,GPM IMERG climatology,,2001-01-01,2020-12-31,example row
+atacama-yungay,mean_surface_temp_k,18.4,°C,MODIS MOD11A2 mean,,2003-01-01,2022-12-31,converted to K on import

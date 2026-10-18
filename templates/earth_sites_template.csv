@@ -1,0 +1,2 @@
+site_id,name,country,region,latitude,longitude,categories,terrain_type,description,geologic_context,applications,limitations,mean_slope_deg,local_relief_m,annual_precip_mm_per_yr,lithology,ground_ice
+example-basalt-field,Example basalt field,Iceland,Northeast,65.10,-16.50,volcanic;highland,Basaltic lava plain,Replace with a factual description,Replace with geological context,Rover traverses|Regolith handling,Short field season,4.2,180,450,basalt;tephra,no

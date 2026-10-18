@@ -1,214 +1,99 @@
 # EarthTwin
 
-**Where on Earth is the Moon and Mars?**
-EarthTwin finds Earth locations that closely match Moon and Mars mission targets, and ranks them with an explainable score.
+**Finding Earth's best analogs for the Moon and Mars.**
 
-**Team PLANEX | NASA Space Apps Challenge**
-**Challenge:** Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars
+Team **PLANEX** · NASA Space Apps Challenge 2026 · Challenge: *Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars*
 
-**Live demo:** https://es-ratt.github.io/earthtwin/
+EarthTwin is a scientific decision-support web application. It compares measured characteristics of Earth locations with
+lunar and Martian target regions, shows the evidence behind every match, makes the differences and data gaps explicit,
+and lets the team add NASA, ESA, USGS or other verified datasets through a Data Center, with no code changes or rebuilds.
 
----
+> **Demonstration data.** The application ships with a curated catalogue (17 Earth sites, 9 Moon/Mars targets) and
+> *illustrative placeholder measurements*, all labelled **DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT**. Results only
+> become scientific once verified datasets are imported. See [docs/IMPLEMENTATION_STATUS.md](docs/IMPLEMENTATION_STATUS.md).
 
-## Overview
-
-Before going to the Moon or Mars, engineers test rovers, ice drills, habitats, and crew operations in places on Earth that feel similar. Choosing those places is slow and manual, and the data is spread across many sources.
-
-EarthTwin makes it simple:
-- Pick a mission and a Moon or Mars target
-- Set what matters most (terrain, geology, environment, resources)
-- Get a ranked list of Earth analog sites with a clear reason for every score
-
----
-
-## Features
-
-- **Mission setup wizard:** 4 mission types, 4 targets, 4 priority presets plus custom sliders
-- **Earth Scan:** ranks candidate sites by Analog Match Index (AMI) and confidence
-- **Interactive map:** ranked markers, click to select
-- **Site profiles:** strengths, limitations, and potential applications
-- **Explainable scores:** plain-language "Why did this site score X%?"
-- **Site comparison:** compare up to 3 sites side by side
-- **Seasonal analysis:** monthly chart and best testing window
-- **Mission report:** print or save as PDF, or download as HTML
-- **Light and dark theme**, mobile friendly, keyboard accessible
-
----
-
-## How It Works
-
-| Step | What happens |
-|------|--------------|
-| 1. Choose mission | Permanent Base, Landing Site, Rover Testing, or Research Mission |
-| 2. Choose target | Lunar South Pole, Mare Tranquillitatis, Mars Landing Zone, or Arcadia Planitia |
-| 3. Set priorities | Use a preset or custom weights (always total 100%) |
-| 4. Scan Earth | Every candidate site is scored against the target |
-| 5. Explore | Map, profiles, comparison, seasons, and report |
-
----
-
-## Targets
-
-| Target | Body | Environment | Key characteristics |
-|--------|------|-------------|---------------------|
-| Lunar South Pole | Moon | Extreme cold, permanent shadow, changing illumination | Shadowed ice, highland anorthosite, high resource potential |
-| Mare Tranquillitatis | Moon | Basaltic plain, large day-night thermal swing | Low slope, basalt mare, ilmenite |
-| Mars Landing Zone | Mars | Dusty basaltic plain, thin CO2 atmosphere | Basalt, clay and delta deposits, moderate resources |
-| Arcadia Planitia | Mars | Mid-latitude ice plains, cold, smooth | Shallow subsurface ice, volcanic plains |
-
---
-
-## Scoring Model
-
-Each Earth site gets a similarity score (0 to 100) for four factors:
-
-| Factor | What it compares |
-|--------|------------------|
-| Terrain | Elevation, slope, roughness |
-| Geology | Rock and soil type (basalt, sediments, minerals) |
-| Environment | Temperature, cold conditions, aridity |
-| Resources | Ground ice, water, and useful minerals |
-
-**Analog Match Index (AMI)**
-```
-AMI = (Terrain x wT + Geology x wG + Environment x wE + Resources x wR) / 100
-```
-Weights `w` come from the preset or the sliders and always add up to 100%.
-
-**Confidence**
-```
-Confidence = site data confidence - 0.3 x spread between the four factor scores
-```
-Confidence goes down when the factors disagree strongly. It is a heuristic, not a statistical probability.
-
-**Priority presets**
-
-| Preset | Terrain | Geology | Environment | Resources | Best for |
-|--------|:------:|:-------:|:-----------:|:---------:|----------|
-| General Analog | 25% | 20% | 25% | 30% | Balanced search |
-| Rover Testing | 40% | 30% | 20% | 10% | Mobility and slopes |
-| Ice Drill Testing | 15% | 15% | 25% | 45% | Ground ice and cold |
-| Habitat Materials | 20% | 45% | 25% | 10% | Regolith and rock |
-
-**Mission type to default preset**
-
-| Mission | Default preset |
-|---------|----------------|
-| Permanent Base | Ice Drill Testing |
-| Landing Site | Rover Testing |
-| Rover Testing | Rover Testing |
-| Research Mission | General Analog |
-
----
-
-## Candidate Earth Sites (12)
-
-| # | Site | Country | Lat, Lon | Why it is a candidate |
-|---|------|---------|----------|-----------------------|
-| 1 | Antarctic Dry Valleys | Antarctica | -77.5, 161.0 | Hyper-arid cold desert, buried ground ice |
-| 2 | High Arctic Permafrost | Canada (Nunavut) | 75.4, -89.0 | Impact crater terrain, permafrost |
-| 3 | Svalbard Valley Systems | Norway | 78.2, 16.0 | Glacial valleys, periglacial landforms |
-| 4 | Icelandic Volcanic Fields | Iceland | 64.9, -19.0 | Fresh basalt, ice-volcano interaction |
-| 5 | Iceland Lava Tubes | Iceland | 64.7, -20.5 | Lava-tube habitat analogs, ice-bearing caves |
-| 6 | Hawaiian Basalt Fields | USA (Hawaii) | 19.5, -155.5 | Well-studied basalt, mature infrastructure |
-| 7 | Craters of the Moon | USA (Idaho) | 43.4, -113.5 | Young basalt flows, cinder cones, lava tubes |
-| 8 | Atacama Desert | Chile | -24.5, -69.3 | Hyper-arid, oxidized salt-rich soils |
-| 9 | Utah High Desert | USA (Utah) | 38.4, -110.8 | Sedimentary layers, habitat simulation heritage |
-| 10 | Canary Volcanic Terrain | Spain (Tenerife) | 28.3, -16.6 | High-altitude volcanic landscape |
-| 11 | Namib Gravel Plains | Namibia | -24.0, 15.5 | Flat gravel plains for landing trials |
-| 12 | Danakil Depression | Ethiopia | 14.2, 40.3 | Evaporites, hydrothermal features |
-
----
-
-## Data
-
-### Data status in this prototype
-
-| Data | Status in prototype | Notes |
-|------|---------------------|-------|
-| Target profiles (4 targets) | Illustrative | Values written to match published characteristics |
-| Earth site scores (12 sites) | Illustrative | Per-factor scores for Moon and Mars are demo values |
-| Ground ice, basalt, cold indices | Illustrative | 0 to 1 indicators used to adjust factor scores |
-| Seasonal curves | Generated | Computed from latitude, thermal character, and weights |
-| Site imagery | Placeholder | Gradient tiles, not real photos |
-
-### NASA data sources the pipeline is designed for
-
-| Factor | Moon target data | Mars target data | Earth site data |
-|--------|------------------|------------------|-----------------|
-| Terrain | LRO **LOLA** (elevation, slope) | **MOLA** (elevation, slope) | **SRTM** / ASTER GDEM (elevation, slope) |
-| Terrain (roughness) | LRO **LROC** imagery | **HiRISE** / **CTX** imagery | Landsat imagery |
-| Geology | LRO / Clementine mineral maps | **CRISM** / **OMEGA** mineral maps | **ASTER** / Landsat mineralogy |
-| Environment | LRO **Diviner** (temperature, shadow) | **THEMIS** (temperature), **MCS** (dust and atmosphere) | **MODIS** (land surface temperature, snow, vegetation), **MERRA-2** / **GPM** (climate, rainfall) |
-| Resources | **LCROSS**, **LEND**, Lunar Prospector (water ice, hydrogen) | **GRS**, **SHARAD**, **MARSIS** (subsurface ice) | **SMAP** (soil moisture), ground-ice and permafrost maps |
-
-Data portals: [NASA Earthdata](https://earthdata.nasa.gov) and [NASA PDS](https://pds.nasa.gov)
-
-### Minimum data set for the next version
-
-| Body | Datasets |
-|------|----------|
-| Moon | LOLA + Diviner |
-| Mars | MOLA + THEMIS |
-| Earth | SRTM + MODIS + ASTER |
-
-These cover all four factors.
-
----
-
-## Tech Stack
-
-| Part | Choice |
-|------|--------|
-| Frontend | HTML, CSS, vanilla JavaScript (single file) |
-| Map | Inline SVG schematic world map |
-| Charts | Inline SVG |
-| Hosting | GitHub Pages |
-| Dependencies | None, no build step |
-
----
-
-## Run Locally
-
+## Quick start
 ```bash
-git clone https://github.com/es-ratt/earthtwin.git
-cd earthtwin
+git clone https://github.com/es-ratt/earthtwin.git && cd earthtwin
+python3 -m venv .venv && source .venv/bin/activate      # Python 3.11+ (tested on 3.13)
+pip install -r requirements-dev.txt
+python run.py                                            # → http://127.0.0.1:8000
 ```
-Then open `index.html` in any modern browser.
+The first start creates `data/`, applies database migrations, imports the seed bundles through the normal import
+pipeline, and prints the **Data Center admin token**. Run the tests with `cd backend && ../.venv/bin/python -m pytest -q`.
 
----
+## What's inside
+| Page | What it does |
+|---|---|
+| **Home** | Mission, challenge statement, how analog comparison works, live data-transparency counts |
+| **Explorer** | Choose a Moon/Mars target and weighting profile, filter candidates; the map, ranking and evidence panel stay in sync |
+| **Targets** | Moon and Mars explorers on their own planetocentric maps (NASA Trek imagery), name/coordinate search, target profiles |
+| **Catalogue** | Searchable Earth analog catalogue by category with data-completeness indicators |
+| **Site profile** | Context, every measurement with source/method/class, similarity breakdown, differences, applications, citations |
+| **Compare** | Up to three sites against one target: dot plot, contribution bars, metrics table, CSV/PDF export |
+| **Data Center** | Dataset catalogue, upload → inspect → field mapping → validation report → processing log → activation, versions, templates, providers (NASA CMR search) |
+| **Reports** | Candidate CSV, comparison CSV, PDF scientific report |
+| **Methodology** | Criteria, formulas, weights, missing-data rules, coordinate handling, limitations, sources from the database |
+| **About** | Purpose, approach, acknowledgments, independence statement |
 
-## Project Structure
-
+## How it works
 ```
-earthtwin/
-|-- index.html   # complete app (UI, scoring, data, charts)
-|-- README.md
+Dataset import → format detection → validation → metadata & field mapping → normalisation
+→ scientific processing (e.g. DEM → relief/slope/roughness) → feature extraction → similarity assessment
+→ database update (+ revision bump) → every open page refreshes automatically
+```
+* **Similarity engine** (`backend/app/services/similarity.py`): per-criterion similarity (Gaussian, log-ratio, Jaccard,
+  agreement), weight-normalised index, **coverage reported separately**, *Insufficient data* below threshold, and the
+  input data classes carried through. Missing data are never treated as matches.
+* **Planetary-aware**: Earth = WGS 84; Moon/Mars = planetocentric, east-positive on IAU 2015 spheres. Longitude
+  conventions and latitude types must be declared on import; raster CRSs are checked against the declared body.
+* **Provenance**: every value has its dataset, version, method, spatial support and class (`verified` / `derived` / `demo`).
+
+## Repository layout
+```
+backend/app/
+  main.py                API + static hosting        config.py   environment settings
+  db.py, migrations/     SQLite + SQL migrations     seed.py     first-run seeding
+  services/              vocabulary, units, similarity, catalog, analysis, exports, providers
+  ingest/                detect.py, mapping.py, pipeline.py, adapters/{tabular,raster}.py
+backend/seed/            curated catalogue + demo-measurement bundles (and their generator)
+backend/tests/           pytest suite (engine, pipeline, API, rasters, exports, persistence)
+frontend/                index.html, css/, js/{api,store,ui,charts,maps,components}.js, js/pages/*.js, vendor/leaflet
+templates/               import templates (CSV, GeoJSON, bundle)
+docs/                    DATA_DICTIONARY, METHODOLOGY, API, DEPLOYMENT, IMPLEMENTATION_STATUS
+legacy/prototype.html    the original single-file prototype (kept for reference)
 ```
 
----
+## Adding your datasets
+1. Open **Data Center**, enter the admin token, choose **Import data**.
+2. Upload a CSV/JSON/GeoJSON/GeoTIFF/bundle (templates under *Formats & templates*).
+3. Pick what it contains, review the proposed field mapping, and confirm units and coordinate conventions.
+4. Fill in provenance (verified data need publisher + source URL/identifier; add the citation).
+5. **Validate** (a dry run with a full report) → **Process**. The dataset is versioned and activated, and every page updates.
+6. When verified data cover your needs, deactivate *EarthTwin demonstration measurements*.
 
-## Limitations
+New *kinds* of measurement need a variable definition (and optionally a criterion) in
+`backend/app/services/vocabulary.py`; new file types or processing need an adapter in `backend/app/ingest/adapters/`.
+See [docs/DATA_DICTIONARY.md](docs/DATA_DICTIONARY.md).
 
-- Earth cannot reproduce lunar or Martian **gravity, vacuum, atmosphere, or radiation**. Every site profile says so.
-- This is a **frontend prototype using illustrative data**. Results are not scientific mission recommendations and are not validated NASA analysis.
-- Confidence is a demo heuristic, not a statistical probability.
-- The map is schematic, not geographically exact.
+## Documentation
+* [Data dictionary & import formats](docs/DATA_DICTIONARY.md)
+* [Methodology](docs/METHODOLOGY.md) (full version in the app)
+* [API](docs/API.md) (interactive at `/api/docs`)
+* [Deployment](docs/DEPLOYMENT.md) (local, Docker, hosted; needs a persistent volume)
+* [Implementation status, tests, limitations](docs/IMPLEMENTATION_STATUS.md)
 
----
+## Tech stack
+Python · FastAPI · SQLite · rasterio · pyproj · numpy · reportlab — vanilla JavaScript modules · Leaflet 1.9.4 (vendored) ·
+inline SVG charts. No frontend build step.
 
-## Roadmap
-
-- [ ] Replace illustrative values with real NASA dataset values (LOLA, Diviner, MOLA, THEMIS, SRTM, MODIS, ASTER)
-- [ ] Add real site imagery
-- [ ] Expand beyond 12 sites and add more lunar and Martian targets
-- [ ] Add a proper map with real coordinates and layers
-- [ ] Validate scoring with planetary science references
-
----
+## Acknowledgments
+Imagery: NASA Solar System Treks (LRO WAC, LRO LOLA, Viking MDIM 2.1, MGS MOLA) and NASA GIBS Blue Marble. Land
+outlines: Natural Earth. Metadata search: NASA CMR. Mapping: Leaflet (BSD-2-Clause).
 
 ## Team PLANEX
+*(Add team member names here.)*
 
-Built for the NASA Space Apps Challenge.
-
-**Disclaimer:** EarthTwin is an independent project and is not affiliated with NASA.
+**Disclaimer:** EarthTwin is an independent project created for the NASA Space Apps Challenge and is not affiliated with
+or endorsed by NASA. Similarity indices are prototype values, not probabilities of mission success or proof of
+environmental equivalence.
