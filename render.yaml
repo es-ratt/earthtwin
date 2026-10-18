@@ -1,0 +1,22 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploy: Render dashboard → New → Blueprint → select this repository.
+services:
+  - type: web
+    name: earthtwin
+    runtime: docker
+    plan: free            # free: data resets on restart/redeploy (seed data reloads automatically)
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: EARTHTWIN_ADMIN_TOKEN
+        generateValue: true   # find it under the service's Environment tab
+      - key: EARTHTWIN_DATA_DIR
+        value: /data
+      - key: EARTHTWIN_MAX_RASTER_MB
+        value: "200"
+    # To keep imported datasets across restarts, switch to a paid plan and add a disk:
+    # plan: starter
+    # disk:
+    #   name: earthtwin-data
+    #   mountPath: /data
+    #   sizeGB: 1
