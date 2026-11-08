@@ -1,0 +1,2146 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-11-08T19:28:39+00:00",
+ "contains_sample": true,
+ "candidates": [
+  {
+   "id": "haughton-crater",
+   "name": "Haughton Crater, Devon Island",
+   "lat": 75.38,
+   "lon": -89.67,
+   "country": "Canada",
+   "is_baseline": true,
+   "why_candidate": "Well-known Moon/Mars analog (impact crater in polar desert).",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 6.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 2.5,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 8.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "impact_breccia",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 18.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 235.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 700.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 2.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 0.6,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.4,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 38.06,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.75,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 5 of 17 by annual minimum surface temperature (235 K)."
+    }
+   }
+  },
+  {
+   "id": "sf-volcanic-field",
+   "name": "San Francisco Volcanic Field",
+   "lat": 35.35,
+   "lon": -111.5,
+   "country": "USA",
+   "is_baseline": true,
+   "why_candidate": "Apollo astronaut training ground (basaltic cinder).",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 9.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 4.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 6.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "volcanic_ash_cinder",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "basalt",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 30.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 262.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 450.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 0.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.9,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 78.09,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.312,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 12 of 17 by annual minimum surface temperature (262 K)."
+    }
+   }
+  },
+  {
+   "id": "mauna-kea",
+   "name": "Mauna Kea",
+   "lat": 19.82,
+   "lon": -155.47,
+   "country": "USA",
+   "is_baseline": true,
+   "why_candidate": "Basaltic volcano used for lunar ISRU field tests.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 17.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 6.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 15.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "volcanic_ash_cinder",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "basalt",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 22.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 268.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 500.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 1.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.8,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 90.0,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.25,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 13 of 17 by annual minimum surface temperature (268 K)."
+    }
+   }
+  },
+  {
+   "id": "iceland-holuhraun",
+   "name": "Holuhraun lava field",
+   "lat": 64.87,
+   "lon": -16.83,
+   "country": "Iceland",
+   "is_baseline": true,
+   "why_candidate": "Young basalt flows; Mars/Moon rover tests.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 4.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 1.8,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 10.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "volcanic_ash_cinder",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "basalt",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 12.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 255.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 600.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 1.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.7,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 48.57,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.438,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 10 of 17 by annual minimum surface temperature (255 K)."
+    }
+   }
+  },
+  {
+   "id": "atacama-yungay",
+   "name": "Atacama Desert (Yungay)",
+   "lat": -24.08,
+   "lon": -70.01,
+   "country": "Chile",
+   "is_baseline": true,
+   "why_candidate": "Hyper-arid Mars analog.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 3.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 1.2,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 3.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 40.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 275.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 800.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 0.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.8,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 89.36,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.125,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 15 of 17 by annual minimum surface temperature (275 K)."
+    }
+   }
+  },
+  {
+   "id": "mcmurdo-dry-valleys",
+   "name": "McMurdo Dry Valleys",
+   "lat": -77.5,
+   "lon": 161.8,
+   "country": "Antarctica",
+   "is_baseline": true,
+   "why_candidate": "Cold, dry polar desert with permafrost.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 8.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 3.5,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 12.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "granitic",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 15.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 225.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 900.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 2.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 0.3,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.3,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 35.94,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.938,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 2 of 17 by annual minimum surface temperature (225 K)."
+    }
+   }
+  },
+  {
+   "id": "mojave",
+   "name": "Mojave Desert",
+   "lat": 35.0,
+   "lon": -116.0,
+   "country": "USA",
+   "is_baseline": true,
+   "why_candidate": "Rover and landing test area.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 2.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 0.8,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 4.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "mixed",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 38.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 270.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 1000.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 0.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.95,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 78.44,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.188,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 14 of 17 by annual minimum surface temperature (270 K)."
+    }
+   }
+  },
+  {
+   "id": "death-valley",
+   "name": "Death Valley",
+   "lat": 36.5,
+   "lon": -116.9,
+   "country": "USA",
+   "is_baseline": true,
+   "why_candidate": "Hot desert Mars analog.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 3.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 1.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 6.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 42.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 280.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 1100.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 0.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.9,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 76.94,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.062,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 16 of 17 by annual minimum surface temperature (280 K)."
+    }
+   }
+  },
+  {
+   "id": "nain-anorthosite",
+   "name": "Nain Plutonic Suite, Labrador",
+   "lat": 56.5,
+   "lon": -61.8,
+   "country": "Canada",
+   "is_baseline": false,
+   "why_candidate": "NEW: anorthosite (lunar highland rock) at high latitude with permafrost.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 7.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 3.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 9.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "glacial_till",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "anorthosite",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 16.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 245.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 1200.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 2.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 1.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.35,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 56.94,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.688,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 6 of 17 by annual minimum surface temperature (245 K)."
+    }
+   }
+  },
+  {
+   "id": "adirondack-marcy",
+   "name": "Marcy Anorthosite, Adirondacks",
+   "lat": 44.1,
+   "lon": -73.9,
+   "country": "USA",
+   "is_baseline": false,
+   "why_candidate": "NEW: anorthosite massif, easy access.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 11.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 4.5,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": null,
+     "unit": "%",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "regolith_type": {
+     "value": "glacial_till",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "anorthosite",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 20.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 258.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": null,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "ice_presence": {
+     "value": 1.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.85,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 69.34,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.375,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 11 of 17 by annual minimum surface temperature (258 K)."
+    }
+   }
+  },
+  {
+   "id": "beacon-valley",
+   "name": "Beacon Valley",
+   "lat": -77.82,
+   "lon": 160.65,
+   "country": "Antarctica",
+   "is_baseline": false,
+   "why_candidate": "NEW: buried glacier ice under debris (Mars lobate debris apron analog).",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 5.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 2.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 4.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "debris_over_ice",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "ice_dominated",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 14.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 222.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 350.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 3.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 0.5,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.25,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 35.62,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 1.0,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 1 of 17 by annual minimum surface temperature (222 K)."
+    }
+   }
+  },
+  {
+   "id": "duvanny-yar",
+   "name": "Duvanny Yar (Kolyma)",
+   "lat": 68.63,
+   "lon": 159.15,
+   "country": "Russia",
+   "is_baseline": false,
+   "why_candidate": "NEW: massive ice-rich permafrost (yedoma) like Utopia/Arcadia ice.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 4.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 1.5,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 1.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "ice_rich_mantle",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 25.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 228.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 1400.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 3.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 1.2,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.3,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 44.81,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.875,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 3 of 17 by annual minimum surface temperature (228 K)."
+    }
+   }
+  },
+  {
+   "id": "axel-heiberg",
+   "name": "Expedition Fiord, Axel Heiberg Island",
+   "lat": 79.43,
+   "lon": -90.8,
+   "country": "Canada",
+   "is_baseline": false,
+   "why_candidate": "NEW: polygonal permafrost terrain.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 5.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 2.2,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 3.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "ice_rich_mantle",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 16.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 230.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 900.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 3.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 0.7,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.25,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 34.01,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.812,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 4 of 17 by annual minimum surface temperature (230 K)."
+    }
+   }
+  },
+  {
+   "id": "svalbard-bockfjorden",
+   "name": "Bockfjorden volcanics, Svalbard",
+   "lat": 79.43,
+   "lon": 13.33,
+   "country": "Norway",
+   "is_baseline": false,
+   "why_candidate": "NEW: volcanic rock + permafrost (AMASE field site).",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 12.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 5.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 7.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "volcanic_ash_cinder",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "basalt",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 10.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 245.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 700.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 2.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 1.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.4,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 34.01,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.625,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 7 of 17 by annual minimum surface temperature (245 K)."
+    }
+   }
+  },
+  {
+   "id": "changthang-tso-kar",
+   "name": "Tso Kar, Changthang Plateau (Ladakh)",
+   "lat": 33.3,
+   "lon": 78.0,
+   "country": "India",
+   "is_baseline": false,
+   "why_candidate": "NEW: cold high desert with permafrost.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 3.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 1.1,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": 2.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 35.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 250.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 650.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 2.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 1.5,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.6,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 80.14,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.562,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 8 of 17 by annual minimum surface temperature (250 K)."
+    }
+   }
+  },
+  {
+   "id": "lonar-crater",
+   "name": "Lonar Crater",
+   "lat": 19.98,
+   "lon": 76.51,
+   "country": "India",
+   "is_baseline": false,
+   "why_candidate": "NEW: impact crater in basalt.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 6.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 2.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": null,
+     "unit": "%",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "basalt",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": 25.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "annual_min_lst_K": {
+     "value": 290.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": null,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "ice_presence": {
+     "value": 0.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.9,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 90.0,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.0,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 17 of 17 by annual minimum surface temperature (290 K)."
+    }
+   }
+  },
+  {
+   "id": "qaidam-basin",
+   "name": "Qaidam Basin",
+   "lat": 37.5,
+   "lon": 94.0,
+   "country": "China",
+   "is_baseline": false,
+   "why_candidate": "Cold desert; most features not measured yet (shows 'Cannot be evaluated').",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 1.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 0.5,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": null,
+     "unit": "%",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": null,
+     "unit": "K",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "annual_min_lst_K": {
+     "value": null,
+     "unit": "K",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "thermal_inertia_tiu": {
+     "value": null,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "ice_presence": {
+     "value": null,
+     "unit": "0-3",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.6,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 75.94,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": null,
+     "status": "TODO",
+     "note": "Needs annual_min_lst_K."
+    }
+   }
+  },
+  {
+   "id": "sudbury-basin",
+   "name": "Sudbury Impact Structure",
+   "lat": 46.6,
+   "lon": -81.2,
+   "country": "Canada",
+   "is_baseline": false,
+   "why_candidate": "NEW: large impact structure with impact breccia.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "slope_deg": {
+     "value": 6.0,
+     "unit": "°",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "roughness_m": {
+     "value": 3.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "rock_cover_pct": {
+     "value": null,
+     "unit": "%",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "regolith_type": {
+     "value": "glacial_till",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "impact_breccia",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "temp_range_K": {
+     "value": null,
+     "unit": "K",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "annual_min_lst_K": {
+     "value": 250.0,
+     "unit": "K",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": null,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "ice_presence": {
+     "value": 1.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.9,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "max_sun_elev_deg": {
+     "value": 66.84,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.5,
+     "unit": "0–1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "Rank 9 of 17 by annual minimum surface temperature (250 K)."
+    }
+   }
+  }
+ ]
+}

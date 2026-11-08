@@ -1,0 +1,448 @@
+{
+  "schema_version": 1,
+  "_comment": "Target sites on the Moon and Mars, transcribed from the team research document. Rules: no value without a source_id; missing = null + status TODO; conflicts carry the flag 'inconsistent_in_docs'. 'features' hold the values the score compares against; 'facts' are context shown in the UI but not scored. Measurement fields: value | min+max (range target), unit, status (verified|verify|TODO|derived|method), source_id, confidence (high|medium|low), flags[], note.",
+  "sites": [
+    {
+      "id": "haworth",
+      "name": "Haworth",
+      "body": "moon",
+      "mission_ids": ["artemis-iv"],
+      "role": "candidate_region",
+      "status": "verify",
+      "position": {"lat": -86.9, "lon": -4.0, "status": "verify", "source_id": "team-doc", "note": "Crater centre (86.9°S, 4°W)."},
+      "features": {
+        "slope_deg": {"value": null, "status": "TODO", "note": "Not in team docs. Extract from LOLA slope maps."},
+        "roughness_m": {"value": null, "status": "TODO", "note": "Not in team docs."},
+        "rock_cover_pct": {"value": null, "status": "TODO", "note": "Boulder count and density not found."},
+        "regolith_type": {"value": "fine_impact_regolith", "status": "verify", "source_id": "team-doc", "confidence": "medium", "note": "General lunar regolith; PSR soil described as highly porous."},
+        "geology_type": {"value": null, "status": "TODO", "note": "Mineral composition (rock type) not found in team docs."},
+        "temp_range_K": {"value": null, "status": "TODO"},
+        "cold_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high", "note": "Target = the coldest Earth candidate. PSR temperatures (~60–80 K annual max) cannot be matched on Earth."},
+        "max_sun_elev_deg": {"value": 4.64, "status": "derived", "source_id": "nssdc-moon-fact", "confidence": "medium", "note": "90° − 86.9° + 1.54° (lunar equator tilt to ecliptic) at the crater centre. Crater floor is mostly in permanent shadow."},
+        "ice_presence": {"value": 2, "status": "verify", "source_id": "hayne2015", "confidence": "medium", "note": "UV off/on-band ratio 1.32 is above the 1.2 ice threshold (surface frost). Ice mixed in soil ~0.1–2 wt% (all cold traps combined)."},
+        "ice_depth_m": {"value": null, "status": "TODO", "note": "Neutron data only senses the top ~1 m; no depth to ice reported."},
+        "logistics_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high", "note": "Earth-only factor: target is the most accessible site."}
+      },
+      "facts": [
+        {"label": "Diameter", "text": "~52 km", "source_id": "tye2015", "confidence": "high", "flags": ["inconsistent_in_docs"], "note": "Wikipedia 51.4 km; an older paper 35 km (different method). Use 52 km."},
+        {"label": "Depth", "text": "~4 km", "source_id": "team-doc", "confidence": "low", "flags": ["third_party"], "note": "From a Korean news report of an LRO-based study."},
+        {"label": "Age", "text": "Pre-Nectarian crater (NTRS table: 4.18 Gyr); floor crater-count age Late Imbrian ~3.5 Gyr", "source_id": "tye2015", "confidence": "medium"},
+        {"label": "Annual max temperature", "text": "~60–80 K (coldest of Haworth/Shoemaker/Faustini); PSR mean annual max ~75 K", "source_id": "hayne2015", "confidence": "high", "flags": ["inconsistent_in_docs"], "note": "Wikipedia says many areas stay below 40 K. The Diviner paper value is used."},
+        {"label": "Cold-trap threshold", "text": "Below 110 K counts as a water-ice cold trap", "source_id": "hayne2015", "confidence": "high"},
+        {"label": "Landable area", "text": "8.7% of the region (77.3 km²) meets HLS criteria; 11 candidate sites", "source_id": "wueller2026", "confidence": "medium", "flags": ["abstract_only"]},
+        {"label": "PSR access", "text": "10 sites reach PSRs below 110 K, 3 more reach 110–125 K", "source_id": "wueller2026", "confidence": "medium", "flags": ["abstract_only"]},
+        {"label": "Sun + Earth visibility", "text": "Sites HW04 and HW10 see both Sun and Earth for more than 25 days", "source_id": "wueller2026", "confidence": "medium", "flags": ["abstract_only"]},
+        {"label": "Light inside PSRs", "text": "~100–1000× dimmer than sunlit ground (secondary illumination)", "source_id": "mahanti2024", "confidence": "medium"},
+        {"label": "Floor craters", "text": "50–665 m diameter, mean ~220 m; depth/diameter ~0.1", "source_id": "basilevsky2024", "confidence": "medium"},
+        {"label": "Neutron vs UV", "text": "Neutron data show slightly more hydrogen only near the NW rim; UV and neutron data do not fully agree", "source_id": "hayne2015", "confidence": "medium", "flags": ["inconsistent_in_docs"]},
+        {"label": "Radiation", "text": "No site-specific data", "source_id": null, "confidence": null, "flags": ["missing"]}
+      ],
+      "flags": []
+    },
+    {
+      "id": "de-gerlache-rim-2",
+      "name": "de Gerlache Rim 2",
+      "body": "moon",
+      "mission_ids": ["artemis-iv"],
+      "role": "candidate_region",
+      "status": "verify",
+      "position": {"lat": -88.5, "lon": -87.1, "status": "verify", "source_id": "team-doc", "note": "de Gerlache CRATER centre. The exact Rim 2 region outline is not in the team docs."},
+      "features": {
+        "slope_deg": {"value": null, "status": "TODO", "note": "Crater walls exceed 25°; the Rim 2 landing-area slope is not given."},
+        "roughness_m": {"value": null, "status": "TODO"},
+        "rock_cover_pct": {"value": null, "status": "TODO", "note": "Large boulder fields (boulders up to 17 m) near the highest-light point, but no percentage."},
+        "regolith_type": {"value": "fine_impact_regolith", "status": "verify", "source_id": "team-doc", "confidence": "medium"},
+        "geology_type": {"value": "anorthosite", "status": "verify", "source_id": "rice2023", "confidence": "medium", "note": "Nearly pure anorthosite possible; also impact breccia, impact melt and ancient highland crust (SPA ejecta)."},
+        "temp_range_K": {"value": null, "status": "TODO"},
+        "cold_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"},
+        "max_sun_elev_deg": {"value": 3.04, "status": "derived", "source_id": "nssdc-moon-fact", "confidence": "low", "note": "Computed at the crater centre (88.5°S), not the Rim 2 site."},
+        "ice_presence": {"value": null, "status": "TODO", "flags": ["inconsistent_in_docs"], "note": "Evidence conflicts: UV ratio 0.81 (below 1.2), LEND shows no hydrogen excess, but a model suggests possible ice at ~0.5 m. Not scored."},
+        "ice_depth_m": {"value": 0.5, "status": "verify", "source_id": "kereszturi2022", "confidence": "low", "flags": ["model_not_measurement"], "note": "Model-based possibility, not a measurement."},
+        "logistics_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"}
+      },
+      "facts": [
+        {"label": "Crater diameter", "text": "~32 km (other source 31 km)", "source_id": "rice2023", "confidence": "medium"},
+        {"label": "Crater depth", "text": "7.5 km in one study, ~1.6 km in another", "source_id": "icarus2022-degerlache", "confidence": "low", "flags": ["inconsistent_in_docs"], "note": "Sources disagree. Quote both."},
+        {"label": "Highest point (Site 011)", "text": "~1,400 m on the rim (reference level not stated)", "source_id": "psj-ac88c2", "confidence": "low"},
+        {"label": "Slopes", "text": "Crater walls >25°. Artemis EVA: up to 2 km from lander over slopes up to 20°", "source_id": "rice2023", "confidence": "medium"},
+        {"label": "Landable area", "text": "7.5% (30.1 km²); 7 candidate sites; no site reaches a PSR easily", "source_id": "wueller2026", "confidence": "medium", "flags": ["abstract_only"]},
+        {"label": "Temperature", "text": "Crater interior ~100–150 K (Diviner, winter); PSR mean annual max ~94 K", "source_id": "hayne2015", "confidence": "medium"},
+        {"label": "Illumination", "text": "Rim high point (Site 011) ~84% average sunlight (another analysis ~80%)", "source_id": "rice2023", "confidence": "medium", "flags": ["site_011_not_rim_2"]},
+        {"label": "Earth visibility", "text": "From ~50% of Site 011, Earth is visible 50–60% of the time", "source_id": "psj-ac88c2", "confidence": "medium", "flags": ["site_011_not_rim_2"]},
+        {"label": "Age", "text": "Nectarian crater (~3.9 Gyr); ridges are SPA-basin ejecta (pre-Nectarian)", "source_id": "rice2023", "confidence": "medium"},
+        {"label": "Hazards", "text": "Dense boulder fields near the highest-light point (smaller than Apollo 16 South Ray boulders); landslide traces on slopes", "source_id": "psj-ac88c2", "confidence": "medium"},
+        {"label": "Radiation", "text": "No site-specific data", "source_id": null, "flags": ["missing"]}
+      ],
+      "flags": ["data_from_site_011", "position_is_crater_centre"]
+    },
+    {
+      "id": "malapert-massif",
+      "name": "Malapert Massif",
+      "body": "moon",
+      "mission_ids": ["artemis-iv"],
+      "role": "candidate_region",
+      "status": "verify",
+      "position": {"lat": -86.0, "lon": 0.0, "status": "verify", "source_id": "malapert-a3-2011", "note": "Summit position (~86°S, 0°E)."},
+      "features": {
+        "slope_deg": {"min": 20, "max": 30, "unit": "°", "status": "verify", "source_id": "malapert-a3-2011", "confidence": "medium", "note": "Massif flanks mostly 20–30°; summit and base gentler."},
+        "roughness_m": {"value": null, "status": "TODO"},
+        "rock_cover_pct": {"value": null, "status": "TODO"},
+        "regolith_type": {"value": "fine_impact_regolith", "status": "verify", "source_id": "team-doc", "confidence": "medium"},
+        "geology_type": {"value": "anorthosite", "status": "verify", "source_id": "malapert-ads-2023", "confidence": "low", "note": "Described as feldspar-rich highland, thought to be SPA rim remnant >4 Gyr. 'Anorthosite' is the team's mapping of 'feldspar-rich'."},
+        "temp_range_K": {"value": null, "status": "TODO"},
+        "cold_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"},
+        "max_sun_elev_deg": {"value": 5.54, "status": "derived", "source_id": "nssdc-moon-fact", "confidence": "medium"},
+        "ice_presence": {"value": null, "status": "TODO", "note": "Two PSRs may hold ice, but UV ratio 0.76 shows no ice signal."},
+        "ice_depth_m": {"value": null, "status": "TODO"},
+        "logistics_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"}
+      },
+      "facts": [
+        {"label": "Elevation", "text": "Summit ~5 km above the 1738 km datum; massif ~30 × 50 km", "source_id": "malapert-a3-2011", "confidence": "medium", "flags": ["inconsistent_in_docs"], "note": "One abstract says 8 km high; LROC says >5,000 m above its base."},
+        {"label": "Nearby PSR", "text": "Mean annual max ~103 K (close to the 110 K threshold)", "source_id": "hayne2015", "confidence": "high"},
+        {"label": "Rover limit", "text": "Lunokhod and Apollo rovers could not climb 20–30° slopes", "source_id": "malapert-a3-2011", "confidence": "medium"},
+        {"label": "Real landing nearby", "text": "IM-1 'Odysseus' landed near Malapert A in 2024", "source_id": "team-doc", "confidence": "medium", "flags": ["third_party"]}
+      ],
+      "flags": []
+    },
+    {
+      "id": "mons-mouton-plateau",
+      "name": "Mons Mouton Plateau",
+      "body": "moon",
+      "mission_ids": ["artemis-iv"],
+      "role": "candidate_region",
+      "status": "verify",
+      "position": {"lat": null, "lon": null, "status": "TODO", "note": "Coordinates not in team docs."},
+      "features": {
+        "slope_deg": {"value": null, "status": "TODO", "note": "Described as the widest and flattest of the nine, but no number."},
+        "roughness_m": {"value": null, "status": "TODO"},
+        "rock_cover_pct": {"value": null, "status": "TODO"},
+        "regolith_type": {"value": "fine_impact_regolith", "status": "verify", "source_id": "team-doc", "confidence": "medium"},
+        "geology_type": {"value": "mixed", "status": "verify", "source_id": "wueller2026", "confidence": "low", "flags": ["abstract_only"], "note": "Samples would mix materials from several nearby impacts."},
+        "temp_range_K": {"value": null, "status": "TODO"},
+        "cold_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"},
+        "max_sun_elev_deg": {"value": null, "status": "TODO", "note": "Needs latitude."},
+        "ice_presence": {"value": null, "status": "TODO", "note": "Largest ice-stable area in the top 1 m of the nine regions (stability, not confirmed presence)."},
+        "ice_depth_m": {"value": null, "status": "TODO"},
+        "logistics_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"}
+      },
+      "facts": [
+        {"label": "Elevation", "text": "5,000–6,000 m across ~60 km", "source_id": "astronomy-nine-sites", "confidence": "low", "flags": ["third_party"]},
+        {"label": "Landable area", "text": "Largest: 564.8 km² (12.7%); 11 sites meet HLS criteria", "source_id": "wueller2026", "confidence": "medium", "flags": ["abstract_only"]},
+        {"label": "PSR access", "text": "Sites 02, 05, 06 reach PSRs below 110 K; 03, 08 reach 110–125 K", "source_id": "wueller2026", "confidence": "medium", "flags": ["abstract_only"]},
+        {"label": "PSR 'P'", "text": "More than 70% of this 4 km² PSR is cold enough to keep water ice", "source_id": "lpsc2025-2742", "confidence": "medium"},
+        {"label": "Region size", "text": "~4,450 km²", "source_id": "lpsc2025-2742", "confidence": "medium"}
+      ],
+      "flags": []
+    },
+    {
+      "id": "mons-mouton",
+      "name": "Mons Mouton",
+      "body": "moon",
+      "mission_ids": ["artemis-iv"],
+      "role": "candidate_region",
+      "status": "verify",
+      "position": {"lat": null, "lon": null, "status": "TODO", "note": "Coordinates not in team docs."},
+      "features": {
+        "slope_deg": {"min": 0, "max": 7, "unit": "°", "status": "verify", "source_id": "icarus-mons-mouton-viper", "confidence": "medium", "note": "0–7° in the studied area, locally up to 9°. A scarp to the south reaches 15–28°."},
+        "roughness_m": {"value": null, "status": "TODO"},
+        "rock_cover_pct": {"value": null, "status": "TODO"},
+        "regolith_type": {"value": "fine_impact_regolith", "status": "verify", "source_id": "team-doc", "confidence": "medium"},
+        "geology_type": {"value": "mixed", "status": "verify", "source_id": "jgr-2025JE009127", "confidence": "low", "note": "Area covered by a layer of secondary (ejected) material."},
+        "temp_range_K": {"value": null, "status": "TODO"},
+        "cold_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"},
+        "max_sun_elev_deg": {"value": null, "status": "TODO"},
+        "ice_presence": {"value": null, "status": "TODO", "note": "Neutron hydrogen anomaly up to 0.25 wt% (±0.06): a hydrogen signal, not direct ice."},
+        "ice_depth_m": {"value": null, "status": "TODO"},
+        "logistics_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"}
+      },
+      "facts": [
+        {"label": "Possible VIPER area", "text": "One paper names Mons Mouton as the VIPER landing area; NASA's Moon Base page does not give VIPER's site", "source_id": "icarus-mons-mouton-viper", "confidence": "low"},
+        {"label": "Elevation", "text": "Summit surface ~6 km, ~100 km wide plateau; region on the south part, ~8 km above surroundings", "source_id": "icarus-mons-mouton-viper", "confidence": "medium"},
+        {"label": "Region size", "text": "~255 km², overlaps the Plateau region", "source_id": "lpsc2025-2742", "confidence": "medium"}
+      ],
+      "flags": []
+    },
+    {
+      "id": "nobile-rim-1",
+      "name": "Nobile Rim 1",
+      "body": "moon",
+      "mission_ids": ["artemis-iv"],
+      "role": "candidate_region",
+      "status": "verify",
+      "position": {"lat": null, "lon": null, "status": "TODO", "note": "SW rim of Nobile crater; coordinates not in team docs."},
+      "features": {
+        "slope_deg": {"value": null, "status": "TODO", "note": "Narrow rim; slopes not always suitable for stable landing (no number)."},
+        "roughness_m": {"value": null, "status": "TODO"},
+        "rock_cover_pct": {"value": null, "status": "TODO"},
+        "regolith_type": {"value": "fine_impact_regolith", "status": "verify", "source_id": "team-doc", "confidence": "medium"},
+        "geology_type": {"value": "mixed", "status": "verify", "source_id": "wueller2026", "confidence": "low", "flags": ["abstract_only"]},
+        "temp_range_K": {"value": null, "status": "TODO"},
+        "cold_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"},
+        "max_sun_elev_deg": {"value": null, "status": "TODO"},
+        "ice_presence": {"value": null, "status": "TODO", "note": "UV ratio 0.58: no ice signal; no easy PSR access listed."},
+        "ice_depth_m": {"value": null, "status": "TODO"},
+        "logistics_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"}
+      },
+      "facts": [
+        {"label": "Elevation", "text": "~3,000 m (SW rim of Nobile)", "source_id": "astronomy-nine-sites", "confidence": "low", "flags": ["third_party"]},
+        {"label": "Nobile PSR", "text": "Mean annual max ~107 K, just below 110 K", "source_id": "hayne2015", "confidence": "high"},
+        {"label": "Illumination", "text": "Variable (0.38 ± 0.21); >50% sunlight year-round near the rim", "source_id": "wueller2026", "confidence": "medium", "flags": ["abstract_only"]},
+        {"label": "Candidate sites", "text": "9 along the rim", "source_id": "wueller2026", "confidence": "medium", "flags": ["abstract_only"]}
+      ],
+      "flags": []
+    },
+    {
+      "id": "nobile-rim-2",
+      "name": "Nobile Rim 2",
+      "body": "moon",
+      "mission_ids": ["artemis-iv"],
+      "role": "candidate_region",
+      "status": "verify",
+      "position": {"lat": -84.2, "lon": 60.7, "status": "verify", "source_id": "astronomy-nine-sites", "note": "Approximate region centre (third-party source)."},
+      "features": {
+        "slope_deg": {"min": 0, "max": 5, "unit": "°", "status": "verify", "source_id": "epsc2024-473", "confidence": "medium", "note": "Most of the area below 5°, low roughness."},
+        "roughness_m": {"value": null, "status": "TODO", "note": "Described as low, no number."},
+        "rock_cover_pct": {"value": null, "status": "TODO"},
+        "regolith_type": {"value": "fine_impact_regolith", "status": "verify", "source_id": "team-doc", "confidence": "medium"},
+        "geology_type": {"value": null, "status": "TODO", "note": "Intercrater highland; composition not stated."},
+        "temp_range_K": {"value": null, "status": "TODO"},
+        "cold_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"},
+        "max_sun_elev_deg": {"value": 7.34, "status": "derived", "source_id": "nssdc-moon-fact", "confidence": "medium"},
+        "ice_presence": {"value": null, "status": "TODO", "note": "Site 204 reaches a PSR below 110 K; no ice measurement."},
+        "ice_depth_m": {"value": null, "status": "TODO"},
+        "logistics_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"}
+      },
+      "facts": [
+        {"label": "Elevation", "text": "~−1,400 m; second lowest of the nine", "source_id": "astronomy-nine-sites", "confidence": "low", "flags": ["third_party"]},
+        {"label": "Earth visibility", "text": "Direct-to-Earth contact about one third of the time; ~250 km from Shackleton", "source_id": "pena-asensio2024", "confidence": "medium"},
+        {"label": "'Best site' claim", "text": "A multi-criteria study ranks its best point highest for sunlight and accessible ice. This is one research team's result, not a NASA decision.", "source_id": "pena-asensio2024", "confidence": "medium"}
+      ],
+      "flags": []
+    },
+    {
+      "id": "peak-near-cabeus-b",
+      "name": "Peak near Cabeus B",
+      "body": "moon",
+      "mission_ids": ["artemis-iv"],
+      "role": "candidate_region",
+      "status": "verify",
+      "position": {"lat": null, "lon": null, "status": "TODO", "note": "Coordinates not in team docs."},
+      "features": {
+        "slope_deg": {"value": null, "status": "TODO", "note": "Very steep: ~6 km of relief over 30 km. No slope number."},
+        "roughness_m": {"value": null, "status": "TODO"},
+        "rock_cover_pct": {"value": null, "status": "TODO"},
+        "regolith_type": {"value": "fine_impact_regolith", "status": "verify", "source_id": "team-doc", "confidence": "medium"},
+        "geology_type": {"value": null, "status": "TODO"},
+        "temp_range_K": {"value": null, "status": "TODO"},
+        "cold_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"},
+        "max_sun_elev_deg": {"value": null, "status": "TODO"},
+        "ice_presence": {"value": null, "status": "TODO", "note": "LCROSS found ~5–7 wt% water ice in Cabeus crater, not on this peak. No easy PSR access listed for the peak sites."},
+        "ice_depth_m": {"value": null, "status": "TODO"},
+        "logistics_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"}
+      },
+      "facts": [
+        {"label": "Elevation range", "text": "−2,900 m to +3,850 m over 30 km", "source_id": "astronomy-nine-sites", "confidence": "low", "flags": ["third_party"]},
+        {"label": "Cabeus PSR", "text": "Mean annual max ~95 K", "source_id": "hayne2015", "confidence": "high"},
+        {"label": "Landable area", "text": "Smallest of the nine: 0.5% (2.1 km²), 5 sites", "source_id": "wueller2026", "confidence": "medium", "flags": ["abstract_only"]}
+      ],
+      "flags": []
+    },
+    {
+      "id": "slater-plain",
+      "name": "Slater Plain",
+      "body": "moon",
+      "mission_ids": ["artemis-iv"],
+      "role": "candidate_region",
+      "status": "verify",
+      "position": {"lat": null, "lon": null, "status": "TODO", "note": "Coordinates not in team docs."},
+      "features": {
+        "slope_deg": {"value": null, "status": "TODO"},
+        "roughness_m": {"value": null, "status": "TODO", "note": "Smooth regolith dominates (no number)."},
+        "rock_cover_pct": {"value": null, "status": "TODO", "note": "Radar and optical data suggest no large boulders or boulder fields (no percentage)."},
+        "regolith_type": {"value": "fine_impact_regolith", "status": "verify", "source_id": "lpsc2025-2401", "confidence": "medium", "note": "Smooth regolith dominates."},
+        "geology_type": {"value": null, "status": "TODO", "note": "Nectarian highland plains unit; composition not stated."},
+        "temp_range_K": {"value": null, "status": "TODO"},
+        "cold_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"},
+        "max_sun_elev_deg": {"value": null, "status": "TODO"},
+        "ice_presence": {"value": null, "status": "TODO", "note": "Best PSR access of the regions studied; no ice measurement."},
+        "ice_depth_m": {"value": null, "status": "TODO"},
+        "logistics_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"}
+      },
+      "facts": [
+        {"label": "Elevation", "text": "Not used: the source gives 5,900 ft (≈ +1,800 m) but writes −1,800 m. Verify with LOLA.", "source_id": "astronomy-nine-sites", "confidence": "low", "flags": ["inconsistent_in_docs", "third_party"]},
+        {"label": "Landable area", "text": "Highest share seen: 19.3% (77.0 km²), 11 sites", "source_id": "wueller2026", "confidence": "medium", "flags": ["abstract_only"]},
+        {"label": "PSR access", "text": "Sites 01, 02, 10, 11 reach PSRs below 110 K; 04, 08 reach 110–125 K", "source_id": "wueller2026", "confidence": "medium", "flags": ["abstract_only"]}
+      ],
+      "flags": []
+    },
+    {
+      "id": "shackleton-connecting-ridge",
+      "name": "Shackleton Connecting Ridge",
+      "body": "moon",
+      "mission_ids": ["moon-base"],
+      "role": "reference_site",
+      "status": "verify",
+      "position": {"lat": -89.495, "lon": -137.5, "status": "verify", "source_id": "lunarsurface2020-5082", "note": "A specific landing point (−89.495°, 222.5°E)."},
+      "features": {
+        "slope_deg": {"min": 0, "max": 10, "unit": "°", "status": "verify", "source_id": "psj-ac88c2", "confidence": "medium", "note": "Along the ridge mostly <10°; slopes down from the ridge mostly <20°."},
+        "roughness_m": {"value": null, "status": "TODO"},
+        "rock_cover_pct": {"value": null, "status": "TODO"},
+        "regolith_type": {"value": "fine_impact_regolith", "status": "verify", "source_id": "team-doc", "confidence": "medium"},
+        "geology_type": {"value": "anorthosite", "status": "verify", "source_id": "pds", "confidence": "medium", "note": "Shackleton: mainly anorthosite and plagioclase feldspar (M3 data), little basalt."},
+        "temp_range_K": {"value": null, "status": "TODO", "flags": ["inconsistent_in_docs"], "note": "Team docs give Shackleton rim day ~120 K / night ~80 K, but other sections disagree. Not used."},
+        "cold_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"},
+        "max_sun_elev_deg": {"value": 2.05, "status": "derived", "source_id": "nssdc-moon-fact", "confidence": "medium"},
+        "ice_presence": {"value": null, "status": "TODO", "flags": ["inconsistent_in_docs"], "note": "Debated: UV ratio 1.3 but spectra do not match ice (feldspar could explain it); radar cannot rule out 5–10 wt% ice."},
+        "ice_depth_m": {"value": null, "status": "TODO"},
+        "logistics_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"}
+      },
+      "facts": [
+        {"label": "Role", "text": "Blue Moon MK1 'Endurance' (NASA CLPS) target. NOT one of the nine Artemis IV regions.", "source_id": "nasa-moonbase-phases", "confidence": "high"},
+        {"label": "Ridge", "text": "~32 km long, pre-Nectarian", "source_id": "psj-ac88c2", "confidence": "medium"},
+        {"label": "Illumination", "text": "Most-lit place at the south pole: up to 88% at 2 m height (77.1–88.0% over 19 years); 56.1% at the specific landing point", "source_id": "lunarsurface2020-5082", "confidence": "medium"},
+        {"label": "Earth visibility", "text": "Earth visible ~60% of the time", "source_id": "icarus-shackleton-degerlache-ridge", "confidence": "medium"},
+        {"label": "Shackleton crater age", "text": "Late Imbrian", "source_id": "lroc-1247", "confidence": "medium"},
+        {"label": "Crater and boulder counts", "text": "~238,000 small craters and ~2,973 large boulders around Shackleton", "source_id": "team-doc", "confidence": "low", "flags": ["no_specific_source"]},
+        {"label": "Radiation", "text": "~200–400 mSv/yr on the open surface in quiet Sun; 1–5 Sv in hours during a large solar storm", "source_id": "team-doc", "confidence": "low", "flags": ["no_specific_source"]},
+        {"label": "Shackleton temperatures", "text": "Rim max ~120–130 K, floor ~40 K, PSR 40–55 K (Phase-2 notes)", "source_id": "team-doc", "confidence": "low", "flags": ["inconsistent_in_docs", "unverified"]}
+      ],
+      "flags": ["not_an_artemis_iv_region"]
+    },
+
+    {
+      "id": "ap-105",
+      "name": "AP-105 reference ellipse",
+      "body": "mars",
+      "mission_ids": ["skyfall"],
+      "role": "reference_ellipse",
+      "status": "verify",
+      "position": {"lat": 43.33, "lon": -161.48, "status": "verify", "source_id": "skyfall-package", "note": "~43.33°N, 198.52°E (= −161.48°). Design reference only; landing site not selected."},
+      "inherits": "skyfall-defaults",
+      "features": {
+        "ice_presence": {"value": 3, "status": "verify", "source_id": "usgs-arcadia-secondaries", "confidence": "medium", "note": "Arcadia Planitia: widespread excess ice layer (radar + terraced craters)."},
+        "regolith_type": {"value": "ice_rich_mantle", "status": "verify", "source_id": "hirise-arcadia", "confidence": "medium", "note": "Smooth at large scale, hummocky up close; texture linked to ground ice."},
+        "geology_type": {"value": null, "status": "TODO"}
+      },
+      "facts": [
+        {"label": "Ellipse", "text": "100 × 25 km design reference in Arcadia Planitia", "source_id": "skyfall-package", "confidence": "medium"},
+        {"label": "Why here", "text": "Flat, few rocks: most favourable for landing among the five regions (team assessment)", "source_id": "team-doc", "confidence": "low"}
+      ],
+      "flags": ["not_selected_landing_site"]
+    },
+    {
+      "id": "arcadia-planitia",
+      "name": "Arcadia Planitia",
+      "body": "mars",
+      "mission_ids": ["skyfall"],
+      "role": "broad_region",
+      "status": "verify",
+      "position": {"lat": null, "lon": null, "status": "TODO", "note": "Broad region; contains AP-105. Outline not in team docs."},
+      "inherits": "skyfall-defaults",
+      "features": {
+        "ice_presence": {"value": 3, "status": "verify", "source_id": "bramson2015", "confidence": "medium", "note": "Excess ice: radar reflector, mean dielectric permittivity ~2.5."},
+        "regolith_type": {"value": "ice_rich_mantle", "status": "verify", "source_id": "hirise-arcadia", "confidence": "medium"},
+        "geology_type": {"value": null, "status": "TODO"}
+      },
+      "facts": [
+        {"label": "Ice extent", "text": "Roughly California + Texas in area, ~130 ft (~40 m) thick", "source_id": "aviationweek-arcadia", "confidence": "low", "flags": ["third_party"]},
+        {"label": "Ice age", "text": "Tens of millions of years (expanded secondary craters); at least ~6,000 km³ under crater-free areas", "source_id": "usgs-arcadia-secondaries", "confidence": "medium"},
+        {"label": "Glacier", "text": "Flat ice sheet close to the surface", "source_id": "livescience-arcadia", "confidence": "low", "flags": ["third_party"]}
+      ],
+      "flags": []
+    },
+    {
+      "id": "deuteronilus-mensae",
+      "name": "Deuteronilus Mensae",
+      "body": "mars",
+      "mission_ids": ["skyfall"],
+      "role": "broad_region",
+      "status": "verify",
+      "position": {"lat": 42.0, "lon": 27.0, "status": "verify", "source_id": "hirise-deuteronilus", "note": "Centre of a HiRISE image (~42°N, 27°E), not a region centre."},
+      "inherits": "skyfall-defaults",
+      "features": {
+        "ice_presence": {"value": 3, "status": "verify", "source_id": "peeref-17343422", "confidence": "high", "note": "SHARAD: lobate debris aprons consistent with 80–90% pure water ice (debris-covered glaciers)."},
+        "regolith_type": {"value": "debris_over_ice", "status": "verify", "source_id": "nasa-photojournal-deuteronilus", "confidence": "medium"},
+        "geology_type": {"value": "ice_dominated", "status": "verify", "source_id": "peeref-17343422", "confidence": "medium"}
+      },
+      "facts": [
+        {"label": "Terrain", "text": "Mesas and buttes with sloping debris aprons and wide valleys, on the highland–lowland boundary", "source_id": "hirise-deuteronilus", "confidence": "high"},
+        {"label": "Ice volume", "text": "Regional minimum 0.9–1.0 × 10⁵ km³ (62–69 cm global equivalent layer); SHARAD reached 87% of LDAs", "source_id": "peeref-17343422", "confidence": "medium"},
+        {"label": "Landing risk", "text": "Hilly mesa terrain may be risky; no NASA rock/slope numbers found for this region (team assessment)", "source_id": "team-doc", "confidence": "low"}
+      ],
+      "flags": []
+    },
+    {
+      "id": "utopia-planitia",
+      "name": "Utopia Planitia",
+      "body": "mars",
+      "mission_ids": ["skyfall"],
+      "role": "broad_region",
+      "status": "verify",
+      "position": {"lat": null, "lon": null, "status": "TODO", "note": "Ice deposit spans 39–49°N; longitude not in team docs."},
+      "inherits": "skyfall-defaults",
+      "features": {
+        "ice_presence": {"value": 3, "status": "verify", "source_id": "utexas-utopia-2016", "confidence": "high", "note": "Deposit 50–85% ice, ~80–170 m (260–560 ft) thick."},
+        "regolith_type": {"value": "ice_rich_mantle", "status": "verify", "source_id": "utexas-utopia-2016", "confidence": "medium", "note": "Soil cover ~1–10 m over the ice."},
+        "geology_type": {"value": null, "status": "TODO"}
+      },
+      "facts": [
+        {"label": "Ice cover depth", "text": "~1–10 m of soil over the ice: deeper than SkyFall's 0.5–3 m radar range in many places", "source_id": "utexas-utopia-2016", "confidence": "high"},
+        {"label": "Basin", "text": "~3,300 km impact basin; Viking 2 landed near its centre (1976)", "source_id": "utexas-utopia-2016", "confidence": "medium"},
+        {"label": "Zhurong (CNSA, not NASA)", "text": "Radar found a ~7 m ice-bearing layer ~15 m below the surface in southern Utopia: beyond SkyFall's radar range", "source_id": "nature-zhurong", "confidence": "low"}
+      ],
+      "flags": []
+    },
+    {
+      "id": "phlegra-montes",
+      "name": "Phlegra Montes",
+      "body": "mars",
+      "mission_ids": ["skyfall"],
+      "role": "broad_region",
+      "status": "verify",
+      "position": {"lat": null, "lon": null, "status": "TODO", "note": "Mountain range spanning ~30–50°N; longitude not in team docs."},
+      "inherits": "skyfall-defaults",
+      "features": {
+        "ice_presence": {"value": 3, "status": "verify", "source_id": "behindtheblack-phlegra", "confidence": "low", "flags": ["third_party"], "note": "Eight new glaciers found with SHARAD (via a blog; original paper not read)."},
+        "regolith_type": {"value": "debris_over_ice", "status": "verify", "source_id": "behindtheblack-phlegra", "confidence": "low", "flags": ["third_party"], "note": "Glaciers with a debris cover (thickness estimated in the blog-reported study)."},
+        "geology_type": {"value": "ice_dominated", "status": "verify", "source_id": "behindtheblack-phlegra", "confidence": "low", "flags": ["third_party"]}
+      },
+      "facts": [
+        {"label": "Size and age", "text": "~1,400 km long range; 3.65–3.91 Gyr", "source_id": "esa-phlegra", "confidence": "medium"},
+        {"label": "Why SkyFall matters here", "text": "SHARAD is blind in the top ~10 m; a GPR like SkyFall's could map ice there", "source_id": "baas-phlegra", "confidence": "medium"}
+      ],
+      "flags": []
+    },
+    {
+      "id": "erebus-montes",
+      "name": "Erebus Montes",
+      "body": "mars",
+      "mission_ids": ["skyfall"],
+      "role": "broad_region",
+      "status": "verify",
+      "position": {"lat": 39.64, "lon": -169.58, "status": "verify", "source_id": "hirise-erebus", "note": "Centre of HiRISE ESP_045159_2200 (~39.64°N, 190.42°E), not a region centre."},
+      "inherits": "skyfall-defaults",
+      "features": {
+        "ice_presence": {"value": 3, "status": "verify", "source_id": "swim-erebus-2019", "confidence": "low", "note": "Smooth mantle, polygons and secondary craters suggest shallow ice; lobate debris aprons."},
+        "regolith_type": {"value": "ice_rich_mantle", "status": "verify", "source_id": "swim-erebus-2019", "confidence": "low"},
+        "geology_type": {"value": null, "status": "TODO"}
+      },
+      "facts": [
+        {"label": "Setting", "text": "Hilly area next to Arcadia Planitia; could share an exploration zone with AP-105 (team idea)", "source_id": "team-doc", "confidence": "low"},
+        {"label": "Starship rumour", "text": "News reports list Erebus Montes among possible Starship sites. Not confirmed by NASA or SpaceX.", "source_id": "interestingengineering-erebus", "confidence": "low", "flags": ["third_party"]}
+      ],
+      "flags": []
+    }
+  ],
+  "defaults": {
+    "skyfall-defaults": {
+      "_comment": "Mission-level targets applied to every SkyFall site unless the site overrides them.",
+      "slope_deg": {"min": 0, "max": 15, "unit": "°", "status": "verify", "source_id": "skyfall-package", "confidence": "medium", "note": "Engineering limit (<15° at 1–5 m) used as the target range."},
+      "roughness_m": {"value": null, "status": "TODO"},
+      "rock_cover_pct": {"min": 0, "max": 5, "unit": "%", "status": "verify", "source_id": "skyfall-package", "confidence": "medium", "note": "Rock cover <5% (rocks <11 cm)."},
+      "temp_range_K": {"value": null, "status": "TODO", "note": "No region values in team docs. MEDA data is from Jezero (18°N), not these regions."},
+      "thermal_inertia_tiu": {"value": 150, "unit": "J m⁻² K⁻¹ s⁻½", "status": "verify", "source_id": "skyfall-package", "confidence": "medium", "note": "Ideal >150 (minimum >100 is the hard filter)."},
+      "ice_depth_m": {"min": 0.5, "max": 3, "unit": "m", "status": "verify", "source_id": "skyfall-package", "confidence": "medium", "note": "SkyFall GPR depth range: an analog should have ice within this depth."},
+      "logistics_index": {"value": 1.0, "status": "method", "source_id": "method", "confidence": "high"}
+    }
+  }
+}

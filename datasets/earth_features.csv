@@ -1,0 +1,199 @@
+candidate_id,feature,value,unit,status,source_id,confidence,note
+haughton-crater,slope_deg,6,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,roughness_m,2.5,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,rock_cover_pct,8,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,geology_type,impact_breccia,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,temp_range_K,18,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,annual_min_lst_K,235,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,thermal_inertia_tiu,700,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,ice_presence,2,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,ice_depth_m,0.6,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,logistics_index,0.4,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,slope_deg,9,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,roughness_m,4.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,rock_cover_pct,6,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,regolith_type,volcanic_ash_cinder,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,geology_type,basalt,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,temp_range_K,30,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,annual_min_lst_K,262,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,thermal_inertia_tiu,450,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,ice_presence,0,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,ice_depth_m,,m,TODO,,,Not measured yet
+sf-volcanic-field,logistics_index,0.9,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,slope_deg,17,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,roughness_m,6.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,rock_cover_pct,15,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,regolith_type,volcanic_ash_cinder,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,geology_type,basalt,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,temp_range_K,22,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,annual_min_lst_K,268,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,thermal_inertia_tiu,500,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,ice_presence,1,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,ice_depth_m,,m,TODO,,,Not measured yet
+mauna-kea,logistics_index,0.8,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,slope_deg,4,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,roughness_m,1.8,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,rock_cover_pct,10,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,regolith_type,volcanic_ash_cinder,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,geology_type,basalt,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,temp_range_K,12,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,annual_min_lst_K,255,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,thermal_inertia_tiu,600,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,ice_presence,1,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,ice_depth_m,,m,TODO,,,Not measured yet
+iceland-holuhraun,logistics_index,0.7,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,slope_deg,3,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,roughness_m,1.2,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,rock_cover_pct,3,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,temp_range_K,40,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,annual_min_lst_K,275,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,thermal_inertia_tiu,800,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,ice_presence,0,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,ice_depth_m,,m,TODO,,,Not measured yet
+atacama-yungay,logistics_index,0.8,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,slope_deg,8,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,roughness_m,3.5,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,rock_cover_pct,12,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,geology_type,granitic,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,temp_range_K,15,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,annual_min_lst_K,225,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,thermal_inertia_tiu,900,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,ice_presence,2,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,ice_depth_m,0.3,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,logistics_index,0.3,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,slope_deg,2,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,roughness_m,0.8,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,rock_cover_pct,4,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,geology_type,mixed,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,temp_range_K,38,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,annual_min_lst_K,270,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,thermal_inertia_tiu,1000,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,ice_presence,0,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,ice_depth_m,,m,TODO,,,Not measured yet
+mojave,logistics_index,0.95,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,slope_deg,3,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,roughness_m,1.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,rock_cover_pct,6,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,temp_range_K,42,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,annual_min_lst_K,280,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,thermal_inertia_tiu,1100,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,ice_presence,0,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,ice_depth_m,,m,TODO,,,Not measured yet
+death-valley,logistics_index,0.9,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,slope_deg,7,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,roughness_m,3.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,rock_cover_pct,9,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,regolith_type,glacial_till,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,geology_type,anorthosite,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,temp_range_K,16,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,annual_min_lst_K,245,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,thermal_inertia_tiu,1200,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,ice_presence,2,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,ice_depth_m,1.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,logistics_index,0.35,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,slope_deg,11,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,roughness_m,4.5,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,rock_cover_pct,,%,TODO,,,Not measured yet
+adirondack-marcy,regolith_type,glacial_till,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,geology_type,anorthosite,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,temp_range_K,20,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,annual_min_lst_K,258,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,thermal_inertia_tiu,,J m-2 K-1 s-1/2,TODO,,,Not measured yet
+adirondack-marcy,ice_presence,1,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,ice_depth_m,,m,TODO,,,Not measured yet
+adirondack-marcy,logistics_index,0.85,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,slope_deg,5,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,roughness_m,2.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,rock_cover_pct,4,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,regolith_type,debris_over_ice,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,geology_type,ice_dominated,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,temp_range_K,14,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,annual_min_lst_K,222,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,thermal_inertia_tiu,350,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,ice_presence,3,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,ice_depth_m,0.5,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,logistics_index,0.25,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,slope_deg,4,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,roughness_m,1.5,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,rock_cover_pct,1,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,regolith_type,ice_rich_mantle,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,temp_range_K,25,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,annual_min_lst_K,228,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,thermal_inertia_tiu,1400,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,ice_presence,3,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,ice_depth_m,1.2,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,logistics_index,0.3,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,slope_deg,5,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,roughness_m,2.2,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,rock_cover_pct,3,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,regolith_type,ice_rich_mantle,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,temp_range_K,16,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,annual_min_lst_K,230,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,thermal_inertia_tiu,900,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,ice_presence,3,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,ice_depth_m,0.7,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,logistics_index,0.25,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,slope_deg,12,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,roughness_m,5.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,rock_cover_pct,7,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,regolith_type,volcanic_ash_cinder,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,geology_type,basalt,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,temp_range_K,10,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,annual_min_lst_K,245,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,thermal_inertia_tiu,700,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,ice_presence,2,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,ice_depth_m,1.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,logistics_index,0.4,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,slope_deg,3,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,roughness_m,1.1,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,rock_cover_pct,2,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,temp_range_K,35,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,annual_min_lst_K,250,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,thermal_inertia_tiu,650,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,ice_presence,2,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,ice_depth_m,1.5,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,logistics_index,0.6,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,slope_deg,6,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,roughness_m,2.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,rock_cover_pct,,%,TODO,,,Not measured yet
+lonar-crater,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,geology_type,basalt,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,temp_range_K,25,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,annual_min_lst_K,290,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,thermal_inertia_tiu,,J m-2 K-1 s-1/2,TODO,,,Not measured yet
+lonar-crater,ice_presence,0,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,ice_depth_m,,m,TODO,,,Not measured yet
+lonar-crater,logistics_index,0.9,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+qaidam-basin,slope_deg,1,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+qaidam-basin,roughness_m,0.5,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+qaidam-basin,rock_cover_pct,,%,TODO,,,Not measured yet
+qaidam-basin,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+qaidam-basin,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+qaidam-basin,temp_range_K,,K,TODO,,,Not measured yet
+qaidam-basin,annual_min_lst_K,,K,TODO,,,Not measured yet
+qaidam-basin,thermal_inertia_tiu,,J m-2 K-1 s-1/2,TODO,,,Not measured yet
+qaidam-basin,ice_presence,,0-3,TODO,,,Not measured yet
+qaidam-basin,ice_depth_m,,m,TODO,,,Not measured yet
+qaidam-basin,logistics_index,0.6,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sudbury-basin,slope_deg,6,°,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sudbury-basin,roughness_m,3.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sudbury-basin,rock_cover_pct,,%,TODO,,,Not measured yet
+sudbury-basin,regolith_type,glacial_till,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sudbury-basin,geology_type,impact_breccia,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sudbury-basin,temp_range_K,,K,TODO,,,Not measured yet
+sudbury-basin,annual_min_lst_K,250,K,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sudbury-basin,thermal_inertia_tiu,,J m-2 K-1 s-1/2,TODO,,,Not measured yet
+sudbury-basin,ice_presence,1,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sudbury-basin,ice_depth_m,,m,TODO,,,Not measured yet
+sudbury-basin,logistics_index,0.9,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data

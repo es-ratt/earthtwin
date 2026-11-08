@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EarthTwin · Team PLANEX</title>
+  <meta name="description" content="Find Earth places that analog NASA's next Moon and Mars target sites. NASA Space Apps 2026, Team PLANEX.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://trek.nasa.gov https://gibs.earthdata.nasa.gov https://planetarymaps.usgs.gov; connect-src 'self'; object-src 'none'; base-uri 'self'">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><b>EARTHTWIN</b><span>Team PLANEX · NASA Space Apps 2026</span></div>
+    <nav class="switch" id="mission-switch" aria-label="Mission"></nav>
+    <span class="badge sample" id="sample-badge" hidden data-tip="Earth values are placeholders until the team adds real NASA/USGS data.">Sample data</span>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="tabs">Menu</button>
+    <nav class="tabs" id="tabs" role="tablist" aria-label="Sections">
+      <button role="tab" data-tab="analogs" aria-selected="true">Analogs</button>
+      <button role="tab" data-tab="why">Why not others?</button>
+      <button role="tab" data-tab="method">Method</button>
+      <button role="tab" data-tab="limits">Limitations</button>
+      <button role="tab" data-tab="sources">Sources</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="view active" id="view-analogs" aria-label="Analogs">
+      <div class="mapwrap">
+        <div class="map" id="map-target"></div>
+        <div class="maphead">
+          <div><div class="label" id="target-kicker">Target</div><div class="title" id="target-title">—</div></div>
+          <div class="layerstate" id="target-layerstate"></div>
+        </div>
+        <div class="mapnote" id="target-note" hidden></div>
+      </div>
+      <div class="mapwrap">
+        <div class="map" id="map-earth"></div>
+        <div class="maphead">
+          <div><div class="label">Earth</div><div class="title" id="earth-title">Analog candidates</div></div>
+          <div class="layerstate" id="earth-layerstate"></div>
+        </div>
+      </div>
+      <aside class="side" id="side" aria-label="Results"></aside>
+    </section>
+
+    <section class="view" id="view-why" aria-label="Why not others"><div class="page" id="page-why"></div></section>
+    <section class="view" id="view-method" aria-label="Method"><div class="page" id="page-method"></div></section>
+    <section class="view" id="view-limits" aria-label="Limitations"><div class="page" id="page-limits"></div></section>
+    <section class="view" id="view-sources" aria-label="Sources"><div class="page" id="page-sources"></div></section>
+  </main>
+
+  <div id="tip" role="tooltip"></div>
+  <noscript><p style="padding:80px 24px">EarthTwin needs JavaScript. Serve this folder with <code>python3 -m http.server</code>.</p></noscript>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/layers.js"></script>
+  <script src="js/tiles-check.js"></script>
+  <script src="js/maps.js"></script>
+  <script src="js/panels.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
