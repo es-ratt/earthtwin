@@ -15,10 +15,31 @@ python3 -m pytest pipeline/tests -q -c pipeline/pytest.ini   # 16 tests (needs p
 
 The scoring script uses only the Python standard library. It must be served over HTTP; opening
 `index.html` from disk will not load the JSON. To deploy, publish the `web/` folder to GitHub Pages
-or Netlify as is (no build step).
+or Netlify as is (no build step); `.github/workflows/pages.yml` does this automatically once Pages
+is set to "GitHub Actions" in the repo settings.
 
-**Right now every Earth value is SAMPLE.** The app labels this everywhere. Rankings show how the
-method works; they are not results.
+### Real data already in (fetched 2026-11-09, no login needed)
+
+```bash
+.venv/bin/python pipeline/fetch_real_data.py all          # re-fetch everything (~15 min, needs numpy+rasterio)
+.venv/bin/python pipeline/fetch_real_data.py earth --only mauna-kea,lonar-crater   # just some sites
+```
+
+| Side | Feature | Data | Sites |
+|---|---|---|---|
+| Moon | `slope_240m_deg`, `roughness_240m_m` | LRO LOLA `LDEM_75S_240M` (PDS), 5 km window | the 5 sites with coordinates |
+| Earth | `slope_deg`, `roughness_m` (30 m, 1 km window) | NASADEM; Copernicus DEM GLO-30 (ESA) above 60°N / below 56°S | all 18 |
+| Earth | `slope_240m_deg`, `roughness_240m_m` | same DEM block-averaged to ~240 m, 5 km window | all 18 |
+| Earth | `temp_range_K`, `annual_min_lst_K` | MODIS MOD11A2 + MYD11A2 v061 LST, year 2025 | all 18 |
+
+Artemis IV now compares slope/roughness at **240 m on both sides** (the only full-coverage lunar
+DEM used here). SkyFall keeps the 30 m Earth values.
+
+Caveat shown in the app: above 60° latitude MODIS "night" overpasses are often sunlit in summer and
+polar night/cloud removes composites, so `temp_range_K` there is flagged **low confidence**.
+
+**Still SAMPLE on the Earth side:** rock cover, regolith type, geology, thermal inertia, ground
+ice presence/depth, logistics. The app lists these in a banner on every result.
 
 ---
 
@@ -36,15 +57,15 @@ File: `datasets/earth_features.csv` (one row per place × feature). Replace each
 | `confidence` | `high` / `medium` / `low` |
 | `note` | how you got it (file name, window size, date range) |
 
+Rows marked `measured` came from `fetch_real_data.py` — leave them. Replace the `SAMPLE` rows:
+
 | feature id | unit | where to get it | how |
 |---|---|---|---|
-| `slope_deg` | ° | NASADEM (≤60°N) or ASTER GDEM v3 (Arctic, e.g. Haughton 75°N) via USGS EarthExplorer / AppEEARS | `python3 pipeline/extract_features.py dem <dem.tif> --source-id nasadem` (reproject to metres first) |
-| `roughness_m` | m | same DEM | same command (writes both) |
+| `slope_deg`, `roughness_m`, `*_240m_*` | ° / m | ✅ already measured | re-run `fetch_real_data.py earth`, or use your own DEM: `extract_features.py dem <dem.tif> --source-id nasadem` |
 | `rock_cover_pct` | % | **proxy** — boulder maps or Landsat/ASTER texture | by hand per site; say "proxy" in the note |
 | `regolith_type` | category | geological maps / papers | one of: `fine_impact_regolith`, `volcanic_ash_cinder`, `ice_rich_mantle`, `debris_over_ice`, `glacial_till`, `desert_soil`, `bare_rock` |
 | `geology_type` | category | geological maps / papers | one of: `anorthosite`, `basalt`, `impact_breccia`, `sedimentary`, `ice_dominated`, `granitic`, `mixed` |
-| `temp_range_K` | K | MODIS LST day − night (multi-year mean), AppEEARS | make a day−night GeoTIFF, then `extract_features.py lst <tif> --feature temp_range_K --source-id nasa-lst-tools` |
-| `annual_min_lst_K` | K | MODIS LST or ASTER L2 (annual minimum) | `extract_features.py lst <tif> --feature annual_min_lst_K --source-id nasa-lst-tools` (pipeline turns this into `cold_index`) |
+| `temp_range_K`, `annual_min_lst_K` | K | ✅ already measured (MODIS 2025) | for the polar sites, consider ASTER L2 day/night pairs to improve the low-confidence swing |
 | `thermal_inertia_tiu` | J m⁻² K⁻¹ s⁻½ | **proxy** from day/night LST + albedo through a thermal model | must be in SI units like the Mars value. Raw ΔT is NOT thermal inertia |
 | `ice_presence` | 0–3 | permafrost / ground-ice maps (NSIDC circum-Arctic map — external, verify) + papers | 0 none · 1 seasonal frost · 2 permafrost / ice in soil · 3 massive ice / buried glacier |
 | `ice_depth_m` | m | active-layer thickness / depth to ground ice from papers | leave empty if there is no ice |
@@ -62,6 +83,16 @@ Earth works.
 
 Edit `web/data/targets.json`. Fill `value` (or `min`/`max` for a range), set `status`, `source_id`
 and `confidence`. Never fill a value without a source; the script stops with an error if you do.
+Measured values go in `datasets/target_measurements.csv` and override `targets.json`.
+
+**Done since the first version:** 240 m slope and roughness from LOLA for Haworth (14.5°, 3.5 m),
+de Gerlache crater centre (6.6°, 3.9 m), Malapert summit (17.0°, 4.4 m), Nobile Rim 2 (13.3°, 4.5 m)
+and Shackleton Connecting Ridge (9.6°, 5.2 m). These are 5 km medians around the position in the
+team docs. For de Gerlache that is the crater centre, not Rim 2. The other four Artemis regions
+need coordinates first. The slope ranges in the docs (e.g. Mons Mouton 0–7°) are at an unknown
+scale and are kept as notes, not scored.
+
+The table below is the original gap list; "Slope" for the five sites above is now covered at 240 m.
 
 | Site | Missing |
 |---|---|
@@ -150,7 +181,9 @@ services.
 
 ## 6. Not done / known gaps
 
-- No real Earth data yet (section 1).
+- Earth rock cover, regolith, geology, thermal inertia, ground ice and logistics are still SAMPLE (section 1).
+  They need literature or proxy work by the team; the assistant did not fill them from memory.
+- Mars target slope/roughness are not measured (HiRISE/CTX DEMs exist only for small areas).
 - AP-105 is drawn as a point: the ellipse orientation is not in the team docs.
 - Broad Mars regions without coordinates (Arcadia, Utopia, Phlegra) are listed under the map, not drawn.
 - `extract_features.py` was tested on a synthetic DEM (10° plane → slope 10.0°, roughness 0.0 m),

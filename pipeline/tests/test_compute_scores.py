@@ -159,6 +159,26 @@ def test_every_target_value_cites_a_known_source(ctx):
 
 
 @pytest.mark.unit
+def test_measured_target_values_override_hand_entered_ones(ctx, tmp_path):
+    p = tmp_path / "tm.csv"
+    p.write_text("site_id,feature,value,unit,status,source_id,confidence,note\n"
+                 "haworth,slope_240m_deg,12.5,°,measured,pds-lola-ldem-75s-240m,medium,test\n")
+    meas = cs.load_target_measurements(p)
+    site = next(s for s in ctx["targets"]["sites"] if s["id"] == "haworth")
+    t = cs.resolve_target(site, ctx["targets"]["defaults"], meas)
+    assert t["slope_240m_deg"]["value"] == 12.5 and t["slope_240m_deg"]["status"] == "measured"
+    assert t["ice_presence"]["value"] == 2  # hand-entered value still there
+
+
+@pytest.mark.unit
+def test_target_measurement_without_source_is_refused(tmp_path):
+    p = tmp_path / "tm.csv"
+    p.write_text("site_id,feature,value,unit,status,source_id,confidence,note\nhaworth,slope_240m_deg,12.5,°,measured,,,\n")
+    with pytest.raises(ValueError, match="no source_id"):
+        cs.load_target_measurements(p)
+
+
+@pytest.mark.unit
 def test_earth_value_without_source_is_refused(ctx, tmp_path):
     c, f = write_earth(tmp_path, {"a": {"slope_deg": 5}})
     text = f.read_text().replace(",SAMPLE,sample,", ",measured,,")

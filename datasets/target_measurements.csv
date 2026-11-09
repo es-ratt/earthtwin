@@ -1,0 +1,11 @@
+site_id,feature,value,unit,status,source_id,confidence,note
+haworth,slope_240m_deg,14.47,°,measured,pds-lola-ldem-75s-240m,medium,"LOLA LDEM_75S_240M, median within 5 km of -86.9, -4.0 (Crater centre (86.9°S, 4°W).). Elevation there: -1316 m."
+haworth,roughness_240m_m,3.46,m,measured,pds-lola-ldem-75s-240m,medium,"LOLA LDEM_75S_240M, median within 5 km of -86.9, -4.0 (Crater centre (86.9°S, 4°W).). Elevation there: -1316 m."
+de-gerlache-rim-2,slope_240m_deg,6.6,°,measured,pds-lola-ldem-75s-240m,medium,"LOLA LDEM_75S_240M, median within 5 km of -88.5, -87.1 (de Gerlache CRATER centre. The exact Rim 2 region outline is not in the team docs.). Elevation there: -1096 m."
+de-gerlache-rim-2,roughness_240m_m,3.91,m,measured,pds-lola-ldem-75s-240m,medium,"LOLA LDEM_75S_240M, median within 5 km of -88.5, -87.1 (de Gerlache CRATER centre. The exact Rim 2 region outline is not in the team docs.). Elevation there: -1096 m."
+malapert-massif,slope_240m_deg,16.95,°,measured,pds-lola-ldem-75s-240m,medium,"LOLA LDEM_75S_240M, median within 5 km of -86.0, 0.0 (Summit position (~86°S, 0°E).). Elevation there: 4479 m."
+malapert-massif,roughness_240m_m,4.39,m,measured,pds-lola-ldem-75s-240m,medium,"LOLA LDEM_75S_240M, median within 5 km of -86.0, 0.0 (Summit position (~86°S, 0°E).). Elevation there: 4479 m."
+nobile-rim-2,slope_240m_deg,13.28,°,measured,pds-lola-ldem-75s-240m,medium,"LOLA LDEM_75S_240M, median within 5 km of -84.2, 60.7 (Approximate region centre (third-party source).). Elevation there: 726 m."
+nobile-rim-2,roughness_240m_m,4.54,m,measured,pds-lola-ldem-75s-240m,medium,"LOLA LDEM_75S_240M, median within 5 km of -84.2, 60.7 (Approximate region centre (third-party source).). Elevation there: 726 m."
+shackleton-connecting-ridge,slope_240m_deg,9.58,°,measured,pds-lola-ldem-75s-240m,medium,"LOLA LDEM_75S_240M, median within 5 km of -89.495, -137.5 (A specific landing point (−89.495°, 222.5°E).). Elevation there: 1382 m."
+shackleton-connecting-ridge,roughness_240m_m,5.19,m,measured,pds-lola-ldem-75s-240m,medium,"LOLA LDEM_75S_240M, median within 5 km of -89.495, -137.5 (A specific landing point (−89.495°, 222.5°E).). Elevation there: 1382 m."

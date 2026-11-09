@@ -12,7 +12,24 @@ and lets the team add NASA, ESA, USGS or other verified datasets through a Data 
 > *illustrative placeholder measurements*, all labelled **DEMO DATA — NOT A VERIFIED SCIENTIFIC RESULT**. Results only
 > become scientific once verified datasets are imported. See [docs/IMPLEMENTATION_STATUS.md](docs/IMPLEMENTATION_STATUS.md).
 
-## Quick start
+## Static hackathon prototype (`web/` + `pipeline/`)
+
+The mentor-brief version for the 14–15 Nov 2026 hackathon: pick **Artemis IV** (Moon south pole) or **SkyFall**
+(Mars), see the Moon/Mars target map and the Earth map side by side, ranked Earth analogs with a Similarity Score,
+a "Why not others?" explanation for every rejected place, and Method / Limitations / Sources tabs. No backend.
+
+```bash
+.venv/bin/python pipeline/fetch_real_data.py all   # optional: refresh real LOLA / NASADEM / MODIS values (no login)
+python3 pipeline/compute_scores.py                  # scores → web/data/results/
+cd web && python3 -m http.server 8000               # → http://localhost:8000
+```
+
+Real data so far: Moon slope/roughness (LOLA 240 m DEM), Earth slope/roughness (NASADEM, Copernicus DEM where NASADEM
+has no coverage) and temperature swing / annual minimum (MODIS LST 2025). Everything else on the Earth side is still
+**SAMPLE** and labelled as such. What is missing and where to put it: [README_DATA.md](README_DATA.md).
+Deployment: `.github/workflows/pages.yml` publishes `web/` to GitHub Pages.
+
+## Full application — Quick start
 ```bash
 git clone https://github.com/es-ratt/earthtwin.git && cd earthtwin
 python3 -m venv .venv && source .venv/bin/activate      # Python 3.11+ (tested on 3.13)

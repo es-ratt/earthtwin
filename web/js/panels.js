@@ -84,8 +84,16 @@
   }
 
   /* ------------------------------------------------------------ detail */
-  function featureRows(entry, data) {
+  function noteTip(m) {
+    var n = m && m.note;
+    return n ? ' data-tip="' + esc(n) + '"' : "";
+  }
+
+  function featureRows(entry, siteRes, data) {
+    var cand = data.candById[entry.id];
     return entry.features.map(function (f) {
+      var tNote = noteTip(siteRes.target_features[f.feature_id]);
+      var eNote = noteTip(cand.features[f.feature_id]);
       var miss = f.similarity === null || f.similarity === undefined;
       var sim = miss ? 0 : f.similarity;
       var w = miss ? '<span class="w">not used</span>' :
@@ -93,8 +101,8 @@
         (Math.abs(f.weight_used - f.weight_nominal) > 0.001 ? " (planned " + Math.round(f.weight_nominal * 100) + "%)" : "") + "</span>";
       return '<div class="feat' + (miss ? " missing" : "") + '">' +
         '<div class="feat-head"><span>' + featureLabel(f.feature_id, data) + "</span>" + w + "</div>" +
-        '<div class="feat-vals"><span>Target <b>' + esc(f.target) + "</b> " + ET.statusBadge(f.target_status) + "</span>" +
-        "<span>Earth <b>" + esc(f.earth) + "</b> " + ET.statusBadge(f.earth_status) + "</span></div>" +
+        '<div class="feat-vals"><span>Target <b' + tNote + ">" + esc(f.target) + "</b> " + ET.statusBadge(f.target_status) + "</span>" +
+        "<span>Earth <b" + eNote + ">" + esc(f.earth) + "</b> " + ET.statusBadge(f.earth_status) + "</span></div>" +
         (miss ? '<div class="faint" style="font-size:12px">' + esc(missingText(f.missing)) + "</div>" :
           '<div class="mini"><div class="bar"><i style="width:' + Math.round(sim * 100) + '%"></i></div><span class="faint" style="font-size:11px">similarity</span><span class="num">' + Math.round(sim * 100) + "%</span></div>") +
         "</div>";
@@ -123,7 +131,7 @@
       '<p class="faint" style="font-size:12px;margin:10px 0 0">Why this confidence: ' + esc(entry.confidence_reasons.join("; ")) + ".</p>" +
       (card ? '<div class="notice" style="margin-top:12px"><b>' + esc(card.verdict) + ".</b> " + esc(card.headline) + " " + esc(card.what_would_change) + "</div>" : "") +
       "</div>" +
-      '<div class="sec"><span class="label">Feature by feature · target vs Earth</span>' + featureRows(entry, data) + "</div>" +
+      '<div class="sec"><span class="label">Feature by feature · target vs Earth</span><p class="faint" style="font-size:11px;margin:0 0 4px">Hover a value to see how it was obtained.</p>' + featureRows(entry, siteRes, data) + "</div>" +
       '<div class="sec"><span class="label">What this analog can and cannot test</span>' +
       '<div class="lim-grid"><div><span class="label">Reproduces</span>' + list(lim.reproduces) + '</div><div><span class="label">Partly</span>' + list(lim.partly) +
       '</div><div><span class="label">Fails</span>' + list(lim.fails) + "</div></div>" +
@@ -138,7 +146,22 @@
     var res = data.results[state.missionId];
     var siteRes = res.sites[state.siteId];
     var html = missionBlock(mission, data);
-    if (res.contains_sample) html += '<div class="sample-strip" data-tip="' + esc(ET.GLOSSARY.SAMPLE) + '">Earth values are SAMPLE placeholders. Rankings show how the method works, not real results.</div>';
+    if (res.contains_sample) {
+      var used = res.method.features;
+      var sample = {}, measured = {};
+      data.earth.forEach(function (c) {
+        used.forEach(function (f) {
+          var m = c.features[f];
+          if (!m) return;
+          if (m.status === "SAMPLE") sample[f] = 1;
+          if (m.status === "measured") measured[f] = 1;
+        });
+      });
+      var lab = function (o) { return Object.keys(o).map(function (f) { return data.fdefs[f].label; }).join(", "); };
+      html += '<div class="sample-strip" data-tip="' + esc(ET.GLOSSARY.SAMPLE) + '"><b>Still SAMPLE on the Earth side:</b> ' + esc(lab(sample)) +
+        ". " + (Object.keys(measured).length ? "<b>Measured from NASA data:</b> " + esc(lab(measured)) + ". " : "") +
+        "Rankings are not final results until the SAMPLE values are replaced.</div>";
+    }
     html += siteBlock(mission, site, siteRes, data);
     var entry = state.candidateId && siteRes.candidates.find(function (e) { return e.id === state.candidateId; });
     html += entry ? detailBlock(entry, siteRes, data) : listBlock(siteRes, state, data);

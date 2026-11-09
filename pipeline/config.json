@@ -9,7 +9,8 @@
 
   "mission_features": {
     "_comment": "Which features each mission compares. Artemis IV uses 'cold_index' (relative cold) because Earth cannot reach PSR temperatures; SkyFall uses thermal inertia instead.",
-    "artemis-iv": ["slope_deg", "roughness_m", "rock_cover_pct", "regolith_type", "geology_type", "temp_range_K", "cold_index", "max_sun_elev_deg", "ice_presence", "ice_depth_m", "logistics_index"],
+    "_artemis_note": "Artemis IV uses the 240 m slope/roughness because the only full-coverage lunar DEM sampled here is 240 m (LOLA LDEM_75S_240M). Same scale on both sides.",
+    "artemis-iv": ["slope_240m_deg", "roughness_240m_m", "rock_cover_pct", "regolith_type", "geology_type", "temp_range_K", "cold_index", "max_sun_elev_deg", "ice_presence", "ice_depth_m", "logistics_index"],
     "skyfall":    ["slope_deg", "roughness_m", "rock_cover_pct", "regolith_type", "geology_type", "temp_range_K", "thermal_inertia_tiu", "ice_presence", "ice_depth_m", "logistics_index"]
   },
 
@@ -17,6 +18,8 @@
     "_comment": "PROVISIONAL, team to confirm. similarity = exp(-|Earth − target| / scale). A difference equal to the scale gives 37%; half the scale gives 61%.",
     "slope_deg": 10,
     "roughness_m": 5,
+    "slope_240m_deg": 5,
+    "roughness_240m_m": 5,
     "rock_cover_pct": 5,
     "temp_range_K": 20,
     "cold_index": 0.3,

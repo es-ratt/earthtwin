@@ -47,6 +47,7 @@ window.ET = window.ET || {};
     "SAMPLE": "Placeholder value typed in so the app works. Not data. Replace before drawing conclusions.",
     "VERIFY": "Taken from the team documents but not yet checked against the original source.",
     "TODO": "Not found in the team documents. Left empty on purpose: nothing is guessed.",
+    "measured": "Computed from real NASA/USGS (or ESA) data by pipeline/fetch_real_data.py. See the note and source.",
     "Similarity Score": "How close an Earth place is to the target site on the chosen features, from 0% to 100%. It is not accuracy: there is no ground truth for the Moon or Mars.",
     "hard filter": "A mission limit that a place must pass to be ranked at all (e.g. slope under 15°).",
     "sensitivity": "How much the ranking changes if each category weight moves up or down by 10 percentage points."
@@ -62,7 +63,7 @@ window.ET = window.ET || {};
   ET.statusBadge = function (status) {
     if (!status) return "";
     var s = String(status);
-    var cls = s === "SAMPLE" ? "sample" : s === "verify" ? "verify" : s === "TODO" ? "todo" : "";
+    var cls = s === "SAMPLE" ? "sample" : s === "verify" ? "verify" : s === "TODO" ? "todo" : s === "measured" ? "solid" : "";
     var key = s === "verify" ? "VERIFY" : s;
     var tip = ET.GLOSSARY[key] || (s === "derived" ? "Calculated by the pipeline from other values." : s === "method" ? "Set by the EarthTwin method, not measured." : "");
     return '<span class="badge ' + cls + '"' + (tip ? ' data-tip="' + ET.esc(tip) + '"' : "") + ">" + ET.esc(key) + "</span>";

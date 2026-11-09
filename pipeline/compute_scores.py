@@ -115,6 +115,7 @@ def load_inputs() -> dict:
         "fdefs": fdefs,
         "sources": {s["id"]: s for s in load_json(WEB_DATA / "sources.json")["sources"]},
         "config": load_json(CONFIG_PATH),
+        "target_meas": load_target_measurements(DATASETS / "target_measurements.csv"),
     }
 
 
@@ -186,11 +187,31 @@ def derive_earth_features(cands: list[dict]) -> None:
         c["features"].setdefault("cold_index", {"value": None, "status": "TODO", "note": "Needs annual_min_lst_K."})
 
 
-def resolve_target(site: dict, defaults: dict) -> dict:
+def load_target_measurements(path: Path) -> dict[str, dict[str, dict]]:
+    """datasets/target_measurements.csv: values measured by pipeline/fetch_real_data.py (e.g. LOLA slope)."""
+    out: dict[str, dict[str, dict]] = {}
+    if not path.exists():
+        return out
+    with open(path, encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            if not (row.get("value") or "").strip():
+                continue
+            if not (row.get("source_id") or "").strip():
+                raise ValueError(f"target_measurements.csv: {row['site_id']}/{row['feature']} has a value but no source_id")
+            out.setdefault(row["site_id"], {})[row["feature"]] = {
+                "value": float(row["value"]), "unit": row.get("unit") or None, "status": row.get("status") or "measured",
+                "source_id": row["source_id"], "confidence": row.get("confidence") or None, "note": row.get("note", ""),
+            }
+    return out
+
+
+def resolve_target(site: dict, defaults: dict, measurements: dict | None = None) -> dict:
+    """Mission defaults < hand-entered targets.json values < measured values."""
     merged = {}
     if site.get("inherits"):
         merged.update({k: v for k, v in defaults[site["inherits"]].items() if not k.startswith("_")})
     merged.update(site.get("features", {}))
+    merged.update((measurements or {}).get(site["id"], {}))
     return merged
 
 
@@ -523,7 +544,7 @@ def sensitivity(mission_id, mission, target_feats, cands, ctx, base: dict) -> di
 # -------------------------------------------------------------------- main
 def run_site(mission, site, defaults, cands, ctx) -> dict:
     mission_id = mission["id"]
-    target_feats = resolve_target(site, defaults)
+    target_feats = resolve_target(site, defaults, ctx.get("target_meas"))
     weights = nominal_feature_weights(mission_id, ctx)
     base = classify(cands, mission, target_feats, weights, ctx)
     top_n = ctx["config"]["thresholds"]["top_n_analogs"]
@@ -607,6 +628,8 @@ def main(argv: list[str] | None = None) -> int:
     ctx = load_inputs()
     ctx["cat"] = categorical_table(ctx["config"])
     problems = check_target_sources(ctx["targets"], ctx["sources"])
+    problems += [f"target_measurements.csv {sid}/{fid}: unknown source_id '{m['source_id']}'"
+                 for sid, feats in ctx["target_meas"].items() for fid, m in feats.items() if m["source_id"] not in ctx["sources"]]
     if problems:
         print("Source check failed:\n  " + "\n  ".join(problems), file=sys.stderr)
         return 1

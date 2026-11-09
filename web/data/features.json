@@ -24,6 +24,22 @@
       "caveat": "Depends on DEM resolution. Only compare values computed at the same pixel size."
     },
     {
+      "id": "slope_240m_deg", "label": "Slope (240 m)", "category": "terrain", "kind": "numeric", "unit": "°",
+      "tooltip": "Slope measured on a 240 m grid on BOTH sides, so the Moon and Earth are compared at the same scale.",
+      "earth_source_ids": ["pc-nasadem", "pc-cop-dem-glo-30"],
+      "earth_method": "DEM block-averaged to ~240 m, median slope within 5 km (pipeline/fetch_real_data.py).",
+      "target_method": "LOLA LDEM_75S_240M polar DEM, median slope within 5 km of the site position.",
+      "caveat": "240 m is far coarser than a landing pad: it describes the regional terrain, not the exact touchdown spot."
+    },
+    {
+      "id": "roughness_240m_m", "label": "Roughness (240 m)", "category": "terrain", "kind": "numeric", "unit": "m",
+      "tooltip": "Bumpiness on a 240 m grid on both sides: elevation spread around the local tilt.",
+      "earth_source_ids": ["pc-nasadem", "pc-cop-dem-glo-30"],
+      "earth_method": "DEM block-averaged to ~240 m, 3×3 detrended standard deviation, median within 5 km.",
+      "target_method": "Same calculation on the LOLA 240 m DEM.",
+      "caveat": "The LOLA 240 m DEM is interpolated between laser tracks, which can smooth it slightly more than Earth DEMs."
+    },
+    {
       "id": "rock_cover_pct", "label": "Rock cover (proxy)", "category": "terrain", "kind": "numeric", "unit": "%",
       "tooltip": "Share of the ground covered by rocks. On Earth this is estimated, not measured directly.",
       "earth_source_ids": ["usgs-earthexplorer"],
