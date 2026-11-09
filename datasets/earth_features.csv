@@ -1,0 +1,235 @@
+candidate_id,feature,value,unit,status,source_id,confidence,note
+haughton-crater,rock_cover_pct,8,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,geology_type,impact_breccia,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,thermal_inertia_tiu,700,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,ice_presence,2,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,ice_depth_m,0.6,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+haughton-crater,logistics_index,0.4,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,rock_cover_pct,6,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,regolith_type,volcanic_ash_cinder,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,geology_type,basalt,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,thermal_inertia_tiu,450,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,ice_presence,0,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sf-volcanic-field,ice_depth_m,,m,TODO,,,Not measured yet
+sf-volcanic-field,logistics_index,0.9,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,rock_cover_pct,15,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,regolith_type,volcanic_ash_cinder,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,geology_type,basalt,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,thermal_inertia_tiu,500,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,ice_presence,1,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mauna-kea,ice_depth_m,,m,TODO,,,Not measured yet
+mauna-kea,logistics_index,0.8,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,rock_cover_pct,10,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,regolith_type,volcanic_ash_cinder,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,geology_type,basalt,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,thermal_inertia_tiu,600,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,ice_presence,1,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+iceland-holuhraun,ice_depth_m,,m,TODO,,,Not measured yet
+iceland-holuhraun,logistics_index,0.7,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,rock_cover_pct,3,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,thermal_inertia_tiu,800,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,ice_presence,0,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+atacama-yungay,ice_depth_m,,m,TODO,,,Not measured yet
+atacama-yungay,logistics_index,0.8,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,rock_cover_pct,12,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,geology_type,granitic,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,thermal_inertia_tiu,900,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,ice_presence,2,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,ice_depth_m,0.3,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mcmurdo-dry-valleys,logistics_index,0.3,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,rock_cover_pct,4,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,geology_type,mixed,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,thermal_inertia_tiu,1000,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,ice_presence,0,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,ice_depth_m,,m,TODO,,,Not measured yet
+mojave,logistics_index,0.95,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,rock_cover_pct,6,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,thermal_inertia_tiu,1100,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,ice_presence,0,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+death-valley,ice_depth_m,,m,TODO,,,Not measured yet
+death-valley,logistics_index,0.9,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,rock_cover_pct,9,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,regolith_type,glacial_till,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,geology_type,anorthosite,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,thermal_inertia_tiu,1200,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,ice_presence,2,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,ice_depth_m,1.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+nain-anorthosite,logistics_index,0.35,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,rock_cover_pct,,%,TODO,,,Not measured yet
+adirondack-marcy,regolith_type,glacial_till,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,geology_type,anorthosite,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,thermal_inertia_tiu,,J m-2 K-1 s-1/2,TODO,,,Not measured yet
+adirondack-marcy,ice_presence,1,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+adirondack-marcy,ice_depth_m,,m,TODO,,,Not measured yet
+adirondack-marcy,logistics_index,0.85,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,rock_cover_pct,4,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,regolith_type,debris_over_ice,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,geology_type,ice_dominated,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,thermal_inertia_tiu,350,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,ice_presence,3,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,ice_depth_m,0.5,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+beacon-valley,logistics_index,0.25,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,rock_cover_pct,1,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,regolith_type,ice_rich_mantle,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,thermal_inertia_tiu,1400,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,ice_presence,3,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,ice_depth_m,1.2,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+duvanny-yar,logistics_index,0.3,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,rock_cover_pct,3,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,regolith_type,ice_rich_mantle,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,thermal_inertia_tiu,900,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,ice_presence,3,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,ice_depth_m,0.7,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+axel-heiberg,logistics_index,0.25,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,rock_cover_pct,7,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,regolith_type,volcanic_ash_cinder,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,geology_type,basalt,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,thermal_inertia_tiu,700,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,ice_presence,2,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,ice_depth_m,1.0,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+svalbard-bockfjorden,logistics_index,0.4,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,rock_cover_pct,2,%,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,thermal_inertia_tiu,650,J m-2 K-1 s-1/2,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,ice_presence,2,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,ice_depth_m,1.5,m,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+changthang-tso-kar,logistics_index,0.6,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,rock_cover_pct,,%,TODO,,,Not measured yet
+lonar-crater,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,geology_type,basalt,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,thermal_inertia_tiu,,J m-2 K-1 s-1/2,TODO,,,Not measured yet
+lonar-crater,ice_presence,0,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+lonar-crater,ice_depth_m,,m,TODO,,,Not measured yet
+lonar-crater,logistics_index,0.9,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+qaidam-basin,rock_cover_pct,,%,TODO,,,Not measured yet
+qaidam-basin,regolith_type,desert_soil,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+qaidam-basin,geology_type,sedimentary,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+qaidam-basin,thermal_inertia_tiu,,J m-2 K-1 s-1/2,TODO,,,Not measured yet
+qaidam-basin,ice_presence,,0-3,TODO,,,Not measured yet
+qaidam-basin,ice_depth_m,,m,TODO,,,Not measured yet
+qaidam-basin,logistics_index,0.6,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sudbury-basin,rock_cover_pct,,%,TODO,,,Not measured yet
+sudbury-basin,regolith_type,glacial_till,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sudbury-basin,geology_type,impact_breccia,,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sudbury-basin,thermal_inertia_tiu,,J m-2 K-1 s-1/2,TODO,,,Not measured yet
+sudbury-basin,ice_presence,1,0-3,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+sudbury-basin,ice_depth_m,,m,TODO,,,Not measured yet
+sudbury-basin,logistics_index,0.9,0-1,SAMPLE,sample,low,SAMPLE placeholder - replace with real data
+mojave,slope_deg,12.87,°,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n35w117, median within 1000 m, ~25×31 m pixels"
+mojave,roughness_m,1.23,m,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n35w117, median within 1000 m, ~25×31 m pixels"
+mojave,slope_240m_deg,2.35,°,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~228 m, median within 5 km"
+mojave,roughness_240m_m,1.9,m,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~228 m, median within 5 km"
+mojave,temp_range_K,16.6,K,measured,pc-modis-11a2,high,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+mojave,annual_min_lst_K,274.2,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+death-valley,slope_deg,1.48,°,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n36w117, median within 1000 m, ~25×31 m pixels"
+death-valley,roughness_m,0.41,m,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n36w117, median within 1000 m, ~25×31 m pixels"
+death-valley,slope_240m_deg,0.26,°,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~224 m, median within 5 km"
+death-valley,roughness_240m_m,0.58,m,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~224 m, median within 5 km"
+death-valley,temp_range_K,17.1,K,measured,pc-modis-11a2,high,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+death-valley,annual_min_lst_K,275.9,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+nain-anorthosite,slope_deg,5.01,°,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n56w062, median within 1000 m, ~17×31 m pixels"
+nain-anorthosite,roughness_m,0.41,m,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n56w062, median within 1000 m, ~17×31 m pixels"
+nain-anorthosite,slope_240m_deg,3.45,°,measured,pc-nasadem,high,"NASADEM block-averaged 10×10 to ~171 m, median within 5 km"
+nain-anorthosite,roughness_240m_m,7.59,m,measured,pc-nasadem,high,"NASADEM block-averaged 10×10 to ~171 m, median within 5 km"
+nain-anorthosite,temp_range_K,6.5,K,measured,pc-modis-11a2,high,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 55 night valid), 3×3 px median; mean of day − night over 55 composites with both"
+nain-anorthosite,annual_min_lst_K,244.7,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 55 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+adirondack-marcy,slope_deg,20.95,°,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n44w074, median within 1000 m, ~22×31 m pixels"
+adirondack-marcy,roughness_m,1.22,m,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n44w074, median within 1000 m, ~22×31 m pixels"
+adirondack-marcy,slope_240m_deg,14.25,°,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~200 m, median within 5 km"
+adirondack-marcy,roughness_240m_m,19.71,m,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~200 m, median within 5 km"
+adirondack-marcy,temp_range_K,5.3,K,measured,pc-modis-11a2,high,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (49 day / 54 night valid), 3×3 px median; mean of day − night over 47 composites with both"
+adirondack-marcy,annual_min_lst_K,251.9,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (49 day / 54 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+beacon-valley,slope_deg,5.45,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_S78_00_E160_00_DEM, median within 1000 m, ~20×31 m pixels"
+beacon-valley,roughness_m,0.34,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_S78_00_E160_00_DEM, median within 1000 m, ~20×31 m pixels"
+beacon-valley,slope_240m_deg,11.96,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~196 m, median within 5 km"
+beacon-valley,roughness_240m_m,16.17,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~196 m, median within 5 km"
+beacon-valley,temp_range_K,1.6,K,measured,pc-modis-11a2,low,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (55 day / 56 night valid), 3×3 px median; mean of day − night over 55 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+beacon-valley,annual_min_lst_K,207.9,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (55 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+axel-heiberg,slope_deg,16.6,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N79_00_W091_00_DEM, median within 1000 m, ~17×31 m pixels"
+axel-heiberg,roughness_m,0.75,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N79_00_W091_00_DEM, median within 1000 m, ~17×31 m pixels"
+axel-heiberg,slope_240m_deg,10.66,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~170 m, median within 5 km"
+axel-heiberg,roughness_240m_m,13.0,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~170 m, median within 5 km"
+axel-heiberg,temp_range_K,2.5,K,measured,pc-modis-11a2,low,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 119 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+axel-heiberg,annual_min_lst_K,235.6,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 119 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+svalbard-bockfjorden,slope_deg,13.45,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N79_00_E013_00_DEM, median within 1000 m, ~17×31 m pixels"
+svalbard-bockfjorden,roughness_m,0.47,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N79_00_E013_00_DEM, median within 1000 m, ~17×31 m pixels"
+svalbard-bockfjorden,slope_240m_deg,11.7,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~170 m, median within 5 km"
+svalbard-bockfjorden,roughness_240m_m,16.83,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~170 m, median within 5 km"
+svalbard-bockfjorden,temp_range_K,1.8,K,measured,pc-modis-11a2,low,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (54 day / 55 night valid), 3×3 px median; mean of day − night over 54 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+svalbard-bockfjorden,annual_min_lst_K,243.6,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (54 day / 55 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+changthang-tso-kar,slope_deg,2.17,°,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n33e078, median within 1000 m, ~26×31 m pixels"
+changthang-tso-kar,roughness_m,0.66,m,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n33e078, median within 1000 m, ~26×31 m pixels"
+changthang-tso-kar,slope_240m_deg,0.69,°,measured,pc-nasadem,high,"NASADEM block-averaged 8×8 to ~207 m, median within 5 km"
+changthang-tso-kar,roughness_240m_m,1.23,m,measured,pc-nasadem,high,"NASADEM block-averaged 8×8 to ~207 m, median within 5 km"
+changthang-tso-kar,temp_range_K,26.1,K,measured,pc-modis-11a2,high,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+changthang-tso-kar,annual_min_lst_K,242.0,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+lonar-crater,slope_deg,3.85,°,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n19e076, median within 1000 m, ~29×31 m pixels"
+lonar-crater,roughness_m,0.71,m,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n19e076, median within 1000 m, ~29×31 m pixels"
+lonar-crater,slope_240m_deg,0.91,°,measured,pc-nasadem,high,"NASADEM block-averaged 8×8 to ~232 m, median within 5 km"
+lonar-crater,roughness_240m_m,1.57,m,measured,pc-nasadem,high,"NASADEM block-averaged 8×8 to ~232 m, median within 5 km"
+lonar-crater,temp_range_K,14.8,K,measured,pc-modis-11a2,high,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (52 day / 47 night valid), 3×3 px median; mean of day − night over 47 composites with both"
+lonar-crater,annual_min_lst_K,285.3,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (52 day / 47 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+qaidam-basin,slope_deg,0.0,°,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n37e094, median within 1000 m, ~25×31 m pixels"
+qaidam-basin,roughness_m,0.0,m,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n37e094, median within 1000 m, ~25×31 m pixels"
+qaidam-basin,slope_240m_deg,0.34,°,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~221 m, median within 5 km"
+qaidam-basin,roughness_240m_m,1.02,m,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~221 m, median within 5 km"
+qaidam-basin,temp_range_K,19.5,K,measured,pc-modis-11a2,high,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+qaidam-basin,annual_min_lst_K,252.1,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+sudbury-basin,slope_deg,2.3,°,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n46w082, median within 1000 m, ~21×31 m pixels"
+sudbury-basin,roughness_m,0.44,m,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n46w082, median within 1000 m, ~21×31 m pixels"
+sudbury-basin,slope_240m_deg,0.48,°,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~191 m, median within 5 km"
+sudbury-basin,roughness_240m_m,1.53,m,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~191 m, median within 5 km"
+sudbury-basin,temp_range_K,10.0,K,measured,pc-modis-11a2,high,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (51 day / 54 night valid), 3×3 px median; mean of day − night over 50 composites with both"
+sudbury-basin,annual_min_lst_K,237.0,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (51 day / 54 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+haughton-crater,slope_deg,3.08,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N75_00_W090_00_DEM, median within 1000 m, ~23×31 m pixels"
+haughton-crater,roughness_m,0.3,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N75_00_W090_00_DEM, median within 1000 m, ~23×31 m pixels"
+haughton-crater,slope_240m_deg,2.42,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~211 m, median within 5 km"
+haughton-crater,roughness_240m_m,5.49,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~211 m, median within 5 km"
+haughton-crater,temp_range_K,1.1,K,measured,pc-modis-11a2,low,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 77 composites (14 day / 14 night valid), 3×3 px median; mean of day − night over 14 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+haughton-crater,annual_min_lst_K,226.7,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 77 composites (14 day / 14 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+sf-volcanic-field,slope_deg,8.41,°,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n35w112, median within 1000 m, ~25×31 m pixels"
+sf-volcanic-field,roughness_m,0.82,m,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n35w112, median within 1000 m, ~25×31 m pixels"
+sf-volcanic-field,slope_240m_deg,3.93,°,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~227 m, median within 5 km"
+sf-volcanic-field,roughness_240m_m,7.8,m,measured,pc-nasadem,high,"NASADEM block-averaged 9×9 to ~227 m, median within 5 km"
+sf-volcanic-field,temp_range_K,25.3,K,measured,pc-modis-11a2,high,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+sf-volcanic-field,annual_min_lst_K,263.8,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+mauna-kea,slope_deg,14.63,°,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n19w156, median within 1000 m, ~29×31 m pixels"
+mauna-kea,roughness_m,1.22,m,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_n19w156, median within 1000 m, ~29×31 m pixels"
+mauna-kea,slope_240m_deg,10.07,°,measured,pc-nasadem,high,"NASADEM block-averaged 8×8 to ~233 m, median within 5 km"
+mauna-kea,roughness_240m_m,7.33,m,measured,pc-nasadem,high,"NASADEM block-averaged 8×8 to ~233 m, median within 5 km"
+mauna-kea,temp_range_K,30.0,K,measured,pc-modis-11a2,high,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+mauna-kea,annual_min_lst_K,266.8,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+iceland-holuhraun,slope_deg,1.44,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N64_00_W017_00_DEM, median within 1000 m, ~26×31 m pixels"
+iceland-holuhraun,roughness_m,0.48,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N64_00_W017_00_DEM, median within 1000 m, ~26×31 m pixels"
+iceland-holuhraun,slope_240m_deg,0.45,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 8×8 to ~210 m, median within 5 km"
+iceland-holuhraun,roughness_240m_m,0.62,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 8×8 to ~210 m, median within 5 km"
+iceland-holuhraun,temp_range_K,7.5,K,measured,pc-modis-11a2,low,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (54 day / 56 night valid), 3×3 px median; mean of day − night over 54 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+iceland-holuhraun,annual_min_lst_K,253.3,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (54 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+atacama-yungay,slope_deg,4.24,°,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_s25w071, median within 1000 m, ~28×31 m pixels"
+atacama-yungay,roughness_m,0.91,m,measured,pc-nasadem,high,"NASADEM tile NASADEM_HGT_s25w071, median within 1000 m, ~28×31 m pixels"
+atacama-yungay,slope_240m_deg,3.03,°,measured,pc-nasadem,high,"NASADEM block-averaged 8×8 to ~226 m, median within 5 km"
+atacama-yungay,roughness_240m_m,3.67,m,measured,pc-nasadem,high,"NASADEM block-averaged 8×8 to ~226 m, median within 5 km"
+atacama-yungay,temp_range_K,28.7,K,measured,pc-modis-11a2,high,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+atacama-yungay,annual_min_lst_K,275.3,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+mcmurdo-dry-valleys,slope_deg,26.41,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_S78_00_E161_00_DEM, median within 1000 m, ~20×31 m pixels"
+mcmurdo-dry-valleys,roughness_m,0.51,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_S78_00_E161_00_DEM, median within 1000 m, ~20×31 m pixels"
+mcmurdo-dry-valleys,slope_240m_deg,11.8,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~181 m, median within 5 km"
+mcmurdo-dry-valleys,roughness_240m_m,6.51,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~181 m, median within 5 km"
+mcmurdo-dry-valleys,temp_range_K,1.6,K,measured,pc-modis-11a2,low,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (54 day / 55 night valid), 3×3 px median; mean of day − night over 54 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+mcmurdo-dry-valleys,annual_min_lst_K,212.0,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (54 day / 55 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+duvanny-yar,slope_deg,0.75,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N68_00_E159_00_DEM, median within 1000 m, ~23×31 m pixels"
+duvanny-yar,roughness_m,0.18,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N68_00_E159_00_DEM, median within 1000 m, ~23×31 m pixels"
+duvanny-yar,slope_240m_deg,0.73,°,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~203 m, median within 5 km"
+duvanny-yar,roughness_240m_m,2.43,m,measured,pc-cop-dem-glo-30,medium,"Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~203 m, median within 5 km"
+duvanny-yar,temp_range_K,0.0,K,measured,pc-modis-11a2,low,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (14 day / 14 night valid), 3×3 px median; mean of day − night over 14 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+duvanny-yar,annual_min_lst_K,237.1,K,measured,pc-modis-11a2,medium,"MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (14 day / 14 night valid), 3×3 px median; lowest 8-day mean (day or night)"

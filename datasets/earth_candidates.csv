@@ -1,0 +1,19 @@
+id,name,lat,lon,country,is_baseline,why_candidate,position_status,position_note
+haughton-crater,"Haughton Crater, Devon Island",75.38,-89.67,Canada,1,Well-known Moon/Mars analog (impact crater in polar desert).,verify,Approximate coordinates typed by the assistant; verify before use.
+sf-volcanic-field,San Francisco Volcanic Field,35.35,-111.5,USA,1,Apollo astronaut training ground (basaltic cinder).,verify,Approximate coordinates typed by the assistant; verify before use.
+mauna-kea,Mauna Kea,19.82,-155.47,USA,1,Basaltic volcano used for lunar ISRU field tests.,verify,Approximate coordinates typed by the assistant; verify before use.
+iceland-holuhraun,Holuhraun lava field,64.87,-16.83,Iceland,1,Young basalt flows; Mars/Moon rover tests.,verify,Approximate coordinates typed by the assistant; verify before use.
+atacama-yungay,Atacama Desert (Yungay),-24.08,-70.01,Chile,1,Hyper-arid Mars analog.,verify,Approximate coordinates typed by the assistant; verify before use.
+mcmurdo-dry-valleys,McMurdo Dry Valleys,-77.5,161.8,Antarctica,1,"Cold, dry polar desert with permafrost.",verify,Approximate coordinates typed by the assistant; verify before use.
+mojave,Mojave Desert,35.0,-116.0,USA,1,Rover and landing test area.,verify,Approximate coordinates typed by the assistant; verify before use.
+death-valley,Death Valley,36.5,-116.9,USA,1,Hot desert Mars analog.,verify,Approximate coordinates typed by the assistant; verify before use.
+nain-anorthosite,"Nain Plutonic Suite, Labrador",56.5,-61.8,Canada,0,NEW: anorthosite (lunar highland rock) at high latitude with permafrost.,verify,Approximate coordinates typed by the assistant; verify before use.
+adirondack-marcy,"Marcy Anorthosite, Adirondacks",44.1,-73.9,USA,0,"NEW: anorthosite massif, easy access.",verify,Approximate coordinates typed by the assistant; verify before use.
+beacon-valley,Beacon Valley,-77.82,160.65,Antarctica,0,NEW: buried glacier ice under debris (Mars lobate debris apron analog).,verify,Approximate coordinates typed by the assistant; verify before use.
+duvanny-yar,Duvanny Yar (Kolyma),68.63,159.15,Russia,0,NEW: massive ice-rich permafrost (yedoma) like Utopia/Arcadia ice.,verify,Approximate coordinates typed by the assistant; verify before use.
+axel-heiberg,"Expedition Fiord, Axel Heiberg Island",79.43,-90.8,Canada,0,NEW: polygonal permafrost terrain.,verify,Approximate coordinates typed by the assistant; verify before use.
+svalbard-bockfjorden,"Bockfjorden volcanics, Svalbard",79.43,13.33,Norway,0,NEW: volcanic rock + permafrost (AMASE field site).,verify,Approximate coordinates typed by the assistant; verify before use.
+changthang-tso-kar,"Tso Kar, Changthang Plateau (Ladakh)",33.3,78.0,India,0,NEW: cold high desert with permafrost.,verify,Approximate coordinates typed by the assistant; verify before use.
+lonar-crater,Lonar Crater,19.98,76.51,India,0,NEW: impact crater in basalt.,verify,Approximate coordinates typed by the assistant; verify before use.
+qaidam-basin,Qaidam Basin,37.5,94.0,China,0,Cold desert; most features not measured yet (shows 'Cannot be evaluated').,verify,Approximate coordinates typed by the assistant; verify before use.
+sudbury-basin,Sudbury Impact Structure,46.6,-81.2,Canada,0,NEW: large impact structure with impact breccia.,verify,Approximate coordinates typed by the assistant; verify before use.

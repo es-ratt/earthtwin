@@ -1,0 +1,2437 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-11-09T11:55:27+00:00",
+ "contains_sample": true,
+ "candidates": [
+  {
+   "id": "haughton-crater",
+   "name": "Haughton Crater, Devon Island",
+   "lat": 75.38,
+   "lon": -89.67,
+   "country": "Canada",
+   "is_baseline": true,
+   "why_candidate": "Well-known Moon/Mars analog (impact crater in polar desert).",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 8.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "impact_breccia",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 700.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 2.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 0.6,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.4,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 3.08,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N75_00_W090_00_DEM, median within 1000 m, ~23×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.3,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N75_00_W090_00_DEM, median within 1000 m, ~23×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 2.42,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~211 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 5.49,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~211 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 1.1,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "low",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 77 composites (14 day / 14 night valid), 3×3 px median; mean of day − night over 14 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+    },
+    "annual_min_lst_K": {
+     "value": 226.7,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 77 composites (14 day / 14 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 38.06,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.882,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 3 of 18 by annual minimum surface temperature (226.7 K)."
+    }
+   }
+  },
+  {
+   "id": "sf-volcanic-field",
+   "name": "San Francisco Volcanic Field",
+   "lat": 35.35,
+   "lon": -111.5,
+   "country": "USA",
+   "is_baseline": true,
+   "why_candidate": "Apollo astronaut training ground (basaltic cinder).",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 6.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "volcanic_ash_cinder",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "basalt",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 450.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 0.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.9,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 8.41,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n35w112, median within 1000 m, ~25×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.82,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n35w112, median within 1000 m, ~25×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 3.93,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~227 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 7.8,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~227 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 25.3,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "high",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+    },
+    "annual_min_lst_K": {
+     "value": 263.8,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 78.09,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.294,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 13 of 18 by annual minimum surface temperature (263.8 K)."
+    }
+   }
+  },
+  {
+   "id": "mauna-kea",
+   "name": "Mauna Kea",
+   "lat": 19.82,
+   "lon": -155.47,
+   "country": "USA",
+   "is_baseline": true,
+   "why_candidate": "Basaltic volcano used for lunar ISRU field tests.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 15.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "volcanic_ash_cinder",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "basalt",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 500.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 1.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.8,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 14.63,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n19w156, median within 1000 m, ~29×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 1.22,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n19w156, median within 1000 m, ~29×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 10.07,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 8×8 to ~233 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 7.33,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 8×8 to ~233 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 30.0,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "high",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+    },
+    "annual_min_lst_K": {
+     "value": 266.8,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 90.0,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.235,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 14 of 18 by annual minimum surface temperature (266.8 K)."
+    }
+   }
+  },
+  {
+   "id": "iceland-holuhraun",
+   "name": "Holuhraun lava field",
+   "lat": 64.87,
+   "lon": -16.83,
+   "country": "Iceland",
+   "is_baseline": true,
+   "why_candidate": "Young basalt flows; Mars/Moon rover tests.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 10.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "volcanic_ash_cinder",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "basalt",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 600.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 1.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.7,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 1.44,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N64_00_W017_00_DEM, median within 1000 m, ~26×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.48,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N64_00_W017_00_DEM, median within 1000 m, ~26×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 0.45,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 8×8 to ~210 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 0.62,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 8×8 to ~210 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 7.5,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "low",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (54 day / 56 night valid), 3×3 px median; mean of day − night over 54 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+    },
+    "annual_min_lst_K": {
+     "value": 253.3,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (54 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 48.57,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.353,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 12 of 18 by annual minimum surface temperature (253.3 K)."
+    }
+   }
+  },
+  {
+   "id": "atacama-yungay",
+   "name": "Atacama Desert (Yungay)",
+   "lat": -24.08,
+   "lon": -70.01,
+   "country": "Chile",
+   "is_baseline": true,
+   "why_candidate": "Hyper-arid Mars analog.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 3.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 800.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 0.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.8,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 4.24,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_s25w071, median within 1000 m, ~28×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.91,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_s25w071, median within 1000 m, ~28×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 3.03,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 8×8 to ~226 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 3.67,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 8×8 to ~226 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 28.7,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "high",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+    },
+    "annual_min_lst_K": {
+     "value": 275.3,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 89.36,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.118,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 16 of 18 by annual minimum surface temperature (275.3 K)."
+    }
+   }
+  },
+  {
+   "id": "mcmurdo-dry-valleys",
+   "name": "McMurdo Dry Valleys",
+   "lat": -77.5,
+   "lon": 161.8,
+   "country": "Antarctica",
+   "is_baseline": true,
+   "why_candidate": "Cold, dry polar desert with permafrost.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 12.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "granitic",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 900.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 2.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 0.3,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.3,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 26.41,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_S78_00_E161_00_DEM, median within 1000 m, ~20×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.51,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_S78_00_E161_00_DEM, median within 1000 m, ~20×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 11.8,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~181 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 6.51,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~181 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 1.6,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "low",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (54 day / 55 night valid), 3×3 px median; mean of day − night over 54 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+    },
+    "annual_min_lst_K": {
+     "value": 212.0,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (54 day / 55 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 35.94,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.941,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 2 of 18 by annual minimum surface temperature (212 K)."
+    }
+   }
+  },
+  {
+   "id": "mojave",
+   "name": "Mojave Desert",
+   "lat": 35.0,
+   "lon": -116.0,
+   "country": "USA",
+   "is_baseline": true,
+   "why_candidate": "Rover and landing test area.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 4.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "mixed",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 1000.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 0.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.95,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 12.87,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n35w117, median within 1000 m, ~25×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 1.23,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n35w117, median within 1000 m, ~25×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 2.35,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~228 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 1.9,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~228 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 16.6,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "high",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+    },
+    "annual_min_lst_K": {
+     "value": 274.2,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 78.44,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.176,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 15 of 18 by annual minimum surface temperature (274.2 K)."
+    }
+   }
+  },
+  {
+   "id": "death-valley",
+   "name": "Death Valley",
+   "lat": 36.5,
+   "lon": -116.9,
+   "country": "USA",
+   "is_baseline": true,
+   "why_candidate": "Hot desert Mars analog.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 6.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 1100.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 0.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.9,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 1.48,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n36w117, median within 1000 m, ~25×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.41,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n36w117, median within 1000 m, ~25×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 0.26,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~224 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 0.58,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~224 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 17.1,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "high",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+    },
+    "annual_min_lst_K": {
+     "value": 275.9,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 76.94,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.059,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 17 of 18 by annual minimum surface temperature (275.9 K)."
+    }
+   }
+  },
+  {
+   "id": "nain-anorthosite",
+   "name": "Nain Plutonic Suite, Labrador",
+   "lat": 56.5,
+   "lon": -61.8,
+   "country": "Canada",
+   "is_baseline": false,
+   "why_candidate": "NEW: anorthosite (lunar highland rock) at high latitude with permafrost.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 9.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "glacial_till",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "anorthosite",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 1200.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 2.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 1.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.35,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 5.01,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n56w062, median within 1000 m, ~17×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.41,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n56w062, median within 1000 m, ~17×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 3.45,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 10×10 to ~171 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 7.59,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 10×10 to ~171 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 6.5,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "high",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 55 night valid), 3×3 px median; mean of day − night over 55 composites with both"
+    },
+    "annual_min_lst_K": {
+     "value": 244.7,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 55 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 56.94,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.529,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 9 of 18 by annual minimum surface temperature (244.7 K)."
+    }
+   }
+  },
+  {
+   "id": "adirondack-marcy",
+   "name": "Marcy Anorthosite, Adirondacks",
+   "lat": 44.1,
+   "lon": -73.9,
+   "country": "USA",
+   "is_baseline": false,
+   "why_candidate": "NEW: anorthosite massif, easy access.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": null,
+     "unit": "%",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "regolith_type": {
+     "value": "glacial_till",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "anorthosite",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": null,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "ice_presence": {
+     "value": 1.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.85,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 20.95,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n44w074, median within 1000 m, ~22×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 1.22,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n44w074, median within 1000 m, ~22×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 14.25,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~200 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 19.71,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~200 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 5.3,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "high",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (49 day / 54 night valid), 3×3 px median; mean of day − night over 47 composites with both"
+    },
+    "annual_min_lst_K": {
+     "value": 251.9,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (49 day / 54 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 69.34,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.471,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 10 of 18 by annual minimum surface temperature (251.9 K)."
+    }
+   }
+  },
+  {
+   "id": "beacon-valley",
+   "name": "Beacon Valley",
+   "lat": -77.82,
+   "lon": 160.65,
+   "country": "Antarctica",
+   "is_baseline": false,
+   "why_candidate": "NEW: buried glacier ice under debris (Mars lobate debris apron analog).",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 4.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "debris_over_ice",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "ice_dominated",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 350.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 3.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 0.5,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.25,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 5.45,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_S78_00_E160_00_DEM, median within 1000 m, ~20×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.34,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_S78_00_E160_00_DEM, median within 1000 m, ~20×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 11.96,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~196 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 16.17,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~196 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 1.6,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "low",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (55 day / 56 night valid), 3×3 px median; mean of day − night over 55 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+    },
+    "annual_min_lst_K": {
+     "value": 207.9,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (55 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 35.62,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 1.0,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 1 of 18 by annual minimum surface temperature (207.9 K)."
+    }
+   }
+  },
+  {
+   "id": "duvanny-yar",
+   "name": "Duvanny Yar (Kolyma)",
+   "lat": 68.63,
+   "lon": 159.15,
+   "country": "Russia",
+   "is_baseline": false,
+   "why_candidate": "NEW: massive ice-rich permafrost (yedoma) like Utopia/Arcadia ice.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 1.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "ice_rich_mantle",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 1400.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 3.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 1.2,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.3,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 0.75,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N68_00_E159_00_DEM, median within 1000 m, ~23×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.18,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N68_00_E159_00_DEM, median within 1000 m, ~23×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 0.73,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~203 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 2.43,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 9×9 to ~203 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 0.0,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "low",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (14 day / 14 night valid), 3×3 px median; mean of day − night over 14 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+    },
+    "annual_min_lst_K": {
+     "value": 237.1,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (14 day / 14 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 44.81,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.706,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 6 of 18 by annual minimum surface temperature (237.1 K)."
+    }
+   }
+  },
+  {
+   "id": "axel-heiberg",
+   "name": "Expedition Fiord, Axel Heiberg Island",
+   "lat": 79.43,
+   "lon": -90.8,
+   "country": "Canada",
+   "is_baseline": false,
+   "why_candidate": "NEW: polygonal permafrost terrain.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 3.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "ice_rich_mantle",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 900.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 3.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 0.7,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.25,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 16.6,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N79_00_W091_00_DEM, median within 1000 m, ~17×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.75,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N79_00_W091_00_DEM, median within 1000 m, ~17×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 10.66,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~170 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 13.0,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~170 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 2.5,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "low",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 119 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+    },
+    "annual_min_lst_K": {
+     "value": 235.6,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 119 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 34.01,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.824,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 4 of 18 by annual minimum surface temperature (235.6 K)."
+    }
+   }
+  },
+  {
+   "id": "svalbard-bockfjorden",
+   "name": "Bockfjorden volcanics, Svalbard",
+   "lat": 79.43,
+   "lon": 13.33,
+   "country": "Norway",
+   "is_baseline": false,
+   "why_candidate": "NEW: volcanic rock + permafrost (AMASE field site).",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 7.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "volcanic_ash_cinder",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "basalt",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 700.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 2.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 1.0,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.4,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 13.45,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N79_00_E013_00_DEM, median within 1000 m, ~17×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.47,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) tile Copernicus_DSM_COG_10_N79_00_E013_00_DEM, median within 1000 m, ~17×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 11.7,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~170 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 16.83,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-cop-dem-glo-30",
+     "confidence": "medium",
+     "note": "Copernicus DEM GLO-30 (outside NASADEM coverage) block-averaged 10×10 to ~170 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 1.8,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "low",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (54 day / 55 night valid), 3×3 px median; mean of day − night over 54 composites with both; LOW CONFIDENCE: above 60° latitude MODIS 'night' passes are often sunlit in summer and polar night/cloud removes many composites, so day − night underestimates the real swing"
+    },
+    "annual_min_lst_K": {
+     "value": 243.6,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (54 day / 55 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 34.01,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.588,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 8 of 18 by annual minimum surface temperature (243.6 K)."
+    }
+   }
+  },
+  {
+   "id": "changthang-tso-kar",
+   "name": "Tso Kar, Changthang Plateau (Ladakh)",
+   "lat": 33.3,
+   "lon": 78.0,
+   "country": "India",
+   "is_baseline": false,
+   "why_candidate": "NEW: cold high desert with permafrost.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": 2.0,
+     "unit": "%",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": 650.0,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_presence": {
+     "value": 2.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": 1.5,
+     "unit": "m",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "logistics_index": {
+     "value": 0.6,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 2.17,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n33e078, median within 1000 m, ~26×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.66,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n33e078, median within 1000 m, ~26×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 0.69,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 8×8 to ~207 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 1.23,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 8×8 to ~207 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 26.1,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "high",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+    },
+    "annual_min_lst_K": {
+     "value": 242.0,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 80.14,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.647,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 7 of 18 by annual minimum surface temperature (242 K)."
+    }
+   }
+  },
+  {
+   "id": "lonar-crater",
+   "name": "Lonar Crater",
+   "lat": 19.98,
+   "lon": 76.51,
+   "country": "India",
+   "is_baseline": false,
+   "why_candidate": "NEW: impact crater in basalt.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": null,
+     "unit": "%",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "basalt",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": null,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "ice_presence": {
+     "value": 0.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.9,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 3.85,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n19e076, median within 1000 m, ~29×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.71,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n19e076, median within 1000 m, ~29×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 0.91,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 8×8 to ~232 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 1.57,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 8×8 to ~232 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 14.8,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "high",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (52 day / 47 night valid), 3×3 px median; mean of day − night over 47 composites with both"
+    },
+    "annual_min_lst_K": {
+     "value": 285.3,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 98 composites (52 day / 47 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 90.0,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.0,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 18 of 18 by annual minimum surface temperature (285.3 K)."
+    }
+   }
+  },
+  {
+   "id": "qaidam-basin",
+   "name": "Qaidam Basin",
+   "lat": 37.5,
+   "lon": 94.0,
+   "country": "China",
+   "is_baseline": false,
+   "why_candidate": "Cold desert; most features not measured yet (shows 'Cannot be evaluated').",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": null,
+     "unit": "%",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "regolith_type": {
+     "value": "desert_soil",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "sedimentary",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": null,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "ice_presence": {
+     "value": null,
+     "unit": "0-3",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.6,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 0.0,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n37e094, median within 1000 m, ~25×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.0,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n37e094, median within 1000 m, ~25×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 0.34,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~221 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 1.02,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~221 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 19.5,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "high",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; mean of day − night over 56 composites with both"
+    },
+    "annual_min_lst_K": {
+     "value": 252.1,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (56 day / 56 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 75.94,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.412,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 11 of 18 by annual minimum surface temperature (252.1 K)."
+    }
+   }
+  },
+  {
+   "id": "sudbury-basin",
+   "name": "Sudbury Impact Structure",
+   "lat": 46.6,
+   "lon": -81.2,
+   "country": "Canada",
+   "is_baseline": false,
+   "why_candidate": "NEW: large impact structure with impact breccia.",
+   "position": {
+    "status": "verify",
+    "note": "Approximate coordinates typed by the assistant; verify before use."
+   },
+   "features": {
+    "rock_cover_pct": {
+     "value": null,
+     "unit": "%",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "regolith_type": {
+     "value": "glacial_till",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "geology_type": {
+     "value": "impact_breccia",
+     "unit": null,
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "thermal_inertia_tiu": {
+     "value": null,
+     "unit": "J m-2 K-1 s-1/2",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "ice_presence": {
+     "value": 1.0,
+     "unit": "0-3",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "ice_depth_m": {
+     "value": null,
+     "unit": "m",
+     "status": "TODO",
+     "source_id": null,
+     "confidence": null,
+     "note": "Not measured yet"
+    },
+    "logistics_index": {
+     "value": 0.9,
+     "unit": "0-1",
+     "status": "SAMPLE",
+     "source_id": "sample",
+     "confidence": "low",
+     "note": "SAMPLE placeholder - replace with real data"
+    },
+    "slope_deg": {
+     "value": 2.3,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n46w082, median within 1000 m, ~21×31 m pixels"
+    },
+    "roughness_m": {
+     "value": 0.44,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM tile NASADEM_HGT_n46w082, median within 1000 m, ~21×31 m pixels"
+    },
+    "slope_240m_deg": {
+     "value": 0.48,
+     "unit": "°",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~191 m, median within 5 km"
+    },
+    "roughness_240m_m": {
+     "value": 1.53,
+     "unit": "m",
+     "status": "measured",
+     "source_id": "pc-nasadem",
+     "confidence": "high",
+     "note": "NASADEM block-averaged 9×9 to ~191 m, median within 5 km"
+    },
+    "temp_range_K": {
+     "value": 10.0,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "high",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (51 day / 54 night valid), 3×3 px median; mean of day − night over 50 composites with both"
+    },
+    "annual_min_lst_K": {
+     "value": 237.0,
+     "unit": "K",
+     "status": "measured",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "MODIS MOD11A2+MYD11A2 v061 8-day LST, 2025, 56 composites (51 day / 54 night valid), 3×3 px median; lowest 8-day mean (day or night)"
+    },
+    "max_sun_elev_deg": {
+     "value": 66.84,
+     "unit": "°",
+     "status": "derived",
+     "source_id": "method",
+     "confidence": "medium",
+     "note": "90° − |latitude| + 23.44° (from the site latitude)."
+    },
+    "cold_index": {
+     "value": 0.765,
+     "unit": "0–1",
+     "status": "derived",
+     "source_id": "pc-modis-11a2",
+     "confidence": "medium",
+     "note": "Rank 5 of 18 by annual minimum surface temperature (237 K)."
+    }
+   }
+  }
+ ]
+}

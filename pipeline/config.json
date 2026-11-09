@@ -1,0 +1,75 @@
+{
+  "_comment": "Method settings. These are TEAM DECISIONS, not measurements. Edit, re-run `python3 pipeline/compute_scores.py`, and the web app shows the new values.",
+
+  "weights_pct": {
+    "_comment": "Provisional category weights from the team doc (percent). Each category's weight is split equally between the mission's features in that category.",
+    "artemis-iv": {"terrain": 30, "temperature": 15, "light": 25, "ice": 10, "logistics": 20},
+    "skyfall":    {"terrain": 30, "temperature": 15, "light": 0,  "ice": 30, "logistics": 25}
+  },
+
+  "mission_features": {
+    "_comment": "Which features each mission compares. Artemis IV uses 'cold_index' (relative cold) because Earth cannot reach PSR temperatures; SkyFall uses thermal inertia instead.",
+    "_artemis_note": "Artemis IV uses the 240 m slope/roughness because the only full-coverage lunar DEM sampled here is 240 m (LOLA LDEM_75S_240M). Same scale on both sides.",
+    "artemis-iv": ["slope_240m_deg", "roughness_240m_m", "rock_cover_pct", "regolith_type", "geology_type", "temp_range_K", "cold_index", "max_sun_elev_deg", "ice_presence", "ice_depth_m", "logistics_index"],
+    "skyfall":    ["slope_deg", "roughness_m", "rock_cover_pct", "regolith_type", "geology_type", "temp_range_K", "thermal_inertia_tiu", "ice_presence", "ice_depth_m", "logistics_index"]
+  },
+
+  "scales": {
+    "_comment": "PROVISIONAL, team to confirm. similarity = exp(-|Earth − target| / scale). A difference equal to the scale gives 37%; half the scale gives 61%.",
+    "slope_deg": 10,
+    "roughness_m": 5,
+    "slope_240m_deg": 5,
+    "roughness_240m_m": 5,
+    "rock_cover_pct": 5,
+    "temp_range_K": 20,
+    "cold_index": 0.3,
+    "thermal_inertia_tiu": 300,
+    "max_sun_elev_deg": 20,
+    "ice_presence": 1.5,
+    "ice_depth_m": 2,
+    "logistics_index": 0.3
+  },
+
+  "categorical_similarity": {
+    "_comment": "PROVISIONAL, team to confirm. Same category = 1.0. Pairs not listed = 0.0. Symmetric.",
+    "regolith_type": [
+      ["fine_impact_regolith", "volcanic_ash_cinder", 0.6],
+      ["fine_impact_regolith", "desert_soil", 0.4],
+      ["fine_impact_regolith", "glacial_till", 0.4],
+      ["fine_impact_regolith", "ice_rich_mantle", 0.3],
+      ["fine_impact_regolith", "debris_over_ice", 0.2],
+      ["fine_impact_regolith", "bare_rock", 0.2],
+      ["ice_rich_mantle", "debris_over_ice", 0.6],
+      ["ice_rich_mantle", "glacial_till", 0.4],
+      ["ice_rich_mantle", "desert_soil", 0.2],
+      ["debris_over_ice", "glacial_till", 0.5],
+      ["volcanic_ash_cinder", "desert_soil", 0.3]
+    ],
+    "geology_type": [
+      ["anorthosite", "impact_breccia", 0.5],
+      ["anorthosite", "mixed", 0.5],
+      ["anorthosite", "basalt", 0.3],
+      ["anorthosite", "granitic", 0.2],
+      ["mixed", "impact_breccia", 0.7],
+      ["mixed", "basalt", 0.4],
+      ["mixed", "sedimentary", 0.3],
+      ["ice_dominated", "sedimentary", 0.2]
+    ]
+  },
+
+  "special_rules": {
+    "_comment": "If an Earth site has NO ground ice (ice_presence = 0), its depth-to-ice is 'not applicable' and counts as a full mismatch (similarity 0), not as missing data.",
+    "no_ice_means_depth_mismatch": true
+  },
+
+  "thresholds": {
+    "top_n_analogs": 5,
+    "min_earth_coverage": 0.5,
+    "_min_earth_coverage": "If less than 50% of the usable weight has Earth data, the site is 'Cannot be evaluated'.",
+    "confidence_high": 0.8,
+    "confidence_medium": 0.5,
+    "sensitivity_pp": 10
+  },
+
+  "validation_ids": ["haughton-crater", "sf-volcanic-field"]
+}
