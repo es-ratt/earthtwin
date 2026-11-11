@@ -15,6 +15,10 @@
   var PIN_R = 13;                              // numbered pin radius (CSS px)
   var EASE = 2.6;                              // view easing speed (per second)
   var MAX_DPR = 1.25;                          // globes are per-pixel work: keep the backing store modest
+  var DRAG_START_PX = 4;                       // movement below this is a click, not a drag
+  var MAX_TILT = 85;                           // how far a globe can be tipped towards a pole (deg)
+  var HOLD_S = 4;                              // after turning to a selected pin, hold it this long, then keep spinning
+  var TILT_RETURN_S = 8;                       // after a drag, keep the user's tilt this long before easing back
 
   var cache = {};
   G.loadTexture = function (url) {
@@ -96,9 +100,13 @@
     this.bodies = []; this.stars = []; this.selected = null; this.hover = null;
     this.running = false; this.raf = 0; this.last = 0; this.pinHits = [];
     var self = this;
-    canvas.addEventListener("pointermove", function (e) { self._pointer(e, false); });
-    canvas.addEventListener("pointerleave", function () { self._setHover(null); });
-    canvas.addEventListener("click", function (e) { self._pointer(e, true); });
+    this.drag = null;
+    canvas.style.touchAction = "none";                                   // let a finger turn the globe instead of scrolling
+    canvas.addEventListener("pointerdown", function (e) { self._down(e); });
+    canvas.addEventListener("pointermove", function (e) { if (self.drag) self._dragMove(e); else self._pointer(e, false); });
+    canvas.addEventListener("pointerup", function (e) { self._up(e); });
+    canvas.addEventListener("pointercancel", function () { self._endDrag(); });
+    canvas.addEventListener("pointerleave", function () { if (!self.drag) self._setHover(null); });
     window.addEventListener("resize", function () { if (self.running) self.resize(); });
     document.addEventListener("visibilitychange", function () { if (document.hidden) self._pause(); else if (self.running) self._loop(); });
   };
@@ -123,7 +131,46 @@
     this.draw(0);
   };
 
-  /** Turn a body so a lat/lon faces the camera (eased); spin stops while a goal is set. */
+  /* ------------------------------------------------------------ drag to turn (mouse and touch) */
+  G.Scene.prototype._local = function (e) {
+    var rect = this.canvas.getBoundingClientRect();
+    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+  };
+  G.Scene.prototype._bodyAt = function (x, y) {
+    var self = this;
+    return this.bodies.find(function (b) { var L = self._layout(b); return Math.hypot(x - L.x, y - L.y) <= L.r; }) || null;
+  };
+  G.Scene.prototype._down = function (e) {
+    var p = this._local(e), b = this._bodyAt(p.x, p.y);
+    if (!b) return;
+    this.drag = { b: b, x0: p.x, y0: p.y, lon0: b.view.lon, tilt0: b.view.tilt, moved: false, id: e.pointerId };
+    try { this.canvas.setPointerCapture(e.pointerId); } catch (err) { /* older browsers: fine */ }
+  };
+  G.Scene.prototype._dragMove = function (e) {
+    var d = this.drag, p = this._local(e), dx = p.x - d.x0, dy = p.y - d.y0;
+    if (!d.moved && Math.hypot(dx, dy) < DRAG_START_PX) return;
+    if (!d.moved) { d.moved = true; this._setHover(null); }
+    var degPerPx = 90 / this._layout(d.b).r;                            // dragging one radius turns the globe 90°
+    d.b.goal = null; d.b.touchedAt = performance.now() / 1000;          // the user is in control while dragging
+    d.b.view.lon = d.lon0 - dx * degPerPx;
+    d.b.view.tilt = Math.max(-MAX_TILT, Math.min(MAX_TILT, d.tilt0 + dy * degPerPx));
+    this.canvas.style.cursor = "grabbing";
+    if (!this.running) this.draw(0);
+  };
+  G.Scene.prototype._up = function (e) {
+    var wasDrag = this.drag && this.drag.moved;
+    this._endDrag();
+    if (!wasDrag) this._pointer(e, true);                                // a tap/click without dragging = click a pin
+  };
+  G.Scene.prototype._endDrag = function () {
+    if (this.drag) {
+      this.drag.b.touchedAt = performance.now() / 1000;                 // keep the user's tilt a while before easing home
+      try { this.canvas.releasePointerCapture(this.drag.id); } catch (err) { /* already released */ }
+    }
+    this.drag = null;
+  };
+
+  /** Turn a body so a lat/lon faces the camera (eased), hold a few seconds, then the auto spin resumes. */
   G.Scene.prototype.face = function (bodyId, lat, lon, tiltFactor) {
     var b = this.bodies.find(function (x) { return x.id === bodyId; });
     if (!b) return;
@@ -169,15 +216,21 @@
     var hits = [];
     var self = this;
     this.bodies.forEach(function (b) {
-      if (b.goal) {
+      var dragging = self.drag && self.drag.moved && self.drag.b === b;
+      if (dragging) {
+        // the user turns this globe; auto motion waits until they let go
+      } else if (b.goal) {                                               // turning to a selected pin, then a short hold
         var k = rm ? 1 : Math.min(1, dt * EASE);
         b.view.tilt += (b.goal.tilt - b.view.tilt) * k; b.view.lon += (b.goal.lon - b.view.lon) * k;
-      } else if (!rm) {
+        if (Math.abs(b.goal.lon - b.view.lon) < 0.5 && Math.abs(b.goal.tilt - b.view.tilt) < 0.5) {
+          b.goal.at = b.goal.at || tnow;
+          if (!rm && tnow - b.goal.at > HOLD_S) { b.goal = null; b.touchedAt = tnow; }
+        }
+      } else if (!rm) {                                                  // continuous auto spin, resumed after every drag
         b.view.lon += (b.spin || 0) * dt;
-        if (b.swing) b.view.lon = b.lon + b.swing * Math.sin(tnow * 0.12);
-        if (b.tiltHome !== undefined) {                                  // tiltSwing rocks north ↔ south so polar pins on both sides show
-          var home = b.tiltHome + (b.tiltSwing || 0) * Math.sin(tnow * 0.16);
-          b.view.tilt += (home - b.view.tilt) * Math.min(1, dt * 0.8);
+        if (b.tiltHome !== undefined && tnow - (b.touchedAt || -1e9) > TILT_RETURN_S) {
+          var home = b.tiltHome + (b.tiltSwing || 0) * Math.sin(tnow * 0.16); // tiltSwing rocks north ↔ south for polar pins
+          b.view.tilt += (home - b.view.tilt) * Math.min(1, dt * 0.3);
         }
       }
       var L = self._layout(b), rDev = L.r * self.dpr;
@@ -255,6 +308,7 @@
     var rect = this.canvas.getBoundingClientRect(), x = e.clientX - rect.left, y = e.clientY - rect.top, best = null;
     this.pinHits.forEach(function (hp) { var d = Math.hypot(hp.x - x, hp.y - y); if (d <= PIN_R + 6 && (!best || d < best.d)) best = { hp: hp, d: d }; });
     this._setHover(best ? best.hp : null);
+    if (!best) this.canvas.style.cursor = this._bodyAt(x, y) ? "grab" : "default";
     if (click && best && this.opts.onPin) this.opts.onPin(best.hp.pin.id);
   };
   G.Scene.prototype._setHover = function (hp) {

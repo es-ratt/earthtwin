@@ -40,7 +40,21 @@
     cfg.overlays.forEach(function (d) { overlays[d.name] = ET.makeLayer(d); });
     L.control.layers(bases, overlays, { collapsed: true, position: "topright" }).addTo(map);
     ET.probeAll(cfg.base.slice(1).concat(cfg.overlays));
+    watchSize(map);
     return map;
+  }
+
+  /** Re-measure the map whenever its box changes size (window resize, layout switch, hidden → shown, page zoom).
+   * Without this Leaflet keeps an old size and only fills part of the box with tiles. */
+  function watchSize(map) {
+    if (!("ResizeObserver" in window)) return;
+    var el = map.getContainer(), raf = 0;
+    var ro = new ResizeObserver(function () {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () { if (el.clientWidth && el.clientHeight) map.invalidateSize({ pan: false }); });
+    });
+    ro.observe(el);
+    map.on("unload", function () { ro.disconnect(); cancelAnimationFrame(raf); });
   }
 
   /* ---------------------------------------------------------- target */

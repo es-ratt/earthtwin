@@ -46,7 +46,7 @@
   function introBodies(body) {
     return [
       { id: body, tex: tex[body], look: LOOKS[body], cx: 0.3, cy: 0.56, layout: introLayout("target"), tilt: body === "moon" ? -12 : 18,
-        lon: body === "moon" ? 0 : -160, spin: body === "mars" ? 4 : 0, swing: body === "moon" ? 18 : 0 },
+        lon: body === "moon" ? 0 : -160, spin: body === "mars" ? 4 : 3 },
       { id: "earth", tex: tex.earth, look: LOOKS.earth, cx: 0.69, cy: 0.54, layout: introLayout("earth"), tilt: 18, lon: -40, spin: 7 }
     ];
   }
@@ -119,11 +119,11 @@
       var pos = site.position || {};
       var hasPos = pos.lat !== null && pos.lat !== undefined;
       var pins = rankPins(siteRes, candidateId);
-      if (key !== resultKey || pins.length !== (result.bodies[1] || { pins: [] }).pins.length) {
+      if (key !== resultKey) {
         var targetPins = hasPos ? [{ id: "target", lat: pos.lat, lon: pos.lon, label: "★", kind: "target", title: site.name + " (chosen target)" }] : [];
         result.setBodies([
           { id: body, tex: tex[body], look: LOOKS[body], cx: 0.25, cy: 0.55, layout: resultLayout("target"), tilt: hasPos ? pos.lat * 0.8 : 0, lon: hasPos ? pos.lon : 0,
-            swing: 0, pins: targetPins },
+            spin: body === "mars" ? 4 : 3, pins: targetPins },
           { id: "earth", tex: tex.earth, look: LOOKS.earth, cx: 0.75, cy: 0.55, layout: resultLayout("earth"), tilt: meanLat(pins), tiltHome: meanLat(pins), tiltSwing: bothPoles(pins) ? 40 : 0,
             lon: 0, spin: 6, pins: pins }
         ]);
