@@ -17,6 +17,11 @@
     "planex": { view: "planex" }
   };
   var LEGACY_TABS = { why: "why-not-others", method: "method", limits: "limitations", sources: "sources" };
+  var WORLD_KEY = "earthtwin.world";        // last chosen world (moon | mars), kept while the user navigates
+
+  /* ------------------------------------------------------------ world memory (sessionStorage; optional) */
+  function rememberWorld(body) { try { sessionStorage.setItem(WORLD_KEY, body); } catch (e) { /* storage blocked: fine */ } }
+  function storedWorld() { try { return sessionStorage.getItem(WORLD_KEY); } catch (e) { return null; } }
 
   var data = {};
   var state = { route: "home", missionId: null, siteId: null, candidateId: null, whyFilter: "all", sourceQuery: "" };
@@ -67,6 +72,7 @@
     var changed = missionId !== state.missionId;
     state.missionId = missionId;
     var m = mission();
+    rememberWorld(m.body);
     if (siteId && siteIdsOf(m).indexOf(siteId) >= 0) state.siteId = siteId;
     else if (changed || !state.siteId) state.siteId = m.default_site_id;
     if (changed) state.candidateId = null;
@@ -103,12 +109,17 @@
   }
 
   function renderNav() {
-    document.querySelectorAll("[data-route]").forEach(function (a) {
-      var on = a.dataset.route === state.route;
-      a.classList.toggle("active", on);
-      if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
-    });
+    ET.Nav.setActive(state.route);
     document.body.classList.toggle("on-home", state.route === "home");
+  }
+
+  /** Background for the current page; world pages follow the selected world (cross-fade in CSS). */
+  function renderWorld() {
+    var world = state.missionId ? mission().body : "moon";
+    document.body.dataset.world = world;
+    var view = ROUTES[state.route].view;
+    var bg = view === "home" ? null : view === "sources" ? "sources" : view === "planex" ? null : world;
+    ET.Backdrop.show(bg);
   }
 
   function renderContent() {
@@ -127,6 +138,7 @@
     var view = ROUTES[state.route].view;
     document.querySelectorAll(".view").forEach(function (v) { v.classList.toggle("active", v.id === "view-" + view); });
     renderNav();
+    renderWorld();
     closeMenu();
     if (view === "home") ET.Solar.start(); else ET.Solar.stop();
     if (view === "analogs") syncMaps(flyToCandidate);
@@ -140,7 +152,7 @@
     var r = ROUTES[h.route];
     if (r.body) setMission(missionForBody(r.body).id, h.s);
     else if (h.m && data.missionsById[h.m] && data.missionsById[h.m].in_selector) setMission(h.m, h.s);
-    else if (!state.missionId) setMission(missionForBody("moon").id, h.s);
+    else if (!state.missionId) setMission(missionForBody(storedWorld() === "mars" ? "mars" : "moon").id, h.s);
     if (r.view === "analogs") setCandidate(h.c || (prevRoute === h.route ? state.candidateId : null));
     show(Boolean(h.c));
     if (prevRoute !== h.route) window.scrollTo(0, 0);
@@ -167,23 +179,15 @@
     if (li) li.classList.toggle("hover", on);
   }
 
-  function closeMenu() {
-    document.getElementById("nav-links").classList.remove("open");
-    document.getElementById("nav-toggle").setAttribute("aria-expanded", "false");
-  }
+  function closeMenu() { ET.Nav.close(); }
 
   /* ------------------------------------------------------------ events */
   function onClick(e) {
     var t = e.target;
-    if (t.closest("#nav-toggle")) {
-      var open = document.getElementById("nav-links").classList.toggle("open");
-      t.closest("#nav-toggle").setAttribute("aria-expanded", open ? "true" : "false");
-      return;
-    }
     var link = t.closest("[data-route]");
     if (link) { closeMenu(); if (link.dataset.route === state.route) { e.preventDefault(); show(false); } return; }
     var mBtn = t.closest("[data-mission]");
-    if (mBtn && mBtn.dataset.mission !== state.missionId) { setMission(mBtn.dataset.mission); renderContent(); return; }
+    if (mBtn && mBtn.dataset.mission !== state.missionId) { setMission(mBtn.dataset.mission); renderWorld(); renderContent(); return; }
     var item = t.closest(".rank-item");
     if (item) { selectCandidate(item.dataset.id); return; }
     if (t.closest("#back-list")) { state.candidateId = null; ET.Maps.selectCandidate(null); renderContent(); return; }
@@ -226,8 +230,10 @@
 
   function boot() {
     ET.initTooltips();
+    ET.Nav.init();
+    ET.Backdrop.init();
     ET.Solar.init(document.getElementById("solar"), document.getElementById("solar-tip"), function (route) { go(route); });
-    var files = ["missions", "targets", "features", "sources", "limitations", "earth_candidates", "results/artemis-iv", "results/skyfall", "coordinate_verification"];
+    var files = ["missions", "targets", "features", "sources", "limitations", "earth_candidates", "results/artemis-iv", "results/skyfall", "coordinate_verification", "worlds"];
     Promise.all(files.map(function (f) { return ET.fetchJSON("data/" + f + ".json"); })).then(function (r) {
       data.missions = r[0].missions; data.missionsById = index(data.missions);
       data.targets = r[1]; data.sitesById = index(r[1].sites);
@@ -237,6 +243,7 @@
       data.earth = r[5].candidates; data.candById = index(data.earth);
       data.results = { "artemis-iv": r[6], "skyfall": r[7] };
       data.coords = r[8];
+      data.worlds = r[9];
       document.getElementById("sample-badge").hidden = !(r[6].contains_sample || r[7].contains_sample);
       bind();
       applyHash();

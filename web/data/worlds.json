@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "_comment": "Per-world content for the Why not others, Limitations and Method pages. Moon = Artemis IV, Mars = SkyFall. No numbers are typed here: weights come from pipeline/config.json (via results/*.json → method.weights_pct), limits from missions.json, limitations from limitations.json → universal.<universal_key>.",
+  "default_world": "moon",
+  "worlds": {
+    "moon": {
+      "label": "Moon",
+      "mission_id": "artemis-iv",
+      "kicker": "Moon · Artemis IV",
+      "background": "moon"
+    },
+    "mars": {
+      "label": "Mars",
+      "mission_id": "skyfall",
+      "kicker": "Mars · SkyFall",
+      "background": "mars"
+    }
+  },
+  "whyNot": {
+    "moon": {
+      "mission_id": "artemis-iv",
+      "intro": "Earth places that are not top analogs for the selected Artemis IV region (Moon south pole)."
+    },
+    "mars": {
+      "mission_id": "skyfall",
+      "intro": "Earth places that are not top analogs for the selected SkyFall region (Mars northern mid-latitudes)."
+    }
+  },
+  "limitations": {
+    "moon": {
+      "mission_id": "artemis-iv",
+      "universal_key": "moon"
+    },
+    "mars": {
+      "mission_id": "skyfall",
+      "universal_key": "mars"
+    }
+  },
+  "method": {
+    "moon": {
+      "mission_id": "artemis-iv",
+      "weights_key": "artemis-iv",
+      "notes": [
+        {
+          "text": "The Artemis HLS landing-slope limit is not in our documents (status TODO), so it is not used as a filter.",
+          "status": "TODO"
+        }
+      ]
+    },
+    "mars": {
+      "mission_id": "skyfall",
+      "weights_key": "skyfall",
+      "notes": [
+        {
+          "text": "Hard filters (elevation, slope, rock cover, thermal inertia) come from the SkyFall Mission Information Package. The TBD flags show which limits NASA still marks TBD.",
+          "status": "verify"
+        }
+      ]
+    }
+  }
+}

@@ -8,22 +8,39 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://trek.nasa.gov https://gibs.earthdata.nasa.gov https://planetarymaps.usgs.gov; connect-src 'self'; object-src 'none'; base-uri 'self'">
   <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="css/app.css">
+  <link rel="preload" href="fonts/sora-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/space.css">
 </head>
 <body>
+  <div class="backdrop" id="backdrop" aria-hidden="true">
+    <canvas class="bg-layer bg-base" data-bg="base"></canvas>
+    <canvas class="bg-layer" data-bg="moon"></canvas>
+    <canvas class="bg-layer" data-bg="mars"></canvas>
+    <canvas class="bg-layer" data-bg="sources"></canvas>
+    <div class="bg-shade"></div>
+  </div>
+
   <header class="nav" id="nav">
-    <a class="nav-brand" href="#home" data-route="home">EarthTwin</a>
+    <div class="nav-left"><a class="nav-brand" href="#home" data-route="home">EarthTwin</a></div>
     <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="nav-links" aria-label="Main">
-      <a class="nav-item nav-stack" href="#moon-analog" data-route="moon-analog"><span class="nav-label">Moon</span><span class="nav-sub">Analog</span></a>
-      <a class="nav-item nav-stack" href="#mars-analog" data-route="mars-analog"><span class="nav-label">Mars</span><span class="nav-sub">Analog</span></a>
-      <a class="nav-item" href="#why-not-others" data-route="why-not-others">Why Not Others</a>
-      <a class="nav-item" href="#method" data-route="method">Method</a>
-      <a class="nav-item" href="#limitations" data-route="limitations">Limitations</a>
-      <a class="nav-item" href="#sources" data-route="sources">Sources</a>
-      <a class="nav-item" href="#planex" data-route="planex">PLANEX</a>
+      <a class="nav-item nav-stack" href="#moon-analog" data-route="moon-analog" data-world="moon"><span class="nav-label">Moon</span><span class="nav-sub">Analog</span></a>
+      <a class="nav-item nav-stack" href="#mars-analog" data-route="mars-analog" data-world="mars"><span class="nav-label">Mars</span><span class="nav-sub">Analog</span></a>
+      <div class="nav-drop" id="nav-drop">
+        <button class="nav-item nav-drop-btn" id="nav-drop-btn" aria-haspopup="true" aria-expanded="false" aria-controls="nav-drop-menu">Others<svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+        <div class="nav-drop-menu" id="nav-drop-menu" role="menu" aria-label="Others">
+          <a role="menuitem" tabindex="-1" href="#why-not-others" data-route="why-not-others">Why not others</a>
+          <a role="menuitem" tabindex="-1" href="#limitations" data-route="limitations">Limitations</a>
+          <a role="menuitem" tabindex="-1" href="#sources" data-route="sources">Sources</a>
+          <a role="menuitem" tabindex="-1" href="#method" data-route="method">Method</a>
+        </div>
+      </div>
+      <span class="nav-credit nav-credit-mobile">PLANEX</span>
     </nav>
-    <span class="badge sample" id="sample-badge" hidden data-tip="Some Earth values are still placeholders until the team adds real data.">Partly sample data</span>
+    <div class="nav-right">
+      <span class="badge sample" id="sample-badge" hidden data-tip="Some Earth values are still placeholders until the team adds real data.">Partly sample data</span>
+      <span class="nav-credit">PLANEX</span>
+    </div>
   </header>
 
   <main>
@@ -69,6 +86,9 @@
   <script src="js/maps.js"></script>
   <script src="js/panels.js"></script>
   <script src="js/pages.js"></script>
+  <script src="js/backdrop.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/solar-art.js"></script>
   <script src="js/solar.js"></script>
   <script src="js/app.js"></script>
 </body>
