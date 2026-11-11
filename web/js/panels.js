@@ -28,7 +28,7 @@
   /** Heading with the Back button (returns to the globes and the search bar: the only way to pick another location). */
   function analogHeading(mission) {
     return '<div class="sec analog-head"><button class="back-globe" id="back-globe" aria-label="Back to the globes to choose another location">← Back</button>' +
-      '<h1 class="analog-title">' + (mission.body === "moon" ? "Moon Analog · Artemis" : "Mars Analog · SkyFall") + "</h1></div>";
+      '<h1 class="analog-title">' + (mission.body === "moon" ? "Moon Analog" : "Mars Analog") + "</h1></div>";
   }
 
   /** The chosen target (read-only: the location is picked in the search bar on the globe screen). */

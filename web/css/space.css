@@ -321,3 +321,32 @@ body.on-intro main { inset: 0; }
 .search-dot { background: #8ab4f8; }
 .search-dot.target { background: #fdd663; }
 .search-list { scrollbar-color: #5f6368 transparent; }
+
+/* ================================================================ fonts: D-DIN (menu, OTHERS, PLANEX), Bradley Hand (logo) */
+@font-face { font-family: "D-DIN"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/d-din-regular.woff2") format("woff2"); }
+@font-face { font-family: "D-DIN"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/d-din-bold.woff2") format("woff2"); }
+:root {
+  --menu-font: "D-DIN", "DIN Alternate", "Bahnschrift", Arial, sans-serif;
+  --logo-font: "Bradley Hand ITC", "Bradley Hand", "Segoe Print", cursive;   /* not shipped: Bradley Hand ITC is a commercial font */
+}
+.nav-item, .nav-item .nav-label, .nav-item .nav-sub, .nav-drop-btn, .nav-drop-menu a, .nav-credit { font-family: var(--menu-font); font-weight: 400; }
+.nav-brand { font-family: var(--logo-font); font-weight: 700; letter-spacing: 0.08em; }   /* wide tracking breaks a script face */
+
+/* ================================================================ search bar: slimmer, in its own band under the menu */
+.nav-search { height: 40px; width: min(480px, 90vw); padding: 0 16px; border-radius: 20px; }
+.nav-search.open { border-radius: 20px 20px 0 0; }
+.search-list { border-radius: 0 0 20px 20px; }
+.nav-search input { font-size: 14px; }
+.search-icon { width: 16px; height: 16px; }
+body.on-intro .nav { height: calc(var(--header-h) + 52px); grid-template-rows: var(--header-h) 52px; }
+body.on-intro .nav > .nav-search { align-self: start; margin-top: 2px; }
+@media (max-width: 767px) {
+  .nav-search { width: calc(100vw - 32px); }
+  body.on-intro .nav { height: calc(var(--header-h) + 52px); grid-template-rows: var(--header-h) 52px; }
+}
+
+/* ================================================================ pins: solid bright fill, thin contrasting outline */
+.site-pin, #map-target .site-pin { background: #ffd166; border: 1.5px solid #1b1300; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6); }
+.site-pin.sel, #map-target .site-pin.sel { background: #ffffff; border-color: #1b1300; box-shadow: 0 0 0 5px rgba(255, 209, 102, 0.45), 0 1px 4px rgba(0, 0, 0, 0.6); }
+.pin { background: #5cc8ff; color: #06121f; border: 1.5px solid #06121f; font-weight: 700; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6); }
+.pin.sel, .pin.hot { background: #ffffff; color: #06121f; border-color: #06121f; box-shadow: 0 0 0 4px rgba(92, 200, 255, 0.45), 0 1px 5px rgba(0, 0, 0, 0.6); }

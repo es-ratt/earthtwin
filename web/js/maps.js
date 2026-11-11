@@ -141,9 +141,9 @@
         });
       } else {
         var style = {
-          low_match: { radius: 5, color: "#8b929c", weight: 1, fillColor: "#8b929c", fillOpacity: 0.35 },
-          rejected: { radius: 4, color: "#fff", weight: 1, fillOpacity: 0, dashArray: null },
-          cannot_evaluate: { radius: 4, color: "#5a616b", weight: 1, fillOpacity: 0, dashArray: "2 2" }
+          low_match: { radius: 5, color: "#0b1220", weight: 1.5, fillColor: "#c3ccd6", fillOpacity: 1 },
+          rejected: { radius: 4.5, color: "#0b1220", weight: 1.5, fillColor: "#ff8a7a", fillOpacity: 1, dashArray: null },
+          cannot_evaluate: { radius: 4.5, color: "#0b1220", weight: 1.5, fillColor: "#8b929c", fillOpacity: 1, dashArray: "2 2" }
         }[e.group];
         m = L.circleMarker([c.lat, c.lon], style);
       }

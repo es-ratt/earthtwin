@@ -274,6 +274,8 @@
       ["Globe texture: Earth", "NASA Blue Marble Next Generation, 2048 × 1024 equirectangular, from NASA GIBS (WMS EPSG:4326). Stored as web/img/globe/earth_bluemarble_2048.jpg.", "NASA, public domain"],
       ["Globe texture: Moon", "LROC WAC global mosaic (USGS Astrogeology WMS, layer LROC_WAC), with the cap south of 74°S replaced by the USGS LOLA south-pole relief image already in the app (the WAC mosaic smears at the pole). web/img/globe/moon_lroc_wac_lola_2048.jpg.", "NASA/ASU LROC, NASA/GSFC LOLA, USGS; public domain"],
       ["Globe texture: Mars", "Viking MDIM 2.1 colour mosaic from NASA Mars Trek (the map fallback image, reused).", "NASA/USGS, public domain"],
+      ["Typeface: D-DIN (menu items, OTHERS, PLANEX)", "Self-hosted (web/fonts/d-din-*.woff2) from the official package on Font Library; SIL Open Font License 1.1 (web/fonts/OFL-D-DIN.txt).", "Datto Inc. (designer Charles Nix)"],
+      ["Logo typeface: Bradley Hand ITC", "Not shipped (a commercial Monotype font). Uses the visitor's installed Bradley Hand ITC or Bradley Hand, else Segoe Print, else the system cursive font.", "Monotype; system font"],
       ["Typeface: Sora", "Self-hosted from Google Fonts (web/fonts/), SIL Open Font License 1.1 (web/fonts/OFL-Sora.txt).", "The Sora Project Authors"]
     ];
     return '<section class="block"><h2>Visual assets</h2><table class="grid"><thead><tr><th>Asset</th><th>How it is made</th><th>Credit · licence</th></tr></thead><tbody>' +
