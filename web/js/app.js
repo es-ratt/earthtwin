@@ -1,8 +1,11 @@
-/* App wiring: load data, hash routing between the views, keep state in the URL, render, handle clicks.
+/* App wiring: load data, routing between the views, render, handle clicks.
  *
- * Routes (hash):  (none) or #home = home page, shown as the clean address  #moon-analog  #mars-analog  #why-not-others  #method  #limitations  #sources  #planex
- * Extra state after the route, e.g. #moon-analog&s=haworth&c=mcmurdo-dry-valleys  or  #method&m=skyfall&s=ap-105
- * Old links (#m=…&s=…&t=…) are still understood. */
+ * The address bar always shows the clean address (…/web/). The current page is kept as a route string in the
+ * browser history state, so Back / Forward work; a refresh starts again at the home page.
+ * Route strings:  #home  #moon-analog  #mars-analog  #why-not-others  #method  #limitations  #sources  #planex
+ * with extra state, e.g. #moon-analog&s=haworth&c=mcmurdo-dry-valleys  or  #method&m=skyfall&s=ap-105
+ * Incoming links that still carry a hash (…/web/#mars-analog, old #m=…&s=…&t=… links) open that page, then the
+ * address is cleaned. In-page links (href="#method") work the same way. */
 (function (ET) {
   "use strict";
 
@@ -30,9 +33,12 @@
   var maps = { ready: false, missionId: null, siteId: null };
 
   /* ------------------------------------------------------------ url state */
-  function parseHash() {
+  var current = "#home";                     // route string of the page on screen (never written to the address bar)
+  function cleanUrl() { return location.pathname + location.search; }
+
+  function parseHash(str) {
     var h = { route: null };
-    location.hash.replace(/^#\/?/, "").split("&").forEach(function (kv) {
+    (str || "").replace(/^#\/?/, "").split("&").forEach(function (kv) {
       if (!kv) return;
       var i = kv.indexOf("=");
       if (i < 0) { if (!h.route) h.route = decodeURIComponent(kv); return; }
@@ -53,24 +59,38 @@
     return "#" + parts.join("&");
   }
 
-  /** Keep the URL in sync. The home page uses the clean address (…/web/) with no "#home". */
+  /** Record the current page in the history state; the address bar stays clean. */
   function writeHash() {
-    var target = buildHash();
-    if (target === "#home") {
-      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
-      return;
-    }
-    if (location.hash !== target) history.replaceState(null, "", target);
+    current = buildHash();
+    var st = history.state || {};
+    if (st.et !== current || location.hash) history.replaceState({ et: current }, "", cleanUrl());
   }
 
-  /** Change view: pushes a history entry so the Back button works. */
+  /** Change view: pushes a history entry (clean address, route in its state) so the Back button works. */
   function go(route, extra) {
     state.route = route;
     if (extra && extra.missionId) setMission(extra.missionId, extra.siteId);
     if (extra && "candidateId" in extra) state.candidateId = extra.candidateId;
     if (extra && "intro" in extra) state.intro = extra.intro;
     var target = buildHash();
-    if (location.hash === target) show(); else location.hash = target;
+    if (target === current) { show(); return; }
+    history.pushState({ et: target }, "", cleanUrl());
+    applyRoute(target);
+  }
+
+  /** A link with a hash was followed (in-page link or an old shared link): open it, then clean the address. */
+  function onHashChange() {
+    var h = location.hash;
+    if (!h) return;
+    history.replaceState({ et: h }, "", cleanUrl());
+    applyRoute(h);
+  }
+
+  /** Back / Forward: the route comes from the history entry's state. Browsers also fire popstate (before
+   * hashchange) when a "#…" link is followed; that case is handled as a link. */
+  function onPopState(e) {
+    if (location.hash) { onHashChange(); return; }
+    applyRoute(e.state && e.state.et ? e.state.et : "#home");
   }
 
   /* ------------------------------------------------------------ state helpers */
@@ -199,8 +219,8 @@
     }
   }
 
-  function applyHash() {
-    var h = parseHash();
+  function applyRoute(str) {
+    var h = parseHash(str);
     var prevRoute = state.route;
     state.route = h.route;
     var r = ROUTES[h.route];
@@ -283,7 +303,8 @@
     });
     document.addEventListener("et:layerstatus", function () { if (state.route === "sources") ET.Pages.renderSources(state, data); });
     window.addEventListener("resize", function () { if (maps.ready) ET.Maps.invalidate(); });
-    window.addEventListener("hashchange", applyHash);
+    window.addEventListener("hashchange", onHashChange);
+    window.addEventListener("popstate", onPopState);
   }
 
   /* ------------------------------------------------------------ boot */
@@ -308,7 +329,7 @@
       ET.Analog.init(data, { choose: chooseLocation, selectCandidate: selectCandidate });
       document.getElementById("sample-badge").hidden = !(r[6].contains_sample || r[7].contains_sample);
       bind();
-      applyHash();
+      applyRoute(location.hash || (history.state && history.state.et) || "#home");
     }).catch(function (err) {
       var page = document.getElementById("page-planex");
       document.querySelectorAll(".view").forEach(function (v) { v.classList.toggle("active", v.id === "view-planex"); });
