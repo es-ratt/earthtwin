@@ -82,10 +82,9 @@
     if (siteLayer) siteLayer.remove();
     siteLayer = L.layerGroup().addTo(target);
     siteMarkers = {};
-    var missing = [];
     sites.forEach(function (s) {
       var p = s.position || {};
-      if (p.lat === null || p.lat === undefined) { missing.push(s.name); return; }
+      if (p.lat === null || p.lat === undefined) return;   // no coordinates in the team documents: not drawn
       var m = L.marker([p.lat, p.lon], {
         icon: L.divIcon({ className: "", html: '<div class="site-pin"></div>', iconSize: [14, 14], iconAnchor: [7, 7] }),
         keyboard: true, title: s.name
@@ -94,11 +93,6 @@
       m.on("click", function () { onSiteClick(s.id); });
       siteMarkers[s.id] = m;
     });
-    var note = document.getElementById("target-note");
-    if (missing.length) {
-      note.hidden = false;
-      note.innerHTML = "<b>Not on the map</b> (no coordinates in team documents, nothing guessed): " + missing.map(ET.esc).join(", ");
-    } else note.hidden = true;
   };
 
   M.selectSite = function (site) {

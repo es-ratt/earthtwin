@@ -14,6 +14,13 @@
     return esc(m.name) + " · target: " + esc(s.name);
   }
 
+  /** Moon / Mars switch for the content pages (they show one mission at a time). */
+  function ctxSwitch(state, data) {
+    return '<div class="ctx-switch" role="group" aria-label="Mission">' + data.missions.filter(function (m) { return m.in_selector; }).map(function (m) {
+      return '<button data-mission="' + esc(m.id) + '" aria-pressed="' + (m.id === state.missionId) + '">' + (m.body === "moon" ? "Moon · Artemis" : "Mars · SkyFall") + "</button>";
+    }).join("") + "</div>";
+  }
+
   /* ================================================== WHY NOT OTHERS */
   function numbersTable(rows, data) {
     if (!rows || !rows.length) return '<span class="faint">—</span>';
@@ -60,7 +67,7 @@
         "</article>";
     }).join("");
     document.getElementById("page-why").innerHTML =
-      head("Why not others?", ctxLine(state, data) + ". Every Earth place that is not a top analog gets the same six-part explanation.", chips) +
+      head("Why not others?", ctxLine(state, data) + ". Every Earth place that is not a top analog gets the same six-part explanation.", '<div class="head-right">' + ctxSwitch(state, data) + chips + "</div>") +
       (shown.length ? '<div class="cards">' + cards + "</div>" : '<p class="muted">Nothing in this group.</p>');
   };
 
@@ -72,10 +79,18 @@
     var siteRes = res.sites[state.siteId];
     var cats = data.features.categories;
 
+    var nEarth = data.earth.length;
+    var renorm = siteRes.weights_renormalised || {};
     var weightRows = cats.map(function (cat) {
       var feats = m.features.filter(function (f) { return data.fdefs[f].category === cat.id; });
-      return "<tr><td>" + esc(cat.label) + '</td><td class="num">' + (m.weights_pct[cat.id] || 0) + "%</td><td>" +
-        (feats.length ? feats.map(function (f) { return ET.Panels.featureLabel(f, data) + ' <span class="faint num">' + (siteRes.weights_nominal[f] * 100).toFixed(1) + "%</span>"; }).join(" · ") : '<span class="faint">none</span>') + "</td></tr>";
+      if (!feats.length) return "<tr><td>" + esc(cat.label) + '</td><td class="num">' + (m.weights_pct[cat.id] || 0) + '%</td><td colspan="4"><span class="faint">no features</span></td></tr>';
+      return feats.map(function (f, i) {
+        var r = renorm[f] || {};
+        return "<tr>" + (i === 0 ? '<td rowspan="' + feats.length + '">' + esc(cat.label) + '</td><td class="num" rowspan="' + feats.length + '">' + (m.weights_pct[cat.id] || 0) + "%</td>" : "") +
+          "<td>" + ET.Panels.featureLabel(f, data) + '</td><td class="num">' + (siteRes.weights_nominal[f] * 100).toFixed(1) + '%</td><td class="num">' +
+          (r.has_target ? "<b>" + (r.weight * 100).toFixed(1) + "%</b>" : '<span class="faint">0% · no target value</span>') +
+          '</td><td class="num">' + (r.earth_sites_with_data === undefined ? "—" : r.earth_sites_with_data + " / " + nEarth) + "</td></tr>";
+      }).join("");
     }).join("");
 
     var scaleRows = m.features.filter(function (f) { return m.scales[f] !== undefined; }).map(function (f) {
@@ -92,7 +107,8 @@
     var filterRows = (mission.constraints || []).map(function (c) {
       var lim = c.limit === null ? '<span class="badge todo">TODO</span>' : esc(Array.isArray(c.limit) ? c.limit.join("–") : c.limit) + " " + esc(c.unit || "");
       return "<tr><td>" + (c.feature_id ? ET.Panels.featureLabel(c.feature_id, data) : esc(c.id)) + "</td><td>" + esc(c.op) + " " + lim + (c.scale ? ' <span class="faint">at ' + esc(c.scale) + "</span>" : "") +
-        "</td><td>" + (c.hard_filter ? "Yes" : "No") + "</td><td>" + ET.statusBadge(c.status) + (c.tbd_by_nasa === null ? ' <span class="badge todo" data-tip="Team doc says some SkyFall constraints are TBD by NASA but not which ones.">tbd_by_nasa ?</span>' : "") +
+        "</td><td>" + (!c.hard_filter ? "No" : c.earth_applicable === false ? '<span class="badge todo" data-tip="No Earth data in the same variable and unit, so this filter cannot be applied to Earth sites.">Not applied to Earth</span>' : "Yes") +
+        (c.label ? '<div class="faint" style="font-size:11px">' + esc(c.label) + "</div>" : "") + "</td><td>" + ET.statusBadge(c.status) + (c.tbd_by_nasa === null ? ' <span class="badge todo" data-tip="Team doc says some SkyFall constraints are TBD by NASA but not which ones.">tbd_by_nasa ?</span>' : "") +
         "</td><td>" + esc(c.note || "") + (c.source_id ? '<div class="faint" style="font-size:11px">' + ET.Panels.srcLink(c.source_id, data) + "</div>" : "") + "</td></tr>";
     }).join("");
 
@@ -116,11 +132,11 @@
     }).join("");
 
     document.getElementById("page-method").innerHTML =
-      head("Method", ctxLine(state, data) + ". How the " + ET.term("Similarity Score") + " is computed. Settings live in <span class=\"mono\">pipeline/config.json</span>; re-run the pipeline after editing.") +
+      head("Method", ctxLine(state, data) + ". How the " + ET.term("Similarity Score") + " is computed. Settings live in <span class=\"mono\">pipeline/config.json</span>; re-run the pipeline after editing.", ctxSwitch(state, data)) +
       '<section class="block"><h2>1 · Two stages</h2><p>Stage A removes Earth places that break a mission ' + ET.term("hard filter") + '. Stage B scores the rest. Only features with data on <b>both</b> sides count; the remaining weights are ' + ET.term("renormalised") + ' and shown on every result.</p>' +
       '<div class="formula">Score = Σ wᵢ × similarityᵢ<br>similarityᵢ = exp( −|Earth − target| / scaleᵢ )</div>' +
-      '<p style="margin-top:14px">If the target is a range (e.g. slope 0–15°), similarity is 100% inside the range and falls off with the distance to the nearest edge. Categories (rock type, regolith) use the table below. An Earth place with no ground ice counts as a full mismatch on depth-to-ice. It is called a <b>Similarity Score</b>, not accuracy: there is no ground truth for the Moon or Mars.</p></section>' +
-      '<section class="block"><h2>2 · Weights</h2><p>Provisional, from the team document. Each category is split equally between its features. Percentages after the feature names are the planned feature weights.</p><table class="grid"><thead><tr><th>Category</th><th>Weight</th><th>Features (planned weight)</th></tr></thead><tbody>' + weightRows + "</tbody></table></section>" +
+      '<p style="margin-top:14px">If the target is a range (e.g. slope 0–15°), similarity is 100% inside the range and falls off with the distance to the nearest edge. Categories (rock type, regolith) use the table below. An Earth place with no perennial ground ice (none or seasonal frost only) counts as a full mismatch on depth-to-ice. It is called a <b>Similarity Score</b>, not accuracy: there is no ground truth for the Moon or Mars.</p></section>' +
+      '<section class="block"><h2>2 · Weights</h2><p>Provisional, from the team document. Each category is split equally between its features (<b>planned</b>). Features without a value for this target site are dropped and the rest are rescaled to 100% (<b>renormalised</b>, used for every Earth site here). Each Earth site is renormalised again over the features it has; its own weights are shown on its detail view. The last column shows how many Earth sites have a real value.</p><table class="grid"><thead><tr><th>Category</th><th>Weight</th><th>Feature</th><th>Planned</th><th>Renormalised for ' + esc(data.sitesById[state.siteId].name) + '</th><th>Earth sites with data</th></tr></thead><tbody>' + weightRows + "</tbody></table></section>" +
       '<section class="block"><h2>3 · Hard filters and mission limits</h2><p>Only rows with “Yes” remove Earth places. A limit that is not in the team documents stays TODO and is not applied.</p><table class="grid"><thead><tr><th>Feature</th><th>Limit</th><th>Filter</th><th>Status</th><th>Note · source</th></tr></thead><tbody>' + filterRows + "</tbody></table>" +
       (mission.constraints_note ? '<p class="faint" style="margin-top:10px">' + esc(mission.constraints_note) + "</p>" : "") + "</section>" +
       '<section class="block"><h2>4 · Scales and how Earth values are made</h2><p>PROVISIONAL, team to confirm. A difference equal to the scale gives 37% similarity; half the scale gives 61%.</p><table class="grid"><thead><tr><th>Feature</th><th>Scale</th><th>Earth-side method</th></tr></thead><tbody>' + scaleRows + "</tbody></table>" +
@@ -147,10 +163,27 @@
       return "<tr><td>" + esc(data.candById[e.id].name) + '<div class="faint" style="font-size:11px">' + esc(e.group.replace("_", " ")) + (e.score_pct !== null ? " · " + e.score_pct + "%" : "") + "</div></td><td>" + j(l.reproduces) + "</td><td>" + j(l.partly) + "</td><td>" + j(l.fails) + '</td><td class="faint">' + j(l.no_data) + "</td></tr>";
     }).join("");
     document.getElementById("page-limits").innerHTML =
-      head("Honest limitations", "What an Earth analog can and cannot tell us about " + esc(mission.body === "moon" ? "the lunar south pole" : "the SkyFall regions on Mars") + ". This page is part of the result, not a disclaimer.") +
+      head("Honest limitations", "What an Earth analog can and cannot tell us about " + esc(mission.body === "moon" ? "the lunar south pole" : "the SkyFall regions on Mars") + ". This page is part of the result, not a disclaimer.", ctxSwitch(state, data)) +
       '<section class="block"><h2>What no place on Earth can copy</h2>' + lims(u[mission.body]) + "</section>" +
       '<section class="block"><h2>Per analog · ' + esc(data.sitesById[state.siteId].name) + '</h2><p>“Reproduces” = similarity ≥70%; “Partly” = 40–70%; “Fails” = under 40%. Generated from the scores. Top analogs and baselines are listed.</p><table class="grid"><thead><tr><th>Earth place</th><th>Reproduces</th><th>Partly</th><th>Fails</th><th>No data</th></tr></thead><tbody>' + rows + "</tbody></table></section>" +
       '<section class="block"><h2>Limits of the method</h2>' + lims(u.method) + "</section>";
+  };
+
+  /* ================================================== PLANEX */
+  /* Content moved from the team's About page (frontend/js/pages/about.js). The technical-approach paragraph
+   * is updated to describe this static app instead of the earlier FastAPI version. */
+  G.renderPlanex = function () {
+    document.getElementById("page-planex").innerHTML =
+      head("PLANEX", "Team PLANEX · NASA Space Apps Challenge 2026") +
+      '<section class="block"><h2>About EarthTwin</h2><p>EarthTwin is a scientific decision-support prototype built by team <b>PLANEX</b> for the NASA Space Apps Challenge 2026, challenge <em>“Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars”</em>.</p></section>' +
+      '<section class="block"><h2>Purpose</h2><p>Mission teams test rovers, drills, habitats and procedures at terrestrial analog sites before flight, but those sites are often characterised unevenly. EarthTwin helps researchers answer four questions: which Earth locations share relevant characteristics with a chosen lunar or Martian region; what measured evidence supports each match; how similar the environments are and where they differ; and which locations may suit equipment testing, terrain navigation or geological investigation.</p></section>' +
+      '<section class="block"><h2>Technical approach</h2><ul>' +
+      "<li><b>Data pipeline:</b> Python scripts read open NASA, USGS and other agency data (LOLA, HRSC-MOLA, NASADEM, MODIS and more), record the provenance of every value and pre-compute the scores as JSON.</li>" +
+      "<li><b>Website:</b> a static site in plain HTML, CSS and JavaScript with Leaflet maps (NASA Trek, GIBS and USGS tiles). No backend and no build step.</li>" +
+      "<li><b>Method:</b> hard filters, then a weighted Similarity Score over features measured the same way on both sides. See the Method tab.</li></ul></section>" +
+      '<section class="block"><h2>Acknowledgments</h2><p>Basemap imagery: NASA Solar System Treks and NASA GIBS; USGS Astrogeology map services. Mapping library: Leaflet (BSD-2-Clause). All data sources are listed on the <a href="#sources" data-route="sources">Sources</a> page.</p></section>' +
+      '<section class="block"><h2>Independence</h2><p>EarthTwin is an independent team project created for the NASA Space Apps Challenge. It is not affiliated with, endorsed by or an official product of NASA or any other agency or institution. The use of NASA data and imagery does not imply endorsement.</p></section>' +
+      '<section class="block"><h2>Team</h2><p>Team PLANEX. Contributor names are maintained by the team in the repository README.</p></section>';
   };
 
   /* ================================================== SOURCES */
@@ -171,7 +204,7 @@
   G.renderSources = function (state, data) {
     var q = (state.sourceQuery || "").toLowerCase();
     var used = usedSourceIds(data);
-    var groups = [["nasa_usgs", "NASA, USGS and space agencies"], ["peer_reviewed", "Peer-reviewed papers and conference abstracts (NASA data, other publishers)"], ["third_party", "Third-party: news, blogs, Wikipedia"], ["team_doc", "Team documents"], ["method", "Method choices"], ["sample", "Placeholders"]];
+    var groups = [["nasa_usgs", "NASA and USGS"], ["other_agency", "Other agencies, non-NASA (ESA, USDA)"], ["peer_reviewed", "Peer-reviewed papers and conference abstracts (NASA data, other publishers)"], ["third_party", "Third-party, non-NASA: open data services, news, blogs, Wikipedia/Wikidata"], ["team_doc", "Team documents"], ["method", "Method choices"], ["sample", "Placeholders"]];
     var html = groups.map(function (g) {
       var items = data.sources.filter(function (s) { return s.kind === g[0] && (!q || (s.name + " " + (s.url || "") + " " + s.id).toLowerCase().indexOf(q) >= 0); });
       if (!items.length) return "";
@@ -184,10 +217,29 @@
     document.getElementById("page-sources").innerHTML =
       head("Sources", "● = used by at least one value in the app. NASA/USGS sources are kept separate from third-party sources. ‘Access’ says how much of each source the team actually read.",
         '<input class="search" id="src-search" type="search" placeholder="Filter sources…" value="' + esc(state.sourceQuery || "") + '" aria-label="Filter sources">') +
-      layerReport() + html;
+      coordinateReport(data) + layerReport() + html;
     var input = document.getElementById("src-search");
     if (state.sourceQuery) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); }
   };
+
+  /** Coordinate verification table (written by pipeline/fetch_context_data.py coords). */
+  function coordinateReport(data) {
+    var c = data.coords;
+    if (!c || !c.rows) return "";
+    var srcName = { gnis: "USGS GNIS", gvp: "Smithsonian GVP", wikidata: "Wikidata (third-party)", none: "—" };
+    var fmt = function (a, b) { return a === "" || a === null || a === undefined ? "—" : Number(a).toFixed(4) + ", " + Number(b).toFixed(4); };
+    var rows = c.rows.map(function (r) {
+      var badgeClass = { verified: "solid", updated: "", unverified: "todo" }[r.status] || "";
+      return "<tr><td>" + esc(r.name) + '</td><td class="num">' + fmt(r.old_lat, r.old_lon) + '</td><td class="num">' + fmt(r.verified_lat, r.verified_lon) +
+        '</td><td class="num">' + (r.distance_km === "" ? "—" : esc(r.distance_km) + " km") + "</td><td>" + '<span class="badge ' + badgeClass + '">' + esc(r.status) + "</span>" +
+        "</td><td>" + (r.source_url ? '<a href="' + esc(r.source_url) + '" target="_blank" rel="noopener">' + esc(srcName[r.source] || r.source) + " " + esc(r.ref_id) + "</a>" : esc(srcName[r.source] || "—")) +
+        (r.point_type ? '<div class="faint" style="font-size:11px">' + esc(r.point_type) + "</div>" : "") + (r.note ? '<div class="faint" style="font-size:11px">' + esc(r.note) + "</div>" : "") +
+        '</td><td><a href="' + esc(r.worldview_url) + '" target="_blank" rel="noopener">Worldview</a></td></tr>';
+    }).join("");
+    return '<section class="block"><h2>Coordinate check · Earth candidates</h2><p>Checked ' + esc(c.checked_on) + ". <b>verified</b> = the old position was within " + esc(c.tolerance_km) +
+      " km of the reference; <b>updated</b> = moved to the reference point; <b>unverified</b> = no reference found, old assistant-typed position kept. Open Worldview to check each point visually.</p>" +
+      '<table class="grid"><thead><tr><th>Candidate</th><th>Old</th><th>Verified</th><th>Moved</th><th>Status</th><th>Reference</th><th>Visual</th></tr></thead><tbody>' + rows + "</tbody></table></section>";
+  }
 
   function layerReport() {
     var rows = [];

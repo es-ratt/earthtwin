@@ -8,31 +8,39 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://trek.nasa.gov https://gibs.earthdata.nasa.gov https://planetarymaps.usgs.gov; connect-src 'self'; object-src 'none'; base-uri 'self'">
   <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/space.css">
 </head>
 <body>
-  <header class="top">
-    <div class="brand"><b>EARTHTWIN</b><span>Team PLANEX · NASA Space Apps 2026</span></div>
-    <nav class="switch" id="mission-switch" aria-label="Mission"></nav>
-    <span class="badge sample" id="sample-badge" hidden data-tip="Some Earth values are still placeholders until the team adds real data. Slope, roughness and temperature are already measured from NASA data.">Partly sample data</span>
-    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="tabs">Menu</button>
-    <nav class="tabs" id="tabs" role="tablist" aria-label="Sections">
-      <button role="tab" data-tab="analogs" aria-selected="true">Analogs</button>
-      <button role="tab" data-tab="why">Why not others?</button>
-      <button role="tab" data-tab="method">Method</button>
-      <button role="tab" data-tab="limits">Limitations</button>
-      <button role="tab" data-tab="sources">Sources</button>
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="#home" data-route="home">EarthTwin</a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a class="nav-item nav-stack" href="#moon-analog" data-route="moon-analog"><span class="nav-label">Moon</span><span class="nav-sub">Analog</span></a>
+      <a class="nav-item nav-stack" href="#mars-analog" data-route="mars-analog"><span class="nav-label">Mars</span><span class="nav-sub">Analog</span></a>
+      <a class="nav-item" href="#why-not-others" data-route="why-not-others">Why Not Others</a>
+      <a class="nav-item" href="#method" data-route="method">Method</a>
+      <a class="nav-item" href="#limitations" data-route="limitations">Limitations</a>
+      <a class="nav-item" href="#sources" data-route="sources">Sources</a>
+      <a class="nav-item" href="#planex" data-route="planex">PLANEX</a>
     </nav>
+    <span class="badge sample" id="sample-badge" hidden data-tip="Some Earth values are still placeholders until the team adds real data.">Partly sample data</span>
   </header>
 
   <main>
-    <section class="view active" id="view-analogs" aria-label="Analogs">
+    <section class="view view-home" id="view-home" aria-label="Solar system">
+      <canvas id="solar" aria-label="Animated solar system. Select the Moon or Mars to explore Earth analogs."></canvas>
+      <div class="solar-tip" id="solar-tip" hidden>Click to explore</div>
+      <p class="solar-hint">Click the Moon or Mars to explore</p>
+      <div class="sr-only"><a href="#moon-analog">Explore Moon analogs (Artemis)</a> <a href="#mars-analog">Explore Mars analogs (SkyFall)</a></div>
+    </section>
+
+    <section class="view" id="view-analogs" aria-label="Analogs">
       <div class="mapwrap">
         <div class="map" id="map-target"></div>
         <div class="maphead">
           <div><div class="label" id="target-kicker">Target</div><div class="title" id="target-title">—</div></div>
           <div class="layerstate" id="target-layerstate"></div>
         </div>
-        <div class="mapnote" id="target-note" hidden></div>
       </div>
       <div class="mapwrap">
         <div class="map" id="map-earth"></div>
@@ -48,6 +56,7 @@
     <section class="view" id="view-method" aria-label="Method"><div class="page" id="page-method"></div></section>
     <section class="view" id="view-limits" aria-label="Limitations"><div class="page" id="page-limits"></div></section>
     <section class="view" id="view-sources" aria-label="Sources"><div class="page" id="page-sources"></div></section>
+    <section class="view" id="view-planex" aria-label="PLANEX"><div class="page" id="page-planex"></div></section>
   </main>
 
   <div id="tip" role="tooltip"></div>
@@ -60,6 +69,7 @@
   <script src="js/maps.js"></script>
   <script src="js/panels.js"></script>
   <script src="js/pages.js"></script>
+  <script src="js/solar.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

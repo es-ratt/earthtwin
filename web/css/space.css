@@ -1,0 +1,99 @@
+/* Space look for the top navigation bar and the solar-system home page.
+ * The Analog interfaces and content pages keep the colours and fonts from app.css. */
+:root {
+  --header-h: 64px;
+  --nav-text: rgba(255, 255, 255, 0.78);
+  --nav-text-hi: #fff;
+  --nav-sub: rgba(255, 255, 255, 0.5);
+  --nav-track: 0.2em;
+  --space-bg: #000;
+  --space-hint: rgba(255, 255, 255, 0.38);
+}
+
+/* ------------------------------------------------------------ nav bar */
+.nav {
+  position: fixed; inset: 0 0 auto 0; height: var(--header-h); z-index: 1200;
+  display: flex; align-items: center; gap: 28px; padding: 0 28px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.55));
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+body.on-home .nav { background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+.nav-brand {
+  color: var(--nav-text-hi); font-size: 14px; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; white-space: nowrap;
+}
+.nav-brand:hover { text-decoration: none; }
+
+.nav-links { display: flex; align-items: center; gap: 26px; margin-left: auto; }
+.nav-item {
+  position: relative; color: var(--nav-text); font-size: 11px; font-weight: 400; letter-spacing: var(--nav-track);
+  text-transform: uppercase; white-space: nowrap; padding: 6px 0; transition: color .15s;
+}
+.nav-item:hover, .nav-item:focus-visible { color: var(--nav-text-hi); text-decoration: none; }
+.nav-item.active { color: var(--nav-text-hi); }
+.nav-item.active::after {
+  content: ""; position: absolute; left: 0; right: calc(var(--nav-track) * 1); bottom: -2px; height: 1px; background: rgba(255, 255, 255, 0.75);
+}
+.nav-stack { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.25; }
+.nav-sub { font-size: 9px; letter-spacing: 0.22em; color: var(--nav-sub); transition: color .15s; }
+.nav-stack:hover .nav-sub, .nav-stack.active .nav-sub { color: var(--accent); }
+#sample-badge { margin-left: 4px; }
+
+.nav-toggle { display: none; width: 34px; height: 34px; margin-left: auto; flex-direction: column; justify-content: center; gap: 5px; }
+.nav-toggle span { display: block; height: 1px; background: var(--nav-text-hi); transition: transform .2s, opacity .2s; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ------------------------------------------------------------ home */
+.view-home { background: var(--space-bg); overflow: hidden; }
+#view-home.active { display: block; animation: none; }
+body.on-home main { inset: 0; }                                    /* the solar system runs under the transparent bar */
+#solar { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: manipulation; }
+.solar-tip {
+  position: absolute; left: 0; top: 0; pointer-events: none; z-index: 2;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #fff;
+  background: rgba(0, 0, 0, 0.72); border: 1px solid rgba(255, 255, 255, 0.25); padding: 5px 9px; white-space: nowrap;
+}
+.solar-hint {
+  position: absolute; left: 0; right: 0; bottom: 18px; margin: 0; text-align: center; pointer-events: none;
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--space-hint);
+}
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ------------------------------------------------------------ analog heading + page mission switch */
+.analog-head { padding-bottom: 14px; }
+.analog-title { font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); }
+.head-right { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.ctx-switch { display: inline-flex; border: 1px solid var(--line-2); border-radius: 999px; padding: 3px; }
+.ctx-switch button { font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+.ctx-switch button[aria-pressed="true"] { background: var(--text); color: #000; }
+
+/* ------------------------------------------------------------ responsive */
+@media (max-width: 1100px) {
+  .nav { gap: 18px; padding: 0 18px; }
+  .nav-links { gap: 16px; }
+  .nav-item { letter-spacing: 0.14em; }
+}
+@media (max-width: 900px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none; position: fixed; top: var(--header-h); left: 0; right: 0; margin: 0;
+    flex-direction: column; align-items: stretch; gap: 0; padding: 4px 20px 12px;
+    background: rgba(0, 0, 0, 0.94); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .nav-links.open { display: flex; }
+  .nav-item { padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 12px; }
+  .nav-item.active::after { display: none; }
+  .nav-item.active { color: var(--accent); }
+  .nav-stack { flex-direction: row; align-items: baseline; gap: 10px; }
+  #sample-badge { display: none; }
+}
+@media (max-width: 760px) {
+  body.on-home { overflow: hidden; }
+  body.on-home main { position: fixed; inset: 0; padding-top: 0; }
+  #view-home.active { position: absolute; inset: 0; }
+  .head-right { align-items: flex-start; }
+  .page-head { flex-wrap: wrap; }
+}
