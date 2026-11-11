@@ -28,12 +28,26 @@
   A.ready = function (body) { return Promise.all([load(body), load("earth")]); };
 
   /* ------------------------------------------------------------ globe screen */
-  /** Wide screens: side by side. Tall (phone) screens: target body upper left, Earth lower right. */
+  var BAR_GAP_PX = 24, HINT_PX = 40, HINT_TALL_PX = 64;   // globes stay ≥ 24 px below the search bar, clear of the bottom hint (2 lines on phones)
+  var introTop = 0;                            // bottom edge of the header search bar (viewport px), measured
+  function measureIntroTop() {
+    var bar = document.getElementById("nav-search");
+    introTop = bar && !bar.hidden ? bar.getBoundingClientRect().bottom : 0;
+  }
+  window.addEventListener("resize", measureIntroTop);
+
+  /** Wide screens: side by side. Tall (phone) screens: target body upper left, Earth lower right.
+   * Every globe sits in the band between the search bar (+24 px) and the bottom hint. */
   function introLayout(which) {
     return function (w, h) {
       var m = Math.min(w, h), tall = h > w * 1.15;
-      if (tall) return which === "target" ? { x: 0.36 * w, y: 0.42 * h, r: 0.36 * w } : { x: 0.66 * w, y: 0.74 * h, r: 0.3 * w };
-      return which === "target" ? { x: 0.3 * w, y: 0.56 * h, r: 0.34 * m } : { x: 0.69 * w, y: 0.54 * h, r: 0.25 * m };
+      var top = introTop + BAR_GAP_PX, avail = Math.max(80, h - (tall ? HINT_TALL_PX : HINT_PX) - top);
+      if (tall) {
+        if (which === "target") { var rt = Math.min(0.36 * w, avail * 0.3); return { x: 0.36 * w, y: top + rt, r: rt }; }
+        var re = Math.min(0.3 * w, avail * 0.24); return { x: 0.66 * w, y: top + avail - re, r: re };
+      }
+      var r = which === "target" ? Math.min(0.34 * m, avail / 2) : Math.min(0.25 * m, avail * 0.4);
+      return { x: (which === "target" ? 0.3 : 0.69) * w, y: top + avail / 2, r: r };
     };
   }
   function resultLayout(which) {
@@ -56,7 +70,9 @@
     el.classList.remove("zooming");
     el.hidden = false;
     if (result) result.stop();
+    measureIntroTop();
     A.ready(body).then(function () {
+      measureIntroTop();
       if (!intro) intro = new ET.Globe.Scene(document.getElementById("intro-globe"), { reduceMotion: reduceMotion });
       if (introBody !== body) { intro.setBodies(introBodies(body)); introBody = body; }
       intro.start();
@@ -178,7 +194,7 @@
   function render(q) {
     var all = locations(), needle = (q || "").trim().toLowerCase();
     function match(x) { return !needle || (x.name + " " + x.sub).toLowerCase().indexOf(needle) >= 0; }
-    var groups = [[body === "moon" ? "Moon targets · Artemis IV" : "Mars targets · SkyFall", all.targets.filter(match)], ["Earth sites", all.earth.filter(match)]];
+    var groups = [[body === "moon" ? "Moon Target" : "Mars Target", all.targets.filter(match)], ["Earth sites", all.earth.filter(match)]];
     items = [];
     var html = groups.map(function (g) {
       if (!g[1].length) return "";
