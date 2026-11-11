@@ -25,12 +25,16 @@
     return anyAlpha && varied ? "ok" : "blank";
   }
 
+  /* USGS map servers (WMS) can take 10–15 s on a cold request (12.9 s measured 2026-11-12); tile services answer fast. */
+  var TILE_TIMEOUT_MS = 9000, WMS_TIMEOUT_MS = 20000;
+  function probeTimeout(def) { return def.type && def.type.indexOf("wms") >= 0 ? WMS_TIMEOUT_MS : TILE_TIMEOUT_MS; }
+
   /** Resolve to 'ok' | 'blank' | 'error' | 'unverifiable' for a layer definition. */
   ET.probeLayer = function (def, timeoutMs) {
     return new Promise(function (resolve) {
       var img = new Image();
       var done = false;
-      var timer = setTimeout(function () { finish("error"); }, timeoutMs || 9000);
+      var timer = setTimeout(function () { finish("error"); }, timeoutMs || probeTimeout(def));
       function finish(state) {
         if (done) return;
         done = true;

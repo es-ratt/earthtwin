@@ -29,7 +29,7 @@
   var data = {};
   var state = { route: "home", missionId: null, siteId: null, candidateId: null, whyFilter: "all", sourceQuery: "",
     intro: true,            // Moon/Mars Analog without a chosen location = globe screen with the search bar
-    viewMode: "globe" };    // result screen: "globe" (default) or "map" (the Leaflet maps)
+    viewMode: "map" };      // result screen: "map" = the original Moon/Mars Analog interface (default), "globe" = optional globes
   var maps = { ready: false, missionId: null, siteId: null };
 
   /* ------------------------------------------------------------ url state */
