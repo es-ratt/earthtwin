@@ -304,3 +304,20 @@ body.on-intro main { inset: 0; }
 #view-analogs:not(.globe-mode) .view-toggle { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
 .globe-hint { position: absolute; right: 18px; bottom: 18px; margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--space-hint); pointer-events: none; }
 @media (max-width: 767px) { .globe-hint { display: none; } }
+
+/* ================================================================ search bar: black, Google Earth style */
+.nav-search { background: #202124; color: #e8eaed; border: 1px solid #3c4043; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.45); }
+.search-icon { color: #9aa0a6; }
+.nav-search input { color: #e8eaed; }
+.nav-search input::placeholder { color: #9aa0a6; }
+.nav-search:focus-within { border-color: #5f6368; box-shadow: 0 0 0 2px var(--accent), 0 8px 24px rgba(0, 0, 0, 0.5); }
+.nav-search.open { border-bottom-color: transparent; }
+.search-list { background: #202124; border: 1px solid #3c4043; border-top: 1px solid #3c4043; left: -1px; right: -1px; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55); }
+.search-group { color: #9aa0a6; }
+.search-item:hover, .search-item.active { background: rgba(255, 255, 255, 0.08); }
+.search-name { color: #e8eaed; }
+.search-sub { color: #9aa0a6; }
+.search-empty { color: #9aa0a6; }
+.search-dot { background: #8ab4f8; }
+.search-dot.target { background: #fdd663; }
+.search-list { scrollbar-color: #5f6368 transparent; }
