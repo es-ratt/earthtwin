@@ -123,7 +123,7 @@ def load_inputs() -> dict:
         "fdefs": fdefs,
         "sources": {s["id"]: s for s in load_json(WEB_DATA / "sources.json")["sources"]},
         "config": load_json(CONFIG_PATH),
-        "target_meas": load_target_measurements(DATASETS / "target_measurements.csv"),
+        "target_meas": load_target_measurements(DATASETS / "target_measurements.csv", fdefs),
     }
 
 
@@ -196,8 +196,10 @@ def derive_earth_features(cands: list[dict]) -> None:
         c["features"].setdefault("cold_index", {"value": None, "status": "TODO", "note": "Needs annual_min_lst_K."})
 
 
-def load_target_measurements(path: Path) -> dict[str, dict[str, dict]]:
-    """datasets/target_measurements.csv: values measured by pipeline/fetch_real_data.py (e.g. LOLA slope)."""
+def load_target_measurements(path: Path, fdefs: dict | None = None) -> dict[str, dict[str, dict]]:
+    """datasets/target_measurements.csv: values measured by the pipeline (LOLA slope, Diviner, USGS map units).
+
+    Numeric unless features.json says the feature is categorical or text."""
     out: dict[str, dict[str, dict]] = {}
     if not path.exists():
         return out
@@ -208,7 +210,8 @@ def load_target_measurements(path: Path) -> dict[str, dict[str, dict]]:
             if not (row.get("source_id") or "").strip():
                 raise ValueError(f"target_measurements.csv: {row['site_id']}/{row['feature']} has a value but no source_id")
             out.setdefault(row["site_id"], {})[row["feature"]] = {
-                "value": float(row["value"]), "unit": row.get("unit") or None, "status": row.get("status") or "measured",
+                "value": parse_value(row["value"], (fdefs or {}).get(row["feature"], {}).get("kind", "numeric")),
+                "unit": row.get("unit") or None, "status": row.get("status") or "measured",
                 "source_id": row["source_id"], "confidence": row.get("confidence") or None, "note": row.get("note", ""),
                 **provenance_of(row),
             }
@@ -556,6 +559,13 @@ def sensitivity(mission_id, mission, target_feats, cands, ctx, base: dict) -> di
 
 
 # -------------------------------------------------------------------- main
+def target_context(target_feats: dict, fdefs: dict) -> dict:
+    """Target-side context features (never scored), in features.json order; only those the site has a row for."""
+    return {fid: {**target_feats[fid], "display": fmt_measure(target_feats[fid], fdef.get("unit"))}
+            for fid, fdef in fdefs.items()
+            if fdef.get("context_side") == "target" and fid in target_feats}
+
+
 def run_site(mission, site, defaults, cands, ctx) -> dict:
     mission_id = mission["id"]
     target_feats = resolve_target(site, defaults, ctx.get("target_meas"))
@@ -608,6 +618,7 @@ def run_site(mission, site, defaults, cands, ctx) -> dict:
         "target_features": {fid: {**(target_feats.get(fid) or {"value": None, "status": "TODO"}),
                                   "display": fmt_measure(target_feats.get(fid), ctx["fdefs"][fid].get("unit"))}
                             for fid in weights},
+        "target_context": target_context(target_feats, ctx["fdefs"]),
         "weights_nominal": {k: round(v, 4) for k, v in weights.items()},
         "weights_renormalised": renormalised_weights(weights, target_feats, cands),
         "counts": {

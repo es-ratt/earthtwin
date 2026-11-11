@@ -72,7 +72,8 @@
    "when": {
     "value": "Launch late 2028 · arrival ~2030",
     "status": "verify",
-    "source_id": "nasa-skyfall"
+    "source_id": "skyfall-package",
+    "note": "Package: 'a 2028 launch'; the backflip trajectory takes ~2 years, arrival in northern spring (Ls ~35°). Landing site not yet selected: Landing Site Workshop 1 is virtual, 9–10 Feb 2027; LSW2 TBD (likely spring 2027)."
    },
    "summary": "Three helicopters will study terrain, underground ice, temperature, wind and radiation in the northern mid-latitudes.",
    "banner": "Landing site NOT selected yet. First Landing Site Workshop: 9–10 Feb 2027. AP-105 is a design reference ellipse, not a chosen site.",
@@ -88,6 +89,20 @@
    "default_site_id": "ap-105",
    "constraints": [
     {
+     "id": "latitude",
+     "feature_id": null,
+     "op": "from",
+     "limit": "0–20 (TBD) to 45",
+     "unit": "°N",
+     "status": "verify",
+     "hard_filter": false,
+     "tbd_by_nasa": true,
+     "source_id": "skyfall-package",
+     "package_text": "V.a: southern limit between the equator and 20°N (TBD, depends on arrival season and SR-1 capabilities); northern limit 45°N. For the workshops, presume 0–45°N is accessible.",
+     "checked": "Checked by the assistant against the SkyFall Mission Information Package (section V) on 2026-11-11; still VERIFY until a second team member checks it.",
+     "note": "Mars-only constraint; not applied to Earth sites."
+    },
+    {
      "id": "elevation",
      "feature_id": null,
      "op": "<",
@@ -95,9 +110,11 @@
      "unit": "m (MOLA)",
      "status": "verify",
      "hard_filter": false,
-     "tbd_by_nasa": null,
+     "tbd_by_nasa": false,
      "source_id": "skyfall-package",
-     "note": "Mars-only constraint (thick enough atmosphere for entry). Earth elevation is not comparable, so it is not applied to Earth sites."
+     "note": "Mars-only constraint (thick enough atmosphere for entry). Earth elevation is not comparable, so it is not applied to Earth sites.",
+     "package_text": "V.b: site elevation < −3 km with respect to the MOLA geoid (enough atmosphere for EDL). Not marked TBD.",
+     "checked": "Checked by the assistant against the SkyFall Mission Information Package (section V) on 2026-11-11; still VERIFY until a second team member checks it."
     },
     {
      "id": "slope",
@@ -105,13 +122,15 @@
      "op": "<",
      "limit": 15,
      "unit": "°",
-     "scale": "~200 m on both sides (NASA limit defined at 1–5 m)",
+     "scale": "~200 m on both sides (NASA: <5°–15° TBD at 100 m; <15° at 1–5 m)",
      "status": "verify",
      "hard_filter": true,
-     "tbd_by_nasa": null,
+     "tbd_by_nasa": true,
      "source_id": "skyfall-package",
-     "note": "COARSE-SCALE SCREENING (~200 m), not a landing-safety proof. Applied to Earth slope on a 200 m grid, the same grid used for the Mars DEM. NASA's <15° limit is defined at 1–5 m (HiRISE/CTX DTMs), where slopes are usually steeper.",
-     "label": "coarse-scale screening (~200 m)"
+     "note": "COARSE-SCALE SCREENING (~200 m), not a landing-safety proof. Applied to Earth slope on a 200 m grid, the same grid used for the Mars DEM. NASA's limits are set at 100 m (<5°–15°, TBD) and at 1–5 m (<15°, HiRISE/CTX DTMs), where slopes are usually steeper; this screen uses the loosest value, 15°.",
+     "label": "coarse-scale screening (~200 m)",
+     "package_text": "V.e: 100 m length scale slopes <5°–15° (TBD) to avoid radar spoofing during descent; 1–5 m length scale slopes <15° for landing stability. The 100 m limit (closest to this ~200 m screen) is the TBD one; this screen uses its upper bound, 15°.",
+     "checked": "Checked by the assistant against the SkyFall Mission Information Package (section V) on 2026-11-11; still VERIFY until a second team member checks it."
     },
     {
      "id": "rock-cover",
@@ -122,10 +141,12 @@
      "scale": "rocks < 11 cm",
      "status": "verify",
      "hard_filter": true,
-     "tbd_by_nasa": null,
+     "tbd_by_nasa": false,
      "source_id": "skyfall-package",
      "note": "Not applied to Earth sites: no Earth dataset gives rock cover in % (only uncalibrated texture proxies). Applying it would make every Earth site 'Cannot be evaluated'.",
-     "earth_applicable": false
+     "earth_applicable": false,
+     "package_text": "V.f: rocks must be <11 cm high; cumulative fractional area covered by rocks < 5% (<5% rock abundance). Not marked TBD.",
+     "checked": "Checked by the assistant against the SkyFall Mission Information Package (section V) on 2026-11-11; still VERIFY until a second team member checks it."
     },
     {
      "id": "thermal-inertia",
@@ -136,10 +157,12 @@
      "unit": "J m⁻² K⁻¹ s⁻½",
      "status": "verify",
      "hard_filter": true,
-     "tbd_by_nasa": null,
+     "tbd_by_nasa": false,
      "source_id": "skyfall-package",
      "note": "Not applied to Earth sites: Earth has only the ATI proxy (K⁻¹), a different variable and unit from thermal inertia (J m⁻² K⁻¹ s⁻½).",
-     "earth_applicable": false
+     "earth_applicable": false,
+     "package_text": "V.g: thermal inertia must be >100 J m⁻² K⁻¹ s⁻½, preferably >150. Not marked TBD.",
+     "checked": "Checked by the assistant against the SkyFall Mission Information Package (section V) on 2026-11-11; still VERIFY until a second team member checks it."
     },
     {
      "id": "ellipse",
@@ -149,9 +172,11 @@
      "unit": "km",
      "status": "verify",
      "hard_filter": false,
-     "tbd_by_nasa": null,
+     "tbd_by_nasa": false,
      "source_id": "skyfall-package",
-     "note": "Landing ellipse size. Not an Earth filter."
+     "note": "Landing ellipse size. Not an Earth filter.",
+     "package_text": "V.c: ellipse 100 × 25 km, long axis oriented 330°–350° clockwise from north. Not marked TBD.",
+     "checked": "Checked by the assistant against the SkyFall Mission Information Package (section V) on 2026-11-11; still VERIFY until a second team member checks it."
     },
     {
      "id": "gpr-range",
@@ -166,10 +191,15 @@
      "hard_filter": false,
      "tbd_by_nasa": null,
      "source_id": "skyfall-package",
-     "note": "Ground-penetrating radar depth range. Used as the ice-depth target, not as a filter."
+     "note": "Ground-penetrating radar depth range. Used as the ice-depth target, not as a filter.",
+     "package_text": "Not an engineering constraint in the package. Section IV.a says the GPR is expected to reach ~3–5 m of subsurface penetration in low-loss materials, which CONFLICTS with the team value 0.5–3 m. Team to decide which range to use; the team value is kept unchanged for now.",
+     "checked": "Checked by the assistant against the SkyFall Mission Information Package (section V) on 2026-11-11; still VERIFY until a second team member checks it.",
+     "flags": [
+      "inconsistent_with_source"
+     ]
     }
    ],
-   "constraints_note": "The team doc says some of these constraints are marked TBD by NASA but does not say which. tbd_by_nasa is null (unknown) for all of them until checked against the SkyFall package.",
+   "constraints_note": "tbd_by_nasa now follows the SkyFall Mission Information Package (Sep 2026): the 100 m slope limit and the southern latitude limit are TBD; elevation, rock cover, thermal inertia and ellipse are not. The GPR depth is not a constraint in the package.",
    "sources": [
     "nasa-skyfall",
     "skyfall-package"

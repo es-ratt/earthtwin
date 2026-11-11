@@ -97,7 +97,7 @@
       ],
       "earth_method": "Earth DEM average-resampled to a 200 m local metric grid; median slope within 5 km (pipeline/fetch_real_data.py).",
       "target_method": "Mars MGS MOLA – MEX HRSC blended DEM (200 m), same resampling and window.",
-      "caveat": "COARSE-SCALE SCREENING (~200 m), not a landing-safety check: NASA's <15° limit is defined at 1–5 m (HiRISE/CTX DTMs)."
+      "caveat": "COARSE-SCALE SCREENING (~200 m), not a landing-safety check: NASA's limits are <5°–15° (TBD) at 100 m and <15° at 1–5 m (HiRISE/CTX DTMs)."
     },
     {
       "id": "roughness_200m_m",
@@ -336,6 +336,90 @@
       "earth_source_ids": [
         "osm-overpass"
       ]
+    },
+    {
+      "id": "psr_mean_annual_max_K",
+      "label": "Nearby PSR annual max temperature",
+      "category": "temperature",
+      "kind": "numeric",
+      "unit": "K",
+      "context_only": true,
+      "context_side": "target",
+      "earth_source_ids": [],
+      "tooltip": "Mean annual maximum temperature of the permanently shadowed region next to the target (Diviner). Below ~110 K water ice can survive. Not a day–night swing.",
+      "target_method": "Team document, citing Hayne et al. 2015 (Diviner)."
+    },
+    {
+      "id": "annual_max_temp_K",
+      "label": "Annual max surface temperature",
+      "category": "temperature",
+      "kind": "numeric",
+      "unit": "K",
+      "context_only": true,
+      "context_side": "target",
+      "earth_source_ids": [],
+      "tooltip": "Hottest surface temperature over a year, median over ±5 km around the target (Diviner thermal model).",
+      "target_method": "LRO Diviner Polar Resource Product (south): median temp_max of mesh triangles within 5 km of the position."
+    },
+    {
+      "id": "annual_avg_temp_K",
+      "label": "Annual mean temperature (2 cm deep)",
+      "category": "temperature",
+      "kind": "numeric",
+      "unit": "K",
+      "context_only": true,
+      "context_side": "target",
+      "earth_source_ids": [],
+      "tooltip": "Year-round average temperature just below the surface, median over ±5 km (Diviner thermal model).",
+      "target_method": "LRO Diviner Polar Resource Product (south): median temp_avg of mesh triangles within 5 km of the position."
+    },
+    {
+      "id": "ice_stable_area_pct",
+      "label": "Area where ice could be stable (top ~2.9 m)",
+      "category": "ice",
+      "kind": "numeric",
+      "unit": "%",
+      "context_only": true,
+      "context_side": "target",
+      "earth_source_ids": [],
+      "tooltip": "Share of the ±5 km area where buried water ice would survive within the top ~2.9 m (thermal model). Shows where ice could last, not where ice is.",
+      "target_method": "LRO Diviner PRP ice_depth (depth where ice sublimates at 1 kg m⁻² per billion years; −999 = deeper than 2.87 m): share of triangles within 5 km with a depth ≥ 0."
+    },
+    {
+      "id": "ice_stable_depth_m",
+      "label": "Depth of ice stability (median where stable)",
+      "category": "ice",
+      "kind": "numeric",
+      "unit": "m",
+      "context_only": true,
+      "context_side": "target",
+      "earth_source_ids": [],
+      "tooltip": "Median depth at which ice would be stable, over the part of the ±5 km area where it is stable within ~2.9 m. A model, not detected ice.",
+      "target_method": "LRO Diviner PRP ice_depth: median over triangles within 5 km with 0 ≤ depth ≤ 2.87 m; empty when none."
+    },
+    {
+      "id": "geologic_unit",
+      "label": "Geologic map unit (USGS)",
+      "category": "terrain",
+      "kind": "text",
+      "unit": null,
+      "context_only": true,
+      "context_side": "target",
+      "earth_source_ids": [],
+      "tooltip": "Unit on the USGS global geologic map at the target. A unit groups terrain by age and landform; it is not the rock type.",
+      "target_method": "Moon: USGS Unified Geologic Map of the Moon 1:5M (2020) raster. Mars: USGS SIM 3292 (Tanaka et al. 2014) polygons. Units covering ≥10% of a ±5 km window, largest first."
+    },
+    {
+      "id": "geologic_unit_paper",
+      "label": "Geologic unit (paper)",
+      "category": "terrain",
+      "kind": "text",
+      "unit": null,
+      "context_only": true,
+      "context_side": "target",
+      "earth_source_ids": [],
+      "tooltip": "Geologic unit named in a published study of this region. Not the rock type.",
+      "target_method": "Hand-entered from the cited abstract."
     }
   ]
 }
