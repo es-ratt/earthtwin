@@ -104,9 +104,9 @@ def test_renormalised_weights_sum_to_one_over_available_features(ctx, tmp_path):
 # ---------------------------------------------------------- filters + cards
 @pytest.mark.unit
 def test_hard_filter_rejects_and_explains(ctx, tmp_path):
-    good = {"slope_deg": 5, "rock_cover_pct": 2, "thermal_inertia_tiu": 200, "ice_presence": 3, "ice_depth_m": 1,
+    good = {"slope_200m_deg": 5, "rock_cover_pct": 2, "thermal_inertia_tiu": 200, "ice_presence": 3, "ice_depth_m": 1,
             "regolith_type": "ice_rich_mantle", "logistics_index": 0.5}
-    steep = {**good, "slope_deg": 22}
+    steep = {**good, "slope_200m_deg": 22}
     c, f = write_earth(tmp_path, {"good": good, "steep": steep, "good2": {**good, "logistics_index": 0.9}})
     cands = cs.load_earth(ctx["fdefs"], c, f)
     mission = next(m for m in ctx["missions"] if m["id"] == "skyfall")
@@ -117,12 +117,13 @@ def test_hard_filter_rejects_and_explains(ctx, tmp_path):
     card = steep_e["card"]
     assert card["verdict"] == "Rejected" and card["reason_type"] == "hard-filter fail"
     assert card["numbers"][0]["earth"].startswith("22") and card["numbers"][0]["limit"].startswith("< 15")
-    assert "slope limit allowed 22" in card["what_would_change"]
+    assert "slope (200 m) limit allowed 22" in card["what_would_change"]
     assert card["confidence"] == "low"  # SAMPLE data
 
 
 @pytest.mark.unit
 def test_unknown_hard_filter_value_means_cannot_evaluate(ctx, tmp_path):
+    # slope_200m_deg missing → the (applied) slope filter cannot be checked
     c, f = write_earth(tmp_path, {"x": {"slope_deg": 5, "rock_cover_pct": None, "thermal_inertia_tiu": 200, "logistics_index": 0.5}})
     cands = cs.load_earth(ctx["fdefs"], c, f)
     mission = next(m for m in ctx["missions"] if m["id"] == "skyfall")
@@ -131,7 +132,7 @@ def test_unknown_hard_filter_value_means_cannot_evaluate(ctx, tmp_path):
     e = out["candidates"][0]
     assert e["status"] == "cannot_evaluate"
     assert e["card"]["verdict"] == "Cannot be evaluated"
-    assert "rock cover" in e["card"]["what_would_change"]
+    assert "slope" in e["card"]["what_would_change"].lower()
 
 
 @pytest.mark.unit

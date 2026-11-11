@@ -25,15 +25,9 @@
   }
 
   /* ------------------------------------------------------------ header + site */
-  function missionBlock(mission, data) {
-    var when = mission.when ? esc(mission.when.value) : "";
-    return '<div class="sec">' +
-      '<span class="label">' + esc(mission.agency) + " · " + esc(mission.kind) + "</span>" +
-      '<div class="mission-name">' + esc(mission.name) + "</div>" +
-      '<div class="mission-meta">' + when + (mission.when ? " " + ET.statusBadge(mission.when.status) : "") + "</div>" +
-      '<p class="muted" style="margin:10px 0 0;font-size:13px">' + esc(mission.summary) + "</p>" +
-      (mission.banner ? '<div class="notice">' + esc(mission.banner) + "</div>" : "") +
-      "</div>";
+  /** Plain heading so the user knows which interface is open. */
+  function analogHeading(mission) {
+    return '<div class="sec analog-head"><h1 class="analog-title">' + (mission.body === "moon" ? "Moon Analog · Artemis" : "Mars Analog · SkyFall") + "</h1></div>";
   }
 
   function siteBlock(mission, site, siteRes, data) {
@@ -44,18 +38,11 @@
     }).join("");
     var cov = siteRes.target_coverage;
     var flags = (site.flags || []).map(function (f) { return '<span class="badge">' + esc(f.replace(/_/g, " ")) + "</span>"; }).join("");
-    var facts = (site.facts || []).map(function (f) {
-      var fl = (f.flags || []).map(function (x) { return '<span class="badge' + (x === "inconsistent_in_docs" ? " verify" : "") + '">' + esc(x.replace(/_/g, " ")) + "</span>"; }).join(" ");
-      return '<div class="fact"><span class="k">' + esc(f.label) + "</span>" + esc(f.text) +
-        (f.note ? ' <span class="muted">— ' + esc(f.note) + "</span>" : "") +
-        '<div class="src">' + (f.source_id ? srcLink(f.source_id, data) : "No source") + (fl ? " " + fl : "") + "</div></div>";
-    }).join("");
     return '<div class="sec">' +
       '<label class="label" for="site-select">Target site · ' + (mission.body === "moon" ? "Moon" : "Mars") + "</label>" +
       '<select class="site" id="site-select">' + opts + "</select>" +
       '<div class="site-meta">' + ET.statusBadge(site.status) + " " + '<span class="badge">' + esc(site.role.replace(/_/g, " ")) + "</span>" + flags + "</div>" +
       '<div class="coverage" data-tip="Share of the scoring weight for which this target site has a value in the team documents. Features without data are left out, never guessed.">Target data coverage <b class="num" style="color:#e9ecef">' + ET.pct(cov) + '</b><div class="meter"><i style="width:' + Math.round(cov * 100) + '%"></i></div></div>' +
-      (facts ? '<details class="facts" style="margin-top:14px"><summary class="label">Site facts from team documents (' + site.facts.length + ")</summary>" + facts + "</details>" : "") +
       "</div>";
   }
 
@@ -84,9 +71,29 @@
   }
 
   /* ------------------------------------------------------------ detail */
+  var PROV_LABELS = [["dataset", "Dataset"], ["product_id", "Product"], ["version", "Version"], ["date_range", "Dates"],
+    ["resolution", "Resolution"], ["processing", "Steps"], ["source_url", "URL"]];
+
+  /** Tooltip text for one value: its note plus every provenance field the pipeline recorded. */
   function noteTip(m) {
-    var n = m && m.note;
-    return n ? ' data-tip="' + esc(n) + '"' : "";
+    if (!m) return "";
+    var parts = m.note ? [m.note] : [];
+    var prov = m.provenance || {};
+    PROV_LABELS.forEach(function (p) { if (prov[p[0]]) parts.push(p[1] + ": " + prov[p[0]]); });
+    if (m.confidence) parts.push("Confidence: " + m.confidence);
+    return parts.length ? ' data-tip="' + esc(parts.join("\n")) + '"' : "";
+  }
+
+  /** Context features: measured or derived, shown for transparency, never part of the score. */
+  function contextRows(cand, data) {
+    var ids = data.features.features.filter(function (f) { return f.context_only; }).map(function (f) { return f.id; });
+    var rows = ids.map(function (fid) {
+      var m = cand.features[fid], fd = data.fdefs[fid];
+      var val = !m || m.value === null || m.value === undefined ? "No data" : String(m.value) + (fd.unit && typeof m.value === "number" ? " " + fd.unit : "");
+      return '<div class="feat"><div class="feat-head"><span>' + featureLabel(fid, data) + '</span><span class="w">not scored</span></div>' +
+        '<div class="feat-vals"><span><b' + noteTip(m) + ">" + esc(val) + "</b> " + ET.statusBadge(m ? m.status : "TODO") + "</span></div></div>";
+    }).join("");
+    return '<div class="sec"><span class="label">Context · measured but not scored</span><p class="faint" style="font-size:11px;margin:0 0 4px">Raw map classes, distances and proxies behind the scored values. A proxy in a different unit (ATI) is never compared with Mars.</p>' + rows + "</div>";
   }
 
   function featureRows(entry, siteRes, data) {
@@ -132,6 +139,7 @@
       (card ? '<div class="notice" style="margin-top:12px"><b>' + esc(card.verdict) + ".</b> " + esc(card.headline) + " " + esc(card.what_would_change) + "</div>" : "") +
       "</div>" +
       '<div class="sec"><span class="label">Feature by feature · target vs Earth</span><p class="faint" style="font-size:11px;margin:0 0 4px">Hover a value to see how it was obtained.</p>' + featureRows(entry, siteRes, data) + "</div>" +
+      contextRows(c, data) +
       '<div class="sec"><span class="label">What this analog can and cannot test</span>' +
       '<div class="lim-grid"><div><span class="label">Reproduces</span>' + list(lim.reproduces) + '</div><div><span class="label">Partly</span>' + list(lim.partly) +
       '</div><div><span class="label">Fails</span>' + list(lim.fails) + "</div></div>" +
@@ -143,25 +151,8 @@
   P.renderSide = function (state, data) {
     var mission = data.missionsById[state.missionId];
     var site = data.sitesById[state.siteId];
-    var res = data.results[state.missionId];
-    var siteRes = res.sites[state.siteId];
-    var html = missionBlock(mission, data);
-    if (res.contains_sample) {
-      var used = res.method.features;
-      var sample = {}, measured = {};
-      data.earth.forEach(function (c) {
-        used.forEach(function (f) {
-          var m = c.features[f];
-          if (!m) return;
-          if (m.status === "SAMPLE") sample[f] = 1;
-          if (m.status === "measured") measured[f] = 1;
-        });
-      });
-      var lab = function (o) { return Object.keys(o).map(function (f) { return data.fdefs[f].label; }).join(", "); };
-      html += '<div class="sample-strip" data-tip="' + esc(ET.GLOSSARY.SAMPLE) + '"><b>Still SAMPLE on the Earth side:</b> ' + esc(lab(sample)) +
-        ". " + (Object.keys(measured).length ? "<b>Measured from NASA data:</b> " + esc(lab(measured)) + ". " : "") +
-        "Rankings are not final results until the SAMPLE values are replaced.</div>";
-    }
+    var siteRes = data.results[state.missionId].sites[state.siteId];
+    var html = analogHeading(mission);
     html += siteBlock(mission, site, siteRes, data);
     var entry = state.candidateId && siteRes.candidates.find(function (e) { return e.id === state.candidateId; });
     html += entry ? detailBlock(entry, siteRes, data) : listBlock(siteRes, state, data);

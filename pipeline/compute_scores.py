@@ -37,6 +37,14 @@ CONFIG_PATH = ROOT / "pipeline" / "config.json"
 EARTH_AXIAL_TILT_DEG = 23.44  # used only to derive max_sun_elev_deg from latitude
 CONF_ORDER = {"low": 0, "medium": 1, "high": 2}
 CONF_NAMES = {v: k for k, v in CONF_ORDER.items()}
+PERENNIAL_ICE_LEVEL = 2  # ice_presence ≥ 2 = permafrost or massive ice; 0–1 = none or seasonal frost only
+PROVENANCE_FIELDS = ("dataset", "product_id", "version", "date_range", "resolution", "processing", "source_url")
+
+
+def provenance_of(row: dict) -> dict:
+    """Provenance columns written by the fetch scripts (dataset, product ID, version, dates, resolution, steps, URL)."""
+    prov = {k: row[k].strip() for k in PROVENANCE_FIELDS if (row.get(k) or "").strip()}
+    return {"provenance": prov} if prov else {}
 
 
 # --------------------------------------------------------------------------- io
@@ -59,7 +67,7 @@ def parse_value(raw: str, kind: str):
     raw = (raw or "").strip()
     if raw == "":
         return None
-    if kind == "categorical":
+    if kind in ("categorical", "text"):
         return raw
     return float(raw)
 
@@ -155,6 +163,7 @@ def load_earth(fdefs: dict, candidates_csv: Path, features_csv: Path) -> list[di
                 "source_id": (row.get("source_id") or "").strip() or None,
                 "confidence": (row.get("confidence") or "").strip() or None,
                 "note": row.get("note", ""),
+                **provenance_of(row),
             }
     derive_earth_features(list(cands.values()))
     return list(cands.values())
@@ -201,6 +210,7 @@ def load_target_measurements(path: Path) -> dict[str, dict[str, dict]]:
             out.setdefault(row["site_id"], {})[row["feature"]] = {
                 "value": float(row["value"]), "unit": row.get("unit") or None, "status": row.get("status") or "measured",
                 "source_id": row["source_id"], "confidence": row.get("confidence") or None, "note": row.get("note", ""),
+                **provenance_of(row),
             }
     return out
 
@@ -233,10 +243,10 @@ def similarity(fid: str, kind: str, target: dict | None, earth: dict | None, ctx
     """Return (similarity 0..1 or None, missing_reason)."""
     if not has_value(target):
         return None, "no_target_data"
-    # special rule: no ground ice -> depth is a full mismatch, not missing
+    # special rule: no perennial ground ice (level 0–1) -> depth is a full mismatch, not missing
     if fid == "ice_depth_m" and not has_value(earth) and ctx["config"]["special_rules"].get("no_ice_means_depth_mismatch"):
         presence = ctx["earth_features"].get("ice_presence")
-        if presence and presence.get("value") == 0:
+        if presence and presence.get("value") is not None and presence["value"] < PERENNIAL_ICE_LEVEL:
             return 0.0, None
     if not has_value(earth):
         return None, "no_earth_data"
@@ -274,7 +284,10 @@ def nominal_feature_weights(mission_id: str, ctx: dict) -> dict[str, float]:
 
 # -------------------------------------------------------------- hard filters
 def hard_filters(mission: dict) -> list[dict]:
-    return [c for c in mission.get("constraints", []) if c.get("hard_filter") and c.get("feature_id") and c.get("limit") is not None]
+    """Constraints applied to Earth sites. 'earth_applicable: false' = no same-variable Earth data exists, so the filter
+    is listed in the Method tab but not applied (otherwise every Earth site would be 'Cannot be evaluated')."""
+    return [c for c in mission.get("constraints", [])
+            if c.get("hard_filter") and c.get("feature_id") and c.get("limit") is not None and c.get("earth_applicable", True)]
 
 
 def check_filter(constraint: dict, earth_m: dict | None) -> str:
@@ -373,8 +386,9 @@ def feature_row(fid: str, cand: dict, target_feats: dict, ctx: dict, per: dict |
     }
     if limit is not None:
         row["limit"] = limit
-    if fid == "ice_depth_m" and not has_value(e) and (cand["features"].get("ice_presence") or {}).get("value") == 0:
-        row["earth"] = "none (no ground ice)"
+    presence = (cand["features"].get("ice_presence") or {}).get("value")
+    if fid == "ice_depth_m" and not has_value(e) and presence is not None and presence < PERENNIAL_ICE_LEVEL:
+        row["earth"] = "none (no perennial ground ice)"
         row["earth_status"] = cand["features"]["ice_presence"].get("status", "TODO")
     if per is not None:
         row["similarity"] = None if per["similarity"] is None else round(per["similarity"], 3)
@@ -595,6 +609,7 @@ def run_site(mission, site, defaults, cands, ctx) -> dict:
                                   "display": fmt_measure(target_feats.get(fid), ctx["fdefs"][fid].get("unit"))}
                             for fid in weights},
         "weights_nominal": {k: round(v, 4) for k, v in weights.items()},
+        "weights_renormalised": renormalised_weights(weights, target_feats, cands),
         "counts": {
             "analog": sum(1 for e in entries if e["group"] == "analog"),
             "low_match": sum(1 for e in entries if e["group"] == "low_match"),
@@ -605,6 +620,16 @@ def run_site(mission, site, defaults, cands, ctx) -> dict:
         "validation": validation,
         "sensitivity": sens,
     }
+
+
+def renormalised_weights(weights: dict, target_feats: dict, cands: list[dict]) -> dict:
+    """Weights after dropping features with no target value, and how many Earth sites have each feature."""
+    avail = {fid: w for fid, w in weights.items() if has_value(target_feats.get(fid))}
+    total = sum(avail.values())
+    return {fid: {"weight": round(avail[fid] / total, 4) if fid in avail and total else 0.0,
+                  "has_target": fid in avail,
+                  "earth_sites_with_data": sum(1 for c in cands if has_value(c["features"].get(fid)))}
+            for fid in weights}
 
 
 def check_target_sources(targets: dict, sources: dict) -> list[str]:
@@ -661,6 +686,8 @@ def main(argv: list[str] | None = None) -> int:
                 "categorical_similarity": {k: v for k, v in ctx["config"]["categorical_similarity"].items() if not k.startswith("_")},
                 "thresholds": ctx["config"]["thresholds"],
                 "hard_filters": [c["id"] for c in hard_filters(mission)],
+                "filters_not_applied_to_earth": [c["id"] for c in mission.get("constraints", [])
+                                                 if c.get("hard_filter") and not c.get("earth_applicable", True)],
                 "special_rules": ctx["config"]["special_rules"],
             },
             "sites": {sid: run_site(mission, sites[sid], ctx["targets"].get("defaults", {}), cands, ctx) for sid in site_ids},

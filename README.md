@@ -19,14 +19,19 @@ The mentor-brief version for the 14–15 Nov 2026 hackathon: pick **Artemis IV**
 a "Why not others?" explanation for every rejected place, and Method / Limitations / Sources tabs. No backend.
 
 ```bash
-.venv/bin/python pipeline/fetch_real_data.py all   # optional: refresh real LOLA / NASADEM / MODIS values (no login)
-python3 pipeline/compute_scores.py                  # scores → web/data/results/
-cd web && python3 -m http.server 8000               # → http://localhost:8000
+.venv/bin/python pipeline/fetch_context_data.py coords   # check Earth coordinates first
+.venv/bin/python pipeline/fetch_real_data.py all         # terrain (Moon, Mars, Earth) + MODIS temperature (no login)
+.venv/bin/python pipeline/fetch_context_data.py all      # soil, rock type, permafrost, logistics (no login)
+python3 pipeline/compute_scores.py                       # scores → web/data/results/
+cd web && python3 -m http.server 8000                    # → http://localhost:8000
 ```
 
-Real data so far: Moon slope/roughness (LOLA 240 m DEM), Earth slope/roughness (NASADEM, Copernicus DEM where NASADEM
-has no coverage) and temperature swing / annual minimum (MODIS LST 2025). Everything else on the Earth side is still
-**SAMPLE** and labelled as such. What is missing and where to put it: [README_DATA.md](README_DATA.md).
+Real data now covers terrain on both sides at the same scale (Moon LOLA 240 m; Mars HRSC-MOLA 200 m; Earth NASADEM or
+Copernicus DEM resampled to the same grids), MODIS temperature, soil and rock type, permafrost, access and verified
+coordinates. Each value records its dataset, product ID, version, dates, resolution, processing and URL. Earth rock
+cover and thermal inertia are deliberately empty (no same-unit Earth data). Products that need a NASA Earthdata login
+(ATI proxy, ASTER GDEM, NSIDC GGD318, SEDAC, Black Marble) are listed with steps in [README_DATA.md](README_DATA.md);
+the plan is in [docs/DATA_PLAN.md](docs/DATA_PLAN.md).
 Deployment: `.github/workflows/pages.yml` publishes `web/` to GitHub Pages.
 
 ## Full application — Quick start

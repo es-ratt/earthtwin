@@ -1,70 +1,197 @@
 {
-  "schema_version": 1,
-  "_comment": "Missions are data, not code. 'in_selector': false keeps a mission in the schema without showing it (e.g. Moon Base). Constraints are facts about the mission; whether each one is used as a hard filter is set by 'hard_filter'.",
-  "missions": [
+ "schema_version": 1,
+ "_comment": "Missions are data, not code. 'in_selector': false keeps a mission in the schema without showing it (e.g. Moon Base). Constraints are facts about the mission; whether each one is used as a hard filter is set by 'hard_filter'.",
+ "missions": [
+  {
+   "id": "artemis-iv",
+   "name": "Artemis IV",
+   "body": "moon",
+   "in_selector": true,
+   "agency": "NASA",
+   "kind": "Crewed landing",
+   "when": {
+    "value": "2028",
+    "status": "verify",
+    "source_id": "team-doc",
+    "note": "Team doc: Artemis IV (2028), south pole landing. Artemis III (2027) is now an Earth-orbit test."
+   },
+   "summary": "First crewed landing near the lunar south pole. NASA lists nine candidate regions, unordered.",
+   "banner": "Candidate regions are from NASA's Oct 2024 list, made when Artemis III was still the landing mission. Every region is marked VERIFY.",
+   "target_site_ids": [
+    "haworth",
+    "de-gerlache-rim-2",
+    "malapert-massif",
+    "mons-mouton-plateau",
+    "mons-mouton",
+    "nobile-rim-1",
+    "nobile-rim-2",
+    "peak-near-cabeus-b",
+    "slater-plain"
+   ],
+   "reference_site_ids": [
+    "shackleton-connecting-ridge"
+   ],
+   "default_site_id": "haworth",
+   "constraints": [
     {
-      "id": "artemis-iv",
-      "name": "Artemis IV",
-      "body": "moon",
-      "in_selector": true,
-      "agency": "NASA",
-      "kind": "Crewed landing",
-      "when": {"value": "2028", "status": "verify", "source_id": "team-doc", "note": "Team doc: Artemis IV (2028), south pole landing. Artemis III (2027) is now an Earth-orbit test."},
-      "summary": "First crewed landing near the lunar south pole. NASA lists nine candidate regions, unordered.",
-      "banner": "Candidate regions are from NASA's Oct 2024 list, made when Artemis III was still the landing mission. Every region is marked VERIFY.",
-      "target_site_ids": ["haworth", "de-gerlache-rim-2", "malapert-massif", "mons-mouton-plateau", "mons-mouton", "nobile-rim-1", "nobile-rim-2", "peak-near-cabeus-b", "slater-plain"],
-      "reference_site_ids": ["shackleton-connecting-ridge"],
-      "default_site_id": "haworth",
-      "constraints": [
-        {"id": "hls-slope-limit", "feature_id": "slope_deg", "op": "<=", "limit": null, "unit": "°", "status": "TODO", "hard_filter": false, "source_id": null,
-         "note": "The HLS landing slope limit is NOT in the team documents. No slope filter is applied until it is."},
-        {"id": "eva-slope", "feature_id": "slope_deg", "op": "<=", "limit": 20, "unit": "°", "status": "verify", "hard_filter": false, "source_id": "rice2023",
-         "note": "Astronauts may walk up to 2 km from the lander over slopes up to 20° (from the de Gerlache Rim 2 study). Shown for context, not used as a filter."}
-      ],
-      "sources": ["nasa-artemis-regions-2024", "nasa-artemis-iv", "nasa-artemis-schedule"]
+     "id": "hls-slope-limit",
+     "feature_id": "slope_deg",
+     "op": "<=",
+     "limit": null,
+     "unit": "°",
+     "status": "TODO",
+     "hard_filter": false,
+     "source_id": null,
+     "note": "The HLS landing slope limit is NOT in the team documents. No slope filter is applied until it is."
     },
     {
-      "id": "skyfall",
-      "name": "SkyFall",
-      "body": "mars",
-      "in_selector": true,
-      "agency": "NASA",
-      "kind": "Three Mars helicopters",
-      "when": {"value": "Launch late 2028 · arrival ~2030", "status": "verify", "source_id": "nasa-skyfall"},
-      "summary": "Three helicopters will study terrain, underground ice, temperature, wind and radiation in the northern mid-latitudes.",
-      "banner": "Landing site NOT selected yet. First Landing Site Workshop: 9–10 Feb 2027. AP-105 is a design reference ellipse, not a chosen site.",
-      "target_site_ids": ["ap-105", "arcadia-planitia", "deuteronilus-mensae", "utopia-planitia", "phlegra-montes", "erebus-montes"],
-      "reference_site_ids": [],
-      "default_site_id": "ap-105",
-      "constraints": [
-        {"id": "elevation", "feature_id": null, "op": "<", "limit": -3000, "unit": "m (MOLA)", "status": "verify", "hard_filter": false, "tbd_by_nasa": null, "source_id": "skyfall-package",
-         "note": "Mars-only constraint (thick enough atmosphere for entry). Earth elevation is not comparable, so it is not applied to Earth sites."},
-        {"id": "slope", "feature_id": "slope_deg", "op": "<", "limit": 15, "unit": "°", "scale": "1–5 m", "status": "verify", "hard_filter": true, "tbd_by_nasa": null, "source_id": "skyfall-package",
-         "note": "Earth slope comes from a ~30 m DEM, not 1–5 m."},
-        {"id": "rock-cover", "feature_id": "rock_cover_pct", "op": "<", "limit": 5, "unit": "%", "scale": "rocks < 11 cm", "status": "verify", "hard_filter": true, "tbd_by_nasa": null, "source_id": "skyfall-package",
-         "note": "Earth rock cover is a proxy."},
-        {"id": "thermal-inertia", "feature_id": "thermal_inertia_tiu", "op": ">", "limit": 100, "ideal": 150, "unit": "J m⁻² K⁻¹ s⁻½", "status": "verify", "hard_filter": true, "tbd_by_nasa": null, "source_id": "skyfall-package",
-         "note": "Earth thermal inertia is a proxy."},
-        {"id": "ellipse", "feature_id": null, "op": "=", "limit": "100 × 25", "unit": "km", "status": "verify", "hard_filter": false, "tbd_by_nasa": null, "source_id": "skyfall-package", "note": "Landing ellipse size. Not an Earth filter."},
-        {"id": "gpr-range", "feature_id": "ice_depth_m", "op": "between", "limit": [0.5, 3], "unit": "m", "status": "verify", "hard_filter": false, "tbd_by_nasa": null, "source_id": "skyfall-package",
-         "note": "Ground-penetrating radar depth range. Used as the ice-depth target, not as a filter."}
-      ],
-      "constraints_note": "The team doc says some of these constraints are marked TBD by NASA but does not say which. tbd_by_nasa is null (unknown) for all of them until checked against the SkyFall package.",
-      "sources": ["nasa-skyfall", "skyfall-package"]
-    },
-    {
-      "id": "moon-base",
-      "name": "Moon Base (Phase One)",
-      "body": "moon",
-      "in_selector": false,
-      "agency": "NASA",
-      "kind": "Robotic precursors, now to 2029",
-      "summary": "Out of scope for this prototype. Kept so the schema can add it later.",
-      "target_site_ids": ["shackleton-connecting-ridge"],
-      "reference_site_ids": [],
-      "default_site_id": "shackleton-connecting-ridge",
-      "constraints": [],
-      "sources": ["nasa-moonbase-phases"]
+     "id": "eva-slope",
+     "feature_id": "slope_deg",
+     "op": "<=",
+     "limit": 20,
+     "unit": "°",
+     "status": "verify",
+     "hard_filter": false,
+     "source_id": "rice2023",
+     "note": "Astronauts may walk up to 2 km from the lander over slopes up to 20° (from the de Gerlache Rim 2 study). Shown for context, not used as a filter."
     }
-  ]
+   ],
+   "sources": [
+    "nasa-artemis-regions-2024",
+    "nasa-artemis-iv",
+    "nasa-artemis-schedule"
+   ]
+  },
+  {
+   "id": "skyfall",
+   "name": "SkyFall",
+   "body": "mars",
+   "in_selector": true,
+   "agency": "NASA",
+   "kind": "Three Mars helicopters",
+   "when": {
+    "value": "Launch late 2028 · arrival ~2030",
+    "status": "verify",
+    "source_id": "nasa-skyfall"
+   },
+   "summary": "Three helicopters will study terrain, underground ice, temperature, wind and radiation in the northern mid-latitudes.",
+   "banner": "Landing site NOT selected yet. First Landing Site Workshop: 9–10 Feb 2027. AP-105 is a design reference ellipse, not a chosen site.",
+   "target_site_ids": [
+    "ap-105",
+    "arcadia-planitia",
+    "deuteronilus-mensae",
+    "utopia-planitia",
+    "phlegra-montes",
+    "erebus-montes"
+   ],
+   "reference_site_ids": [],
+   "default_site_id": "ap-105",
+   "constraints": [
+    {
+     "id": "elevation",
+     "feature_id": null,
+     "op": "<",
+     "limit": -3000,
+     "unit": "m (MOLA)",
+     "status": "verify",
+     "hard_filter": false,
+     "tbd_by_nasa": null,
+     "source_id": "skyfall-package",
+     "note": "Mars-only constraint (thick enough atmosphere for entry). Earth elevation is not comparable, so it is not applied to Earth sites."
+    },
+    {
+     "id": "slope",
+     "feature_id": "slope_200m_deg",
+     "op": "<",
+     "limit": 15,
+     "unit": "°",
+     "scale": "~200 m on both sides (NASA limit defined at 1–5 m)",
+     "status": "verify",
+     "hard_filter": true,
+     "tbd_by_nasa": null,
+     "source_id": "skyfall-package",
+     "note": "COARSE-SCALE SCREENING (~200 m), not a landing-safety proof. Applied to Earth slope on a 200 m grid, the same grid used for the Mars DEM. NASA's <15° limit is defined at 1–5 m (HiRISE/CTX DTMs), where slopes are usually steeper.",
+     "label": "coarse-scale screening (~200 m)"
+    },
+    {
+     "id": "rock-cover",
+     "feature_id": "rock_cover_pct",
+     "op": "<",
+     "limit": 5,
+     "unit": "%",
+     "scale": "rocks < 11 cm",
+     "status": "verify",
+     "hard_filter": true,
+     "tbd_by_nasa": null,
+     "source_id": "skyfall-package",
+     "note": "Not applied to Earth sites: no Earth dataset gives rock cover in % (only uncalibrated texture proxies). Applying it would make every Earth site 'Cannot be evaluated'.",
+     "earth_applicable": false
+    },
+    {
+     "id": "thermal-inertia",
+     "feature_id": "thermal_inertia_tiu",
+     "op": ">",
+     "limit": 100,
+     "ideal": 150,
+     "unit": "J m⁻² K⁻¹ s⁻½",
+     "status": "verify",
+     "hard_filter": true,
+     "tbd_by_nasa": null,
+     "source_id": "skyfall-package",
+     "note": "Not applied to Earth sites: Earth has only the ATI proxy (K⁻¹), a different variable and unit from thermal inertia (J m⁻² K⁻¹ s⁻½).",
+     "earth_applicable": false
+    },
+    {
+     "id": "ellipse",
+     "feature_id": null,
+     "op": "=",
+     "limit": "100 × 25",
+     "unit": "km",
+     "status": "verify",
+     "hard_filter": false,
+     "tbd_by_nasa": null,
+     "source_id": "skyfall-package",
+     "note": "Landing ellipse size. Not an Earth filter."
+    },
+    {
+     "id": "gpr-range",
+     "feature_id": "ice_depth_m",
+     "op": "between",
+     "limit": [
+      0.5,
+      3
+     ],
+     "unit": "m",
+     "status": "verify",
+     "hard_filter": false,
+     "tbd_by_nasa": null,
+     "source_id": "skyfall-package",
+     "note": "Ground-penetrating radar depth range. Used as the ice-depth target, not as a filter."
+    }
+   ],
+   "constraints_note": "The team doc says some of these constraints are marked TBD by NASA but does not say which. tbd_by_nasa is null (unknown) for all of them until checked against the SkyFall package.",
+   "sources": [
+    "nasa-skyfall",
+    "skyfall-package"
+   ]
+  },
+  {
+   "id": "moon-base",
+   "name": "Moon Base (Phase One)",
+   "body": "moon",
+   "in_selector": false,
+   "agency": "NASA",
+   "kind": "Robotic precursors, now to 2029",
+   "summary": "Out of scope for this prototype. Kept so the schema can add it later.",
+   "target_site_ids": [
+    "shackleton-connecting-ridge"
+   ],
+   "reference_site_ids": [],
+   "default_site_id": "shackleton-connecting-ridge",
+   "constraints": [],
+   "sources": [
+    "nasa-moonbase-phases"
+   ]
+  }
+ ]
 }

@@ -1,0 +1,67 @@
+{
+  "_comment": "Rules that turn raw map classes and distances into EarthTwin features. These are METHOD CHOICES (team decisions), not measurements. They are PROVISIONAL: proposed by the assistant, team to confirm. Used by pipeline/fetch_context_data.py.",
+
+  "soil_to_regolith": {
+    "_comment": "Map a soil class (WRB reference group from SoilGrids, or USDA Soil Taxonomy order/suborder from SSURGO/STATSGO) to the planetary regolith categories in web/data/features.json. Classes not listed stay null/TODO: no forced match.",
+    "wrb": {
+      "Andosols": "volcanic_ash_cinder",
+      "Calcisols": "desert_soil",
+      "Gypsisols": "desert_soil",
+      "Solonchaks": "desert_soil",
+      "Durisols": "desert_soil",
+      "Cryosols": "ice_rich_mantle",
+      "Leptosols": "bare_rock"
+    },
+    "usda": {
+      "Andisols": "volcanic_ash_cinder",
+      "Aridisols": "desert_soil",
+      "Gelisols": "ice_rich_mantle"
+    },
+    "usda_miscellaneous_areas": {
+      "_comment": "SSURGO 'miscellaneous areas' have no soil order; the component name says what the ground is.",
+      "Cinder land": "volcanic_ash_cinder",
+      "Rock outcrop": "bare_rock",
+      "Lava flows": "bare_rock"
+    },
+    "usda_great_group_prefixes": {
+      "_comment": "The USDA formative element 'Torri-' marks a torric (aridic) moisture regime, i.e. a desert soil.",
+      "Torri": "desert_soil"
+    },
+    "low_confidence_classes": ["Cryosols", "Gelisols", "Leptosols"],
+    "_low_confidence_note": "Cryosols/Gelisols are soils with permafrost, not necessarily an ice-RICH mantle; Leptosols are thin soils over rock, close to but not the same as bare rock."
+  },
+
+  "lithology_to_geology": {
+    "_comment": "Keyword rules applied to the Macrostrat / USGS map-unit lithology text. If keywords from more than one category match, the result is 'mixed'. No match → null/TODO.",
+    "anorthosite": ["anorthosite", "anorthositic", "metanorthosite", "metaanorthosite"],
+    "impact_breccia": ["impact breccia", "impact melt", "impactite", "suevite"],
+    "basalt": ["basalt", "basaltic", "mafic volcanic"],
+    "granitic": ["granite", "granitic", "granodiorite", "monzonite", "felsic plutonic", "felsic intrusive"],
+    "ice_dominated": ["glacier ice", "glacial ice", "ice sheet", "massive ice"],
+    "sedimentary": ["sedimentary", "sandstone", "shale", "limestone", "mudstone", "siltstone", "conglomerate", "alluvium",
+                    "alluvial", "gravel", "sand", "silt", "clay", "evaporite", "dolomite", "till", "colluvium", "loess", "playa"]
+  },
+
+  "ice_rules": {
+    "_comment": "Ground-ice ordinal (0 none, 1 seasonal frost, 2 permafrost/ice in soil, 3 massive ice) from ESA CCI permafrost fraction (PFR, % of the 1 km cell) and MODIS annual minimum surface temperature.",
+    "pfr_permafrost_min_pct": 50,
+    "_pfr_note": "≥50% = IPA 'continuous' (≥90%) or 'discontinuous' (50–90%) permafrost classes → level 2. 10–50% ('sporadic') → level 2 with LOW confidence. <10% → treated as no permafrost.",
+    "pfr_sporadic_min_pct": 10,
+    "seasonal_frost_max_lst_K": 273.15,
+    "_seasonal_note": "No permafrost but the coldest 8-day MODIS surface temperature is below 0 °C → level 1 (seasonal frost). Otherwise level 0.",
+    "massive_ice_note": "Level 3 (massive or buried glacier ice) cannot be detected by these datasets. Sites known for massive ice from the literature (e.g. yedoma, buried glacier ice) stay at level 2 until the team adds a cited source."
+  },
+
+  "logistics_rule": {
+    "_comment": "Access index 0–1 = mean of an air-access term and a road-access term. Each term = exp(−distance / scale). Scales are team decisions. Communications, permits and safety are NOT captured.",
+    "airport_scale_km": 100,
+    "road_scale_km": 10,
+    "road_search_radii_km": [1, 5, 25, 50],
+    "road_beyond_last_radius_km": 100,
+    "airport_types": ["large_airport", "medium_airport", "small_airport"],
+    "airport_requires_scheduled_service": true,
+    "road_highway_regex": "^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|track)$"
+  },
+
+  "coordinate_tolerance_km": 1.0
+}
