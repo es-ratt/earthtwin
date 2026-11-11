@@ -1,115 +1,341 @@
 {
   "schema_version": 1,
-  "_comment": "Feature catalogue. Same variable and same unit on the target (Moon/Mars) side and the Earth side. 'kind': numeric | categorical | ordinal. 'derived': computed by pipeline/compute_scores.py, never typed in by hand.",
+  "_comment": "Feature catalogue. Same variable and same unit on the target (Moon/Mars) side and the Earth side. 'kind': numeric | categorical | ordinal. 'derived': computed by pipeline/compute_scores.py, never typed in by hand. 'context_only': shown on the detail view, never scored.",
   "categories": [
-    {"id": "terrain", "label": "Terrain"},
-    {"id": "temperature", "label": "Temperature"},
-    {"id": "light", "label": "Light"},
-    {"id": "ice", "label": "Ice / Subsurface"},
-    {"id": "logistics", "label": "Logistics"}
+    {
+      "id": "terrain",
+      "label": "Terrain"
+    },
+    {
+      "id": "temperature",
+      "label": "Temperature"
+    },
+    {
+      "id": "light",
+      "label": "Light"
+    },
+    {
+      "id": "ice",
+      "label": "Ice / Subsurface"
+    },
+    {
+      "id": "logistics",
+      "label": "Logistics"
+    }
   ],
   "features": [
     {
-      "id": "slope_deg", "label": "Slope", "category": "terrain", "kind": "numeric", "unit": "°",
+      "id": "slope_deg",
+      "label": "Slope",
+      "category": "terrain",
+      "kind": "numeric",
+      "unit": "°",
       "tooltip": "How steep the ground is, in degrees. 0° is flat.",
-      "earth_source_ids": ["nasadem-sc", "aster-gdem-v3", "srtmgl1"],
+      "earth_source_ids": [
+        "nasadem-sc",
+        "aster-gdem-v3",
+        "srtmgl1"
+      ],
       "earth_method": "Median slope within ~1 km of the site from a 30 m DEM (NASADEM below 60°N, ASTER GDEM above).",
-      "caveat": "Earth DEMs are ~30 m per pixel. SkyFall's limit is defined at 1–5 m scale, so Earth slopes are smoother than the same ground would look at 1–5 m."
+      "caveat": "Native ~30 m Earth DEM. No longer used for scoring: SkyFall now compares slope at 200 m on both sides."
     },
     {
-      "id": "roughness_m", "label": "Surface roughness", "category": "terrain", "kind": "numeric", "unit": "m",
+      "id": "roughness_m",
+      "label": "Surface roughness",
+      "category": "terrain",
+      "kind": "numeric",
+      "unit": "m",
       "tooltip": "How bumpy the ground is: standard deviation of elevation in a small window.",
-      "earth_source_ids": ["nasadem", "aster-gdem-v3"],
+      "earth_source_ids": [
+        "nasadem",
+        "aster-gdem-v3"
+      ],
       "earth_method": "Standard deviation of elevation in a 3×3 window of the 30 m DEM, median within ~1 km.",
-      "caveat": "Depends on DEM resolution. Only compare values computed at the same pixel size."
+      "caveat": "Native ~30 m Earth DEM. Not used for scoring (no matching Mars value at this scale)."
     },
     {
-      "id": "slope_240m_deg", "label": "Slope (240 m)", "category": "terrain", "kind": "numeric", "unit": "°",
+      "id": "slope_240m_deg",
+      "label": "Slope (240 m)",
+      "category": "terrain",
+      "kind": "numeric",
+      "unit": "°",
       "tooltip": "Slope measured on a 240 m grid on BOTH sides, so the Moon and Earth are compared at the same scale.",
-      "earth_source_ids": ["pc-nasadem", "pc-cop-dem-glo-30"],
-      "earth_method": "DEM block-averaged to ~240 m, median slope within 5 km (pipeline/fetch_real_data.py).",
+      "earth_source_ids": [
+        "pc-nasadem",
+        "pc-cop-dem-glo-30"
+      ],
+      "earth_method": "DEM average-resampled to a 240 m local metric grid (same code as the Moon side), median slope within 5 km (pipeline/fetch_real_data.py).",
       "target_method": "LOLA LDEM_75S_240M polar DEM, median slope within 5 km of the site position.",
       "caveat": "240 m is far coarser than a landing pad: it describes the regional terrain, not the exact touchdown spot."
     },
     {
-      "id": "roughness_240m_m", "label": "Roughness (240 m)", "category": "terrain", "kind": "numeric", "unit": "m",
+      "id": "roughness_240m_m",
+      "label": "Roughness (240 m)",
+      "category": "terrain",
+      "kind": "numeric",
+      "unit": "m",
       "tooltip": "Bumpiness on a 240 m grid on both sides: elevation spread around the local tilt.",
-      "earth_source_ids": ["pc-nasadem", "pc-cop-dem-glo-30"],
-      "earth_method": "DEM block-averaged to ~240 m, 3×3 detrended standard deviation, median within 5 km.",
+      "earth_source_ids": [
+        "pc-nasadem",
+        "pc-cop-dem-glo-30"
+      ],
+      "earth_method": "DEM average-resampled to a 240 m local metric grid (same code as the Moon side), 3×3 detrended standard deviation, median within 5 km.",
       "target_method": "Same calculation on the LOLA 240 m DEM.",
       "caveat": "The LOLA 240 m DEM is interpolated between laser tracks, which can smooth it slightly more than Earth DEMs."
     },
     {
-      "id": "rock_cover_pct", "label": "Rock cover (proxy)", "category": "terrain", "kind": "numeric", "unit": "%",
-      "tooltip": "Share of the ground covered by rocks. On Earth this is estimated, not measured directly.",
-      "earth_source_ids": ["usgs-earthexplorer"],
-      "earth_method": "PROXY: texture of Landsat/ASTER imagery or mapped boulder fields. No global Earth 'rock abundance' dataset was found.",
-      "proxy": true,
-      "caveat": "Proxy only. Say so in the presentation."
+      "id": "slope_200m_deg",
+      "label": "Slope (200 m)",
+      "category": "terrain",
+      "kind": "numeric",
+      "unit": "°",
+      "tooltip": "Slope on a 200 m grid on BOTH sides (Mars HRSC-MOLA DEM and Earth DEM). Coarse-scale screening only.",
+      "earth_source_ids": [
+        "pc-nasadem",
+        "pc-cop-dem-glo-30",
+        "lpdaac-astgtm-v003"
+      ],
+      "earth_method": "Earth DEM average-resampled to a 200 m local metric grid; median slope within 5 km (pipeline/fetch_real_data.py).",
+      "target_method": "Mars MGS MOLA – MEX HRSC blended DEM (200 m), same resampling and window.",
+      "caveat": "COARSE-SCALE SCREENING (~200 m), not a landing-safety check: NASA's <15° limit is defined at 1–5 m (HiRISE/CTX DTMs)."
     },
     {
-      "id": "regolith_type", "label": "Regolith / soil type", "category": "terrain", "kind": "categorical", "unit": null,
+      "id": "roughness_200m_m",
+      "label": "Roughness (200 m)",
+      "category": "terrain",
+      "kind": "numeric",
+      "unit": "m",
+      "tooltip": "Bumpiness on a 200 m grid on both sides: elevation spread around the local tilt.",
+      "earth_source_ids": [
+        "pc-nasadem",
+        "pc-cop-dem-glo-30",
+        "lpdaac-astgtm-v003"
+      ],
+      "earth_method": "Earth DEM average-resampled to 200 m; 3×3 detrended standard deviation; median within 5 km.",
+      "target_method": "Same calculation on the Mars HRSC-MOLA blended DEM (200 m).",
+      "caveat": "The Mars DEM stores whole metres, so Mars roughness below ~0.5 m is near its quantisation limit."
+    },
+    {
+      "id": "rock_cover_pct",
+      "label": "Rock cover",
+      "category": "terrain",
+      "kind": "numeric",
+      "unit": "%",
+      "tooltip": "Share of the ground covered by rocks. Known for the Mars/Moon side only: Earth has no rock-cover dataset in %, so the Earth value is empty.",
+      "earth_source_ids": [],
+      "earth_method": "NOT AVAILABLE on Earth: no global rock-abundance dataset exists (no Earth equivalent of Mars TES/THEMIS or LRO Diviner rock abundance). Texture proxies (DEM roughness, ASTER GED emissivity, Landsat texture) are not in % and cannot be converted without field calibration, so Earth stays null/TODO.",
+      "caveat": "Earth value is null on purpose. The weight is renormalised over the other features and the SkyFall rock-cover hard filter is not applied to Earth sites."
+    },
+    {
+      "id": "regolith_type",
+      "label": "Regolith / soil type",
+      "category": "terrain",
+      "kind": "categorical",
+      "unit": null,
       "tooltip": "What the loose surface layer is made of (e.g. fine impact dust, volcanic ash, ice-rich mantle).",
-      "earth_source_ids": [],
-      "earth_method": "From geological maps and literature for each Earth site (team to fill).",
-      "values": ["fine_impact_regolith", "volcanic_ash_cinder", "ice_rich_mantle", "debris_over_ice", "glacial_till", "desert_soil", "bare_rock"]
+      "earth_source_ids": [
+        "usda-sda",
+        "isric-soilgrids"
+      ],
+      "earth_method": "US sites: dominant soil component from USDA SSURGO/STATSGO (Soil Data Access). Elsewhere: most probable WRB group from ISRIC SoilGrids 2.0 (non-NASA, modelled 250 m). Soil class → regolith category with pipeline/context_rules.json (provisional). Classes with no planetary equivalent stay null.",
+      "values": [
+        "fine_impact_regolith",
+        "volcanic_ash_cinder",
+        "ice_rich_mantle",
+        "debris_over_ice",
+        "glacial_till",
+        "desert_soil",
+        "bare_rock"
+      ],
+      "caveat": "Earth soil classes and planetary regolith types are different classifications; the mapping is a team decision."
     },
     {
-      "id": "geology_type", "label": "Geology / composition", "category": "terrain", "kind": "categorical", "unit": null,
+      "id": "geology_type",
+      "label": "Geology / composition",
+      "category": "terrain",
+      "kind": "categorical",
+      "unit": null,
       "tooltip": "Main rock type. Lunar highlands are anorthosite (feldspar-rich); lunar maria and much of Mars are basalt.",
-      "earth_source_ids": [],
-      "earth_method": "From geological maps and literature for each Earth site (team to fill).",
-      "values": ["anorthosite", "basalt", "impact_breccia", "sedimentary", "ice_dominated", "granitic", "mixed"]
+      "earth_source_ids": [
+        "macrostrat"
+      ],
+      "earth_method": "Macrostrat geologic map units at the site (compiles USGS, GSC and other survey maps); most detailed map scale with a recognisable lithology; keywords → category with pipeline/context_rules.json (provisional). More than one category at that scale → 'mixed'.",
+      "values": [
+        "anorthosite",
+        "basalt",
+        "impact_breccia",
+        "sedimentary",
+        "ice_dominated",
+        "granitic",
+        "mixed"
+      ]
     },
     {
-      "id": "temp_range_K", "label": "Temperature swing", "category": "temperature", "kind": "numeric", "unit": "K",
+      "id": "temp_range_K",
+      "label": "Temperature swing",
+      "category": "temperature",
+      "kind": "numeric",
+      "unit": "K",
       "tooltip": "Difference between typical day and night surface temperature.",
-      "earth_source_ids": ["nasa-lst-tools", "appeears"],
+      "earth_source_ids": [
+        "nasa-lst-tools",
+        "appeears"
+      ],
       "earth_method": "MODIS LST day minus night, multi-year mean (or ASTER L2 day/night pairs).",
       "caveat": "Lunar and Martian swings are far larger than anything on Earth; this feature ranks Earth sites by relative behaviour only."
     },
     {
-      "id": "cold_index", "label": "Relative cold", "category": "temperature", "kind": "numeric", "unit": "0–1",
+      "id": "cold_index",
+      "label": "Relative cold",
+      "category": "temperature",
+      "kind": "numeric",
+      "unit": "0–1",
       "tooltip": "How cold the Earth site is compared with the other Earth candidates (1 = coldest). Used for the Moon because Earth cannot reach PSR temperatures.",
-      "earth_source_ids": ["nasa-lst-tools"],
+      "earth_source_ids": [
+        "nasa-lst-tools"
+      ],
       "earth_method": "DERIVED by the pipeline: percentile rank of annual minimum land surface temperature (annual_min_lst_K) among Earth candidates.",
       "derived": true,
       "input_feature": "annual_min_lst_K"
     },
     {
-      "id": "thermal_inertia_tiu", "label": "Thermal inertia (proxy)", "category": "temperature", "kind": "numeric", "unit": "J m⁻² K⁻¹ s⁻½",
-      "tooltip": "How slowly the ground heats up and cools down. High values mean firm or rocky ground; low values mean loose dust.",
-      "earth_source_ids": ["nasa-lst-tools"],
-      "earth_method": "PROXY: apparent thermal inertia from day/night LST difference, converted to SI units with a thermal model. Must be in the same unit as the Mars value.",
-      "proxy": true,
-      "caveat": "Day/night temperature difference alone is NOT thermal inertia. Do not enter raw ΔT here."
+      "id": "thermal_inertia_tiu",
+      "label": "Thermal inertia",
+      "category": "temperature",
+      "kind": "numeric",
+      "unit": "J m⁻² K⁻¹ s⁻½",
+      "tooltip": "How slowly the ground heats up and cools down (J m⁻² K⁻¹ s⁻½). Earth has only the ATI proxy in a different unit, so the Earth value is empty and ATI is shown as context.",
+      "earth_source_ids": [],
+      "earth_method": "NOT AVAILABLE on Earth in J m⁻² K⁻¹ s⁻½. The ATI proxy (context feature 'ati_proxy', K⁻¹) is a different variable and unit, so it is not compared with Mars. Converting ATI to thermal inertia needs a calibrated thermal model and field data; not done.",
+      "caveat": "Earth value is null on purpose (same-variable, same-unit rule). The SkyFall thermal-inertia hard filter is not applied to Earth sites."
     },
     {
-      "id": "max_sun_elev_deg", "label": "Highest sun angle", "category": "light", "kind": "numeric", "unit": "°",
+      "id": "max_sun_elev_deg",
+      "label": "Highest sun angle",
+      "category": "light",
+      "kind": "numeric",
+      "unit": "°",
       "tooltip": "The highest the Sun ever gets above the horizon at this place. Near the lunar south pole it stays only a few degrees up, so shadows are long.",
       "earth_source_ids": [],
       "earth_method": "DERIVED from latitude: 90° − |latitude| + 23.44° (Earth's axial tilt), capped at 90°.",
       "derived": true
     },
     {
-      "id": "ice_presence", "label": "Ground ice", "category": "ice", "kind": "ordinal", "unit": "0–3",
+      "id": "ice_presence",
+      "label": "Ground ice",
+      "category": "ice",
+      "kind": "ordinal",
+      "unit": "0–3",
       "tooltip": "0 = no ice; 1 = seasonal frost only; 2 = permafrost or ice mixed in soil; 3 = massive ice or buried glacier.",
-      "earth_source_ids": ["nsidc-permafrost"],
-      "earth_method": "From permafrost/ground-ice maps (external source, verify) and site literature.",
-      "caveat": "Ordinal scale chosen by the team. Moon and Mars evidence is often indirect (UV, neutron, radar)."
+      "earth_source_ids": [
+        "esa-cci-permafrost-v5",
+        "pc-modis-11a2"
+      ],
+      "earth_method": "ESA CCI Permafrost v5 (2023) permafrost fraction of the 1 km cell: ≥10% → level 2 (low confidence if <50%). No permafrost: coldest MODIS 8-day surface temperature <0 °C → level 1 (seasonal frost), else 0. Level 3 (massive ice) needs a cited field study. Rules in pipeline/context_rules.json.",
+      "caveat": "Status 'verify': modelled permafrost at 1 km, not a ground survey. NSIDC GGD318 (needs login) should be used to cross-check."
     },
     {
-      "id": "ice_depth_m", "label": "Depth to ice", "category": "ice", "kind": "numeric", "unit": "m",
+      "id": "ice_depth_m",
+      "label": "Depth to ice",
+      "category": "ice",
+      "kind": "numeric",
+      "unit": "m",
       "tooltip": "How far below the surface the ice starts.",
-      "earth_source_ids": ["nsidc-permafrost"],
-      "earth_method": "Active-layer thickness or depth to ground ice from permafrost maps or site studies."
+      "earth_source_ids": [
+        "esa-cci-permafrost-v5"
+      ],
+      "earth_method": "ESA CCI Permafrost v5 (2023) active-layer thickness (modelled, 1 km) where permafrost is present = depth to the permafrost table.",
+      "caveat": "Depth where ice CAN exist, not confirmed ice: dry permafrost (e.g. parts of the Dry Valleys) is ice-poor below the active layer. ALT ≈ 0 m means the model shows almost no thaw."
     },
     {
-      "id": "logistics_index", "label": "Access & comms", "category": "logistics", "kind": "numeric", "unit": "0–1",
+      "id": "logistics_index",
+      "label": "Access & comms",
+      "category": "logistics",
+      "kind": "numeric",
+      "unit": "0–1",
       "tooltip": "How practical it is to run a test campaign there (access, permits, safety, communications). 1 = easy.",
-      "earth_source_ids": [],
-      "earth_method": "Team scoring rubric (see README_DATA.md). Earth-only factor: the target value is always 1.",
-      "earth_only": true
+      "earth_source_ids": [
+        "ourairports",
+        "osm-overpass"
+      ],
+      "earth_method": "mean(exp(−airport km / 100), exp(−road km / 10)) from OurAirports (nearest airport with scheduled service) and OpenStreetMap roads (distance band 1/5/25/50 km). Both non-NASA; NASA SEDAC gROADS and VIIRS Black Marble need a login. Scales are provisional team choices.",
+      "earth_only": true,
+      "caveat": "Access only: communications, permits and safety are not captured."
+    },
+    {
+      "id": "ati_proxy",
+      "label": "Apparent thermal inertia (proxy)",
+      "category": "temperature",
+      "kind": "numeric",
+      "unit": "K⁻¹",
+      "context_only": true,
+      "proxy": true,
+      "tooltip": "(1 − albedo) / (day − night surface temperature). A proxy only: different variable and unit from thermal inertia, so it is never scored against Mars.",
+      "earth_source_ids": [
+        "appeears-myd11a1-mcd43a3"
+      ],
+      "earth_method": "MYD11A1 v061 daily LST + MCD43A3 v061 white-sky albedo via AppEEARS (needs Earthdata login)."
+    },
+    {
+      "id": "soil_class",
+      "label": "Soil class (raw)",
+      "category": "terrain",
+      "kind": "text",
+      "unit": null,
+      "context_only": true,
+      "tooltip": "The soil class as the soil map names it, before mapping to a regolith category.",
+      "earth_source_ids": [
+        "usda-sda",
+        "isric-soilgrids"
+      ]
+    },
+    {
+      "id": "lithology",
+      "label": "Map lithology (raw)",
+      "category": "terrain",
+      "kind": "text",
+      "unit": null,
+      "context_only": true,
+      "tooltip": "The geological map unit and lithology at the site, before mapping to a geology category.",
+      "earth_source_ids": [
+        "macrostrat"
+      ]
+    },
+    {
+      "id": "permafrost_fraction_pct",
+      "label": "Permafrost fraction",
+      "category": "ice",
+      "kind": "numeric",
+      "unit": "%",
+      "context_only": true,
+      "tooltip": "Share of the 1 km cell underlain by permafrost (ESA CCI v5, 2023, modelled).",
+      "earth_source_ids": [
+        "esa-cci-permafrost-v5"
+      ]
+    },
+    {
+      "id": "airport_distance_km",
+      "label": "Nearest airport",
+      "category": "logistics",
+      "kind": "numeric",
+      "unit": "km",
+      "context_only": true,
+      "tooltip": "Distance to the nearest airport with scheduled flights (OurAirports).",
+      "earth_source_ids": [
+        "ourairports"
+      ]
+    },
+    {
+      "id": "road_distance_km",
+      "label": "Nearest road (band)",
+      "category": "logistics",
+      "kind": "numeric",
+      "unit": "km",
+      "context_only": true,
+      "tooltip": "Smallest search radius (1, 5, 25 or 50 km) that contains a road or track in OpenStreetMap. 100 = none within 50 km.",
+      "earth_source_ids": [
+        "osm-overpass"
+      ]
     }
   ]
 }

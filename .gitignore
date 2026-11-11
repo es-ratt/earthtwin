@@ -5,3 +5,4 @@ __pycache__/
 .env
 .pytest_cache/
 datasets/cache/
+datasets/manual/

@@ -1,0 +1,19 @@
+candidate_id,source,ref_id,ref_label,point_type,note
+haughton-crater,wikidata,Q1589279,Haughton impact crater,crater centre,The Earth Impact Database site (passc.net) did not serve the database when checked (2026-11-10); Wikidata used instead.
+sf-volcanic-field,gnis,5:27656,"Cinder Lake (flat), Coconino County AZ",Apollo astronaut training area inside the field,"GVP volcano 329020 gives a field reference point on San Francisco Mountain (dacite/andesite), which is not the basaltic cinder terrain used for Apollo training, so the USGS GNIS Cinder Lake point is used."
+mauna-kea,gvp,332030,Mauna Kea,summit (GVP),
+iceland-holuhraun,wikidata,Q17663620,Holuhraun,lava field,GVP lists only the source volcano Bárðarbunga (373030) and not the lava field.
+atacama-yungay,none,,,,"No gazetteer entry found for the Yungay research area (Wikidata, Nominatim). Team: take the position from a cited field-site paper."
+mcmurdo-dry-valleys,gnis,8:2821383,McMurdo Dry Valleys (USGS Antarctic names),region reference point,A region (~190 × 80 km): the point is one representative location.
+mojave,wikidata,Q184355,Mojave Desert,region reference point,A region: the point is one representative location.
+death-valley,wikidata,Q118388,Death Valley,basin reference point,
+nain-anorthosite,none,,,,No entry for the Nain Plutonic Suite in Wikidata or Nominatim. The town of Nain (Q3335210) is on the coast and not used. Team: take a position from a geological map.
+adirondack-marcy,gnis,5:973357,"Mount Marcy, Essex County NY",summit inside the Marcy anorthosite massif,Summit is steeper than the massif average.
+beacon-valley,gnis,8:2814864,Beacon Valley (USGS Antarctic names),valley,
+duvanny-yar,none,,,,"No gazetteer entry found (Wikidata, Nominatim). Team: take the exposure position from a cited permafrost paper."
+axel-heiberg,wikidata,Q24190335,McGill Arctic Research Station,research station at Expedition Fiord,
+svalbard-bockfjorden,wikidata,Q16897331,Sverrefjellet,volcano at Bockfjorden,
+changthang-tso-kar,wikidata,Q1030718,Tso Kar,lake centre,"Point is on the lake surface: terrain and temperature describe the lake, not the shore. Team: choose a land point."
+lonar-crater,wikidata,Q2572189,Lonar Lake,crater lake (crater centre),Point is on the crater lake: terrain and temperature describe the lake floor area. Team: consider a rim point.
+qaidam-basin,wikidata,Q34709,Qaidam Basin,region reference point,A region: the point is one representative location.
+sudbury-basin,wikidata,Q281965,Sudbury Basin,structure centre,
