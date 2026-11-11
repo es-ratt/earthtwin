@@ -107,11 +107,13 @@ def run_mars() -> list[dict]:
             p = s.get("position") or {}
             if s["body"] != "mars":
                 continue
-            if p.get("lat") is None:
-                reason = "No coordinates for this region in the team docs, so the DEM cannot be sampled."
+            if p.get("lat") is None or p.get("kind") == "region_centre":
+                reason = ("No coordinates for this region in the team docs, so the DEM cannot be sampled." if p.get("lat") is None else
+                          "Position is the USGS Gazetteer centre of a very large region; terrain there says nothing about a landing "
+                          "ellipse, so it is not sampled (team decision 3: sample boxes inside 30–45°N instead).")
                 rows += [row("site_id", s["id"], f, None, u, "", "", PROV_MARS, reason)
                          for f, u in (("slope_200m_deg", "°"), ("roughness_200m_m", "m"))]
-                print(f"  {s['name']:32s} TODO (no coordinates)")
+                print(f"  {s['name']:32s} TODO ({'no coordinates' if p.get('lat') is None else 'region centre, not sampled'})")
                 continue
             grid = resample_local(ds, p["lat"], p["lon"], WINDOW_RADIUS_M, GRID_200, body="mars")
             slope, rough = terrain_stats(grid, GRID_200)

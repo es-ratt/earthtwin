@@ -67,8 +67,18 @@
       },
       {
         "title": "Slope is screened at ~200 m, not 1–5 m",
-        "text": "SkyFall's slope limit (<15°) is defined at 1–5 m, which needs HiRISE or CTX DTMs that cover only small areas. EarthTwin measures slope on a 200 m grid on BOTH sides (Mars HRSC-MOLA blended DEM; Earth DEM resampled to 200 m). This is coarse-scale screening, not a landing-safety proof: a site that passes at 200 m can still be too steep or rocky at 1–5 m. No HiRISE DTM covering AP-105 was found in this check (the nearest listed DTM is ~4° away), so there is no fine-scale cross-check yet.",
+        "text": "SkyFall's slope limits are set at 100 m (<5°–15°, still TBD by NASA) and at 1–5 m (<15°); the 1–5 m limit needs HiRISE or CTX DTMs that cover only small areas. EarthTwin measures slope on a 200 m grid on BOTH sides (Mars HRSC-MOLA blended DEM; Earth DEM resampled to 200 m). This is coarse-scale screening, not a landing-safety proof: a site that passes at 200 m can still be too steep or rocky at 1–5 m. No HiRISE DTM covering AP-105 was found in this check (the nearest listed DTM is ~4° away), so there is no fine-scale cross-check yet.",
         "earth_can": "Partly"
+      },
+      {
+        "title": "Thermal inertia and rock cover are proxies on Earth",
+        "text": "No Earth dataset measures thermal inertia (J m⁻² K⁻¹ s⁻½) or rock cover (%) the way Mars orbiters do. Earth has only proxies, such as apparent thermal inertia (K⁻¹) and DEM texture. They are shown as context and never scored, and the SkyFall filters for both are not applied to Earth sites.",
+        "earth_can": "Partly"
+      },
+      {
+        "title": "Landing site not selected yet",
+        "text": "NASA has not selected the SkyFall landing site; AP-105 is only a design reference. The first Landing Site Workshop is virtual, 9–10 Feb 2027 (SkyFall Mission Information Package).",
+        "source_id": "skyfall-package"
       }
     ],
     "method": [

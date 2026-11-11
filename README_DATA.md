@@ -5,7 +5,8 @@ Team PLANEX · NASA Space Apps 2026 (14–15 Nov 2026)
 The app is in `web/`, the scoring and data scripts in `pipeline/`, and the inputs in `datasets/`.
 Every value in the app is either **measured** (with its dataset, product ID, version, date range,
 resolution, processing steps and URL), **derived** by a written rule, or **TODO** with the reason.
-Nothing is estimated by hand. Data checked and fetched on **2026-11-10**.
+Nothing is estimated by hand. Data checked and fetched on **2026-11-10**; target positions, Diviner temperatures,
+USGS geologic units and SkyFall constraints added on **2026-11-11** (following *EarthTwin Data Still Needed*).
 
 ## Run it
 
@@ -15,14 +16,15 @@ Nothing is estimated by hand. Data checked and fetched on **2026-11-10**.
 .venv/bin/python pipeline/fetch_context_data.py all           # 3. soil, rock type, permafrost, logistics (~15 min)
 .venv/bin/python pipeline/fetch_earthdata.py ati              # 4. OPTIONAL, needs Earthdata login (see below)
 .venv/bin/python pipeline/fetch_earthdata.py aster-dem        # 5. OPTIONAL, needs Earthdata login
-python3 pipeline/compute_scores.py                            # 6. scores → web/data/results/*.json
+.venv/bin/python pipeline/fetch_target_context.py all         # 6. Moon/Mars target context: Diviner PRP + USGS map units (~3 min)
+python3 pipeline/compute_scores.py                            # 7. scores → web/data/results/*.json
 cd web && python3 -m http.server 8000                         # open http://localhost:8000
-.venv/bin/python -m pytest pipeline/tests -q -c pipeline/pytest.ini   # 41 tests
+.venv/bin/python -m pytest pipeline/tests -q -c pipeline/pytest.ini   # 55 tests
 ```
 
 Step 1 must run before step 2, because the terrain and temperature are read at the checked positions.
 Add `--only id1,id2` to any fetch command to redo some sites. The fetch scripts need `numpy`,
-`rasterio`, `certifi` and `h5py` (all in `.venv`); `compute_scores.py` needs only the standard library.
+`rasterio`, `certifi`, `h5py` and `pyshp` (all in `.venv`); `compute_scores.py` needs only the standard library.
 
 ## What is real now (no login needed)
 
@@ -34,8 +36,10 @@ Add `--only id1,id2` to any fetch command to redo some sites. The fetch scripts 
 | Regolith / soil type | team docs | USDA SSURGO/STATSGO (US) or ISRIC SoilGrids 2.0 (elsewhere, **non-NASA**) → category rule | verify |
 | Rock type / geology | team docs | Macrostrat map units (compiles USGS and other survey maps; **third-party service**) → category rule | verify |
 | Ground ice level, depth to ice | team docs | **ESA CCI Permafrost v5, 2023** (non-NASA, driven by NASA MODIS) + MODIS coldest temperature | verify |
-| Logistics (access) | always 1 (Earth-only factor) | OurAirports + OpenStreetMap roads (**non-NASA**) → index rule | derived for 3 of 18 sites; **TODO for 15** (the OpenStreetMap Overpass servers were overloaded on 2026-11-10). Airport distance is filled for all 18. Re-run `fetch_context_data.py logistics` later. Until then, logistics is left out of those sites' scores, so their weights are renormalised. |
-| Coordinates | — | USGS GNIS, Smithsonian GVP, Wikidata | see the coordinate table |
+| Logistics (access) | always 1 (Earth-only factor) | OurAirports + OpenStreetMap roads (**non-NASA**) → index rule | derived for 6 of 18 sites; **TODO for 12** (the OpenStreetMap Overpass servers were overloaded on 2026-11-10 and again on 2026-11-11). Airport distance is filled for all 18. Re-run `fetch_context_data.py logistics` later. Until then, logistics is left out of those sites' scores, so their weights are renormalised. |
+| Coordinates | Moon: LROC NAC ROI mosaic centres (5 targets). Mars: USGS Gazetteer region centres (Arcadia, Utopia, Phlegra; **not sampled**) | USGS GNIS, Smithsonian GVP, Wikidata | verify; see the coordinate table |
+| Annual max / mean temperature, ice-stability area and depth (**context, not scored**) | **LRO Diviner Polar Resource Product** `LRO-L-DLRE-5-PRP-V2.0` (PDS, thermal model) | — | measured (model output) |
+| Geologic map unit (**context, not scored**) | USGS Unified Geologic Map of the Moon 1:5M (2020); USGS SIM 3292 Mars 1:20M (Tanaka et al. 2014) | — | measured (a unit is not a rock type) |
 
 Same variable, same scale, same unit on both sides: both terrain comparisons use **one function**
 (`common.resample_local`) that average-resamples any DEM onto a local metric grid centred on the
@@ -50,7 +54,9 @@ site, so the Moon/Mars and Earth values are measured identically.
 | **ATI proxy** (context only) | Needs MCD43A3 albedo, which needs an Earthdata login. Planetary Computer has no MCD43A3. I did not use MCD43A4 reflectance with conversion coefficients that I could not check in the source paper. | Run `fetch_earthdata.py ati` after setting up the login (below). |
 | Mars rock cover, thermal inertia, geology per region | Not in the team docs; SkyFall-wide limits are used. | THEMIS thermal inertia and TES rock abundance per region. |
 | Fine-scale (1–5 m) Mars slope at AP-105 | No HiRISE DTM covering AP-105 was found. The nearest listed DTM (Feb 2026 PDS release, "candidate Starship site", ~39.1°N 189.8°E) is ~4° away. | Check the HiRISE DTM index (uahirise.org/dtm) or CTX stereo coverage; add a DTM with `extract_features.py dem`. |
-| Slope at Arcadia, Utopia, Phlegra (Mars) and 4 Artemis regions | No coordinates in the team docs. | Add `position` in `web/data/targets.json`, rerun `fetch_real_data.py mars` / `moon`. |
+| Slope at Arcadia, Utopia, Phlegra (Mars) | Their positions are USGS Gazetteer centres of regions 1,350–3,560 km across (Arcadia and Utopia lie north of the 30–45°N band). Marked `"kind": "region_centre"` and **not sampled**. | Team decision 3: define sample boxes inside 30–45°N, then rerun `fetch_real_data.py mars`. |
+| Slater Plain position | LPSC 2025 abstract 2401 names only Slater crater (88°S, 111°E); no LROC ROI named for the plain was found. | A centre with its source in `web/data/targets.json`, then rerun `moon` and `fetch_target_context.py`. |
+| Moon temperature **swing** | The Diviner PRP has annual maximum and annual mean, **no minimum**, so max − min cannot be computed. | Diviner seasonal polar products (PCP, 24 × 6 bins) give a minimum; not loaded yet. |
 
 ## Manual downloads (Earthdata login)
 
@@ -155,14 +161,27 @@ lithology → geology category, permafrost → ice level, and distances → acce
 5. **Rock-cover and thermal-inertia filters** for SkyFall are listed but **not applied to Earth**. No
    Earth data exists in the same unit, so applying them would make every Earth site "Cannot be
    evaluated". Agree on this or supply cited values.
-6. Artemis HLS slope limit and SkyFall `tbd_by_nasa` are unchanged (still TODO / null).
+6. Artemis HLS slope limit is still TODO. SkyFall `tbd_by_nasa` now follows the NASA package: the 100 m slope
+   limit and the southern latitude limit are TBD; elevation, rock cover, thermal inertia and ellipse are not.
+7. **SkyFall GPR depth conflict**: the team value is 0.5–3 m; the NASA package (section IV.a) says the radar is
+   expected to reach ~3–5 m in low-loss materials. The scored target is unchanged until the team decides.
+8. **Coordinate convention** for the nine Artemis targets (crater centre vs LROC ROI centre vs polygon). Haworth and
+   de Gerlache still use crater centres; five targets use LROC ROI centres; the LROC values for Haworth and de
+   Gerlache are recorded in their notes.
+9. **Nobile Rim 1 and Mons Mouton** share one LROC mosaic (`NAC_ROI_MTMOUTONLOE`), so they have identical values.
+   Merge them, or find separate centres (LPSC 2025 abstracts 2742 and 2655).
+10. **Ice stability as depth to ice?** The Diviner ice-stability depth is shown as context. Using it as the scored
+    `ice_depth_m` would compare a model of where ice *could* survive with measured Earth permafrost depth.
 
 ## Flags carried from the team documents (shown in the app, not used as facts)
 
 - Shackleton temperatures differ between sections → `inconsistent_in_docs`, not scored.
 - Shackleton crater count, boulder count and radiation dose have no specific source.
 - de Gerlache depth: 7.5 km vs ~1.6 km → both shown. Rim 2 data mostly from "Site 011".
-- Haworth PSR temperature: ~60–80 K (Diviner paper, used) vs <40 K (Wikipedia).
+- Haworth PSR temperature: ~60–80 K (Diviner paper, used) vs <40 K (Wikipedia). The Diviner PRP gives 50–273 K
+  annual maximum within 5 km of the crater centre (median 123 K): the window includes sunlit wall terrain.
+- The PSR mean annual maxima (`psr_mean_annual_max_K`) are the team document's Hayne et al. 2015 values; the paper
+  could not be re-opened (its server's TLS certificate chain is incomplete), so they stay `verify`.
 - Slater Plain elevation sign is inconsistent in the source → not used.
 - The 1.54° lunar tilt for "highest sun angle" was added from the NASA Moon fact sheet; please confirm.
 

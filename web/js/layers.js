@@ -71,15 +71,17 @@
       crs: "moon-sp",
       view: { center: [-90, 0], zoom: 2, minZoom: 1, maxZoom: 8 },
       base: [
+        /* Default: natural lunar greys. LROC WAC visible-light mosaic (no false colour), re-checked 2026-11-11:
+         * HTTP 200, CORS *, grey image with real crater detail. Graded lightly in CSS (.moon-natural). */
+        { id: "usgs-lroc-wac-south", name: "LROC WAC mosaic, natural greys · USGS Astrogeology", type: "polar-wms", source_id: "map-usgs-astro",
+          url: USGS_WMS + "?map=/maps/earth/moon_spole.map", layers: "LRO_WAC_south", extentM: 457440, className: "moon-natural",
+          probe: { bbox: "-457440,-457440,457440,457440" }, attribution: "NASA/ASU LROC · USGS Astrogeology" },
         { id: "trek-lola-clrshade", name: "LOLA colour hillshade · NASA Moon Trek", type: "polar-tile", source_id: "map-trek-moon",
           url: trekSP("LRO_LOLA_ClrShade_SPole75_30mp_v04", "png"), maxNativeZoom: 6, extentM: 457440,
           probe: { z: 2, x: 1, y: 1 }, attribution: "NASA/GSFC/LOLA · Moon Trek" },
         { id: "trek-lola-shade", name: "LOLA hillshade · NASA Moon Trek", type: "polar-tile", source_id: "map-trek-moon",
           url: trekSP("LRO_LOLA_Shade_SPole75_30mp_v04", "png"), maxNativeZoom: 6, extentM: 457440,
           probe: { z: 2, x: 1, y: 1 }, attribution: "NASA/GSFC/LOLA · Moon Trek" },
-        { id: "usgs-lroc-wac-south", name: "LROC WAC mosaic · USGS Astrogeology", type: "polar-wms", source_id: "map-usgs-astro",
-          url: USGS_WMS + "?map=/maps/earth/moon_spole.map", layers: "LRO_WAC_south", extentM: 457440,
-          probe: { bbox: "-457440,-457440,457440,457440" }, attribution: "NASA/ASU LROC · USGS Astrogeology" }
       ],
       overlays: [
         { id: "trek-psr", name: "Permanently shadowed regions (LOLA)", type: "polar-tile", source_id: "map-trek-moon",
@@ -148,7 +150,7 @@
   /** Build a Leaflet layer from a definition. */
   ET.makeLayer = function (def) {
     var common = { attribution: def.attribution, opacity: def.opacity === undefined ? 1 : def.opacity, crossOrigin: "anonymous",
-      maxNativeZoom: def.maxNativeZoom, maxZoom: 12, extentM: def.extentM, tileSize: 256 };
+      maxNativeZoom: def.maxNativeZoom, maxZoom: 12, extentM: def.extentM, tileSize: 256, className: def.className || "" };
     if (def.type === "polar-tile") return new ET.PolarTileLayer(def.url, common);
     if (def.type === "tile") return L.tileLayer(def.url, L.extend(common, { noWrap: false }));
     var wms = L.extend(common, { layers: def.layers, format: "image/png", transparent: def.opacity !== undefined, version: "1.1.1", styles: "" });

@@ -43,7 +43,21 @@
       '<select class="site" id="site-select">' + opts + "</select>" +
       '<div class="site-meta">' + ET.statusBadge(site.status) + " " + '<span class="badge">' + esc(site.role.replace(/_/g, " ")) + "</span>" + flags + "</div>" +
       '<div class="coverage" data-tip="Share of the scoring weight for which this target site has a value in the team documents. Features without data are left out, never guessed.">Target data coverage <b class="num" style="color:#e9ecef">' + ET.pct(cov) + '</b><div class="meter"><i style="width:' + Math.round(cov * 100) + '%"></i></div></div>' +
-      "</div>";
+      "</div>" + targetContext(siteRes, data);
+  }
+
+  /** Target-side context (Diviner model temperatures, ice stability, USGS map units): shown, never scored. */
+  function targetContext(siteRes, data) {
+    var ctx = siteRes.target_context || {};
+    var ids = Object.keys(ctx);
+    if (!ids.length) return "";
+    var rows = ids.map(function (fid) {
+      var m = ctx[fid];
+      var val = m.value === null || m.value === undefined ? "No data" : m.display;
+      return '<div class="feat"><div class="feat-head"><span>' + featureLabel(fid, data) + '</span><span class="w">not scored</span></div>' +
+        '<div class="feat-vals"><span><b' + noteTip(m) + ">" + esc(val) + "</b> " + ET.statusBadge(m.status) + "</span></div></div>";
+    }).join("");
+    return '<div class="sec"><span class="label">Target context · not scored</span><p class="faint" style="font-size:11px;margin:0 0 4px">Model temperatures, ice stability and map units at the target. Hover for the source and method.</p>' + rows + "</div>";
   }
 
   /* ------------------------------------------------------------ ranked list */
@@ -86,7 +100,7 @@
 
   /** Context features: measured or derived, shown for transparency, never part of the score. */
   function contextRows(cand, data) {
-    var ids = data.features.features.filter(function (f) { return f.context_only; }).map(function (f) { return f.id; });
+    var ids = data.features.features.filter(function (f) { return f.context_only && f.context_side !== "target"; }).map(function (f) { return f.id; });
     var rows = ids.map(function (fid) {
       var m = cand.features[fid], fd = data.fdefs[fid];
       var val = !m || m.value === null || m.value === undefined ? "No data" : String(m.value) + (fd.unit && typeof m.value === "number" ? " " + fd.unit : "");

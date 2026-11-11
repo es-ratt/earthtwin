@@ -795,6 +795,102 @@
    "url": "https://worldview.earthdata.nasa.gov/",
    "access": "full",
    "note": "Each coordinate-table row links to a Worldview view for a manual visual check."
+  },
+  {
+   "id": "lroc-roi-cabeuspklo2",
+   "kind": "nasa_usgs",
+   "name": "LROC NAC ROI CABEUSPKLO2: Peak Near Cabeus B low-Sun controlled mosaic (NASA LRO camera team, ASU)",
+   "url": "https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_ROI_CABEUSPKLO2",
+   "access": "full",
+   "note": "Center Lat/Lon and min/max bounds read from the product page on 2026-11-11 (longitude 0–360°E)."
+  },
+  {
+   "id": "lroc-roi-moutnpltlo1",
+   "kind": "nasa_usgs",
+   "name": "LROC NAC ROI MOUTNPLTLO1: Mons Mouton Plateau low-Sun controlled mosaic (NASA LRO camera team, ASU)",
+   "url": "https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_ROI_MOUTNPLTLO1",
+   "access": "full",
+   "note": "Center Lat/Lon and min/max bounds read from the product page on 2026-11-11 (longitude 0–360°E)."
+  },
+  {
+   "id": "lroc-roi-mtmoutonloe",
+   "kind": "nasa_usgs",
+   "name": "LROC NAC ROI MTMOUTONLOE: Nobile Rim 1 and Mons Mouton (Leibnitz Beta Plateau) low-Sun mosaic (NASA LRO camera team, ASU)",
+   "url": "https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_ROI_MTMOUTONLOE",
+   "access": "full",
+   "note": "Center Lat/Lon and min/max bounds read from the product page on 2026-11-11 (longitude 0–360°E)."
+  },
+  {
+   "id": "lroc-roi-nobile02lo1",
+   "kind": "nasa_usgs",
+   "name": "LROC NAC ROI NOBILE02LO1: Nobile Rim 2 low-Sun controlled mosaic (NASA LRO camera team, ASU)",
+   "url": "https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_ROI_NOBILE02LO1",
+   "access": "full",
+   "note": "Center Lat/Lon and min/max bounds read from the product page on 2026-11-11 (longitude 0–360°E)."
+  },
+  {
+   "id": "lroc-roi-haworth_lob",
+   "kind": "nasa_usgs",
+   "name": "LROC NAC ROI HAWORTH_LOB: Haworth low-Sun controlled mosaic (B) (NASA LRO camera team, ASU)",
+   "url": "https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_ROI_HAWORTH_LOB",
+   "access": "full",
+   "note": "Center Lat/Lon and min/max bounds read from the product page on 2026-11-11 (longitude 0–360°E)."
+  },
+  {
+   "id": "lroc-roi-degerrimlo1",
+   "kind": "nasa_usgs",
+   "name": "LROC NAC ROI DEGERRIMLO1: de Gerlache Rim low-Sun controlled mosaic (NASA LRO camera team, ASU)",
+   "url": "https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_ROI_DEGERRIMLO1",
+   "access": "full",
+   "note": "Center Lat/Lon and min/max bounds read from the product page on 2026-11-11 (longitude 0–360°E)."
+  },
+  {
+   "id": "usgs-gazetteer-348",
+   "kind": "nasa_usgs",
+   "name": "USGS Gazetteer of Planetary Nomenclature: Arcadia Planitia",
+   "url": "https://planetarynames.wr.usgs.gov/Feature/348",
+   "access": "full",
+   "note": "Center latitude/longitude read on 2026-11-11 (planetocentric, +East, 0–360)."
+  },
+  {
+   "id": "usgs-gazetteer-6260",
+   "kind": "nasa_usgs",
+   "name": "USGS Gazetteer of Planetary Nomenclature: Utopia Planitia",
+   "url": "https://planetarynames.wr.usgs.gov/Feature/6260",
+   "access": "full",
+   "note": "Center latitude/longitude read on 2026-11-11 (planetocentric, +East, 0–360)."
+  },
+  {
+   "id": "usgs-gazetteer-4701",
+   "kind": "nasa_usgs",
+   "name": "USGS Gazetteer of Planetary Nomenclature: Phlegra Montes",
+   "url": "https://planetarynames.wr.usgs.gov/Feature/4701",
+   "access": "full",
+   "note": "Center latitude/longitude read on 2026-11-11 (planetocentric, +East, 0–360)."
+  },
+  {
+   "id": "pds-diviner-prp",
+   "kind": "nasa_usgs",
+   "name": "LRO Diviner Polar Resource Product, south (LRO-L-DLRE-5-PRP-V2.0, DLRE_PRP_SOUTH.TAB; Paige et al. 2010 model)",
+   "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_prp/",
+   "access": "full",
+   "note": "Thermal-model fits to the first mapping year: annual max surface temperature, annual mean temperature at 2 cm, depth of ice stability. Model output (CODMAC level 5), no minimum temperature. Read by pipeline/fetch_target_context.py with HTTP range requests."
+  },
+  {
+   "id": "usgs-moon-unified-geology",
+   "kind": "nasa_usgs",
+   "name": "USGS Unified Geologic Map of the Moon, 1:5M, 2020 (Fortezzo, Spudis & Harrel), raster version 64 ppd",
+   "url": "https://astrogeology.usgs.gov/search/map/Moon/Geology/Unified_Geologic_Map_of_the_Moon",
+   "access": "full",
+   "note": "Geologic units (age + morphology), not rock composition. Download: https://asc-astropedia.s3.us-west-2.amazonaws.com/Moon/Geology/Ancillary/unified_geologic_map_of_the_moon_raster.zip"
+  },
+  {
+   "id": "usgs-mars-sim3292",
+   "kind": "nasa_usgs",
+   "name": "USGS SIM 3292: Geologic Map of Mars, 1:20M (Tanaka et al. 2014)",
+   "url": "https://pubs.usgs.gov/sim/3292/",
+   "access": "full",
+   "note": "Geologic units, not rock composition. Only SIM3292_Global_Geology.* was read from the 809 MB database zip (range requests)."
   }
  ]
 }
