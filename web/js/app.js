@@ -24,7 +24,9 @@
   function storedWorld() { try { return sessionStorage.getItem(WORLD_KEY); } catch (e) { return null; } }
 
   var data = {};
-  var state = { route: "home", missionId: null, siteId: null, candidateId: null, whyFilter: "all", sourceQuery: "" };
+  var state = { route: "home", missionId: null, siteId: null, candidateId: null, whyFilter: "all", sourceQuery: "",
+    intro: true,            // Moon/Mars Analog without a chosen location = globe screen with the search bar
+    viewMode: "globe" };    // result screen: "globe" (default) or "map" (the Leaflet maps)
   var maps = { ready: false, missionId: null, siteId: null };
 
   /* ------------------------------------------------------------ url state */
@@ -44,6 +46,7 @@
   function buildHash() {
     var parts = [state.route];
     if (state.route === "home" || state.route === "planex") return "#" + state.route;
+    if (ROUTES[state.route].view === "analogs" && state.intro) return "#" + state.route;
     if (ROUTES[state.route].view !== "analogs") parts.push("m=" + state.missionId);
     parts.push("s=" + state.siteId);
     if (state.candidateId && ROUTES[state.route].view === "analogs") parts.push("c=" + state.candidateId);
@@ -65,6 +68,7 @@
     state.route = route;
     if (extra && extra.missionId) setMission(extra.missionId, extra.siteId);
     if (extra && "candidateId" in extra) state.candidateId = extra.candidateId;
+    if (extra && "intro" in extra) state.intro = extra.intro;
     var target = buildHash();
     if (location.hash === target) show(); else location.hash = target;
   }
@@ -110,10 +114,26 @@
   /* ------------------------------------------------------------ render */
   function renderHeaderTitles() {
     var m = mission(), s = data.sitesById[state.siteId];
-    document.getElementById("target-kicker").textContent = m.body === "moon" ? "Target · Moon south pole" : "Target · Mars northern mid-latitudes";
-    document.getElementById("target-title").textContent = s.name;
+    var kicker = m.body === "moon" ? "Target · Moon south pole" : "Target · Mars northern mid-latitudes";
     var n = siteRes().counts;
+    document.getElementById("target-kicker").textContent = kicker;
+    document.getElementById("target-title").textContent = s.name;
     document.getElementById("earth-title").textContent = n.analog + " analogs · " + (n.low_match + n.rejected + n.cannot_evaluate) + " others";
+    document.getElementById("gtarget-kicker").textContent = kicker;
+    document.getElementById("gtarget-title").textContent = s.name;
+    document.getElementById("gearth-title").textContent = "Pins 1–" + n.analog + " = rank";
+  }
+
+  /** Result screen: globes (default) or the Leaflet maps. */
+  function renderResultView(flyToCandidate) {
+    document.querySelectorAll("[data-view-mode]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.viewMode === state.viewMode ? "true" : "false"); });
+    document.getElementById("view-analogs").classList.toggle("globe-mode", state.viewMode === "globe");
+    if (state.viewMode === "globe") {
+      ET.Analog.showResult(mission(), data.sitesById[state.siteId], siteRes(), state.candidateId);
+    } else {
+      ET.Analog.hideResult();
+      syncMaps(flyToCandidate);
+    }
   }
 
   function renderNav() {
@@ -132,7 +152,7 @@
 
   function renderContent() {
     var view = ROUTES[state.route].view;
-    if (view === "analogs") { renderHeaderTitles(); ET.Panels.renderSide(state, data); }
+    if (view === "analogs" && !state.intro) { renderHeaderTitles(); ET.Panels.renderSide(state, data); }
     if (view === "why") ET.Pages.renderWhy(state, data);
     if (view === "method") ET.Pages.renderMethod(state, data);
     if (view === "limits") ET.Pages.renderLimits(state, data);
@@ -143,14 +163,40 @@
 
   /** Show the view for state.route (called on every hash change). */
   function show(flyToCandidate) {
-    var view = ROUTES[state.route].view;
-    document.querySelectorAll(".view").forEach(function (v) { v.classList.toggle("active", v.id === "view-" + view); });
+    var view = ROUTES[state.route].view, onIntro = view === "analogs" && state.intro;
+    document.querySelectorAll(".view").forEach(function (v) { v.classList.toggle("active", v.id === "view-" + view && !onIntro); });
+    document.body.classList.toggle("on-intro", onIntro);
     renderNav();
     renderWorld();
     closeMenu();
     if (view === "home") ET.Solar.start(); else ET.Solar.stop();
-    if (view === "analogs") syncMaps(flyToCandidate);
+    ET.Analog.setSearch(onIntro, state.missionId ? mission().body : "moon");
+    if (onIntro) { ET.Analog.hideResult(); ET.Analog.showIntro(mission().body); }
+    else {
+      ET.Analog.hideIntro();
+      if (view === "analogs") { renderResultView(flyToCandidate); enterResult(); } else ET.Analog.hideResult();
+    }
     renderContent();
+  }
+
+  /** Fade the result screen in (after the zoom from the globe screen). */
+  function enterResult() {
+    var v = document.getElementById("view-analogs");
+    v.classList.remove("entering"); void v.offsetWidth; v.classList.add("entering");
+  }
+
+  /** A location was chosen in the header search: zoom into the globes, then open its result screen. */
+  function chooseLocation(item) {
+    var m = mission(), route = routeForMission(m);
+    if (item.kind === "target") {
+      ET.Analog.playZoom(m.body, function () { go(route, { missionId: m.id, siteId: item.id, candidateId: null, intro: false }); });
+    } else {
+      // An Earth site: open the current target's result with that site selected (its profile and pin).
+      ET.Analog.playZoom("earth", function () {
+        state.intro = false; setCandidate(item.id);
+        go(route, { candidateId: state.candidateId, intro: false });
+      });
+    }
   }
 
   function applyHash() {
@@ -161,7 +207,10 @@
     if (r.body) setMission(missionForBody(r.body).id, h.s);
     else if (h.m && data.missionsById[h.m] && data.missionsById[h.m].in_selector) setMission(h.m, h.s);
     else if (!state.missionId) setMission(missionForBody(storedWorld() === "mars" ? "mars" : "moon").id, h.s);
-    if (r.view === "analogs") setCandidate(h.c || (prevRoute === h.route ? state.candidateId : null));
+    if (r.view === "analogs") {
+      state.intro = !h.s;
+      setCandidate(h.c || (prevRoute === h.route ? state.candidateId : null));
+    }
     show(Boolean(h.c));
     if (prevRoute !== h.route) window.scrollTo(0, 0);
   }
@@ -175,10 +224,11 @@
   }
 
   function selectCandidate(id) {
-    if (ROUTES[state.route].view !== "analogs") { go(routeForMission(mission()), { candidateId: id }); return; }
+    if (ROUTES[state.route].view !== "analogs" || state.intro) { go(routeForMission(mission()), { candidateId: id, intro: false }); return; }
     setCandidate(id);
     renderContent();
-    ET.Maps.selectCandidate(id, data.candById[id]);
+    if (state.viewMode === "globe") renderResultView(false);       // highlights the pin and turns the Earth to it
+    else if (maps.ready) ET.Maps.selectCandidate(id, data.candById[id]);
   }
 
   function hoverCandidate(id, on) {
@@ -198,7 +248,10 @@
     if (mBtn && mBtn.dataset.mission !== state.missionId) { setMission(mBtn.dataset.mission); renderWorld(); renderContent(); return; }
     var item = t.closest(".rank-item");
     if (item) { selectCandidate(item.dataset.id); return; }
-    if (t.closest("#back-list")) { state.candidateId = null; ET.Maps.selectCandidate(null); renderContent(); return; }
+    if (t.closest("#back-list")) { state.candidateId = null; if (maps.ready) ET.Maps.selectCandidate(null); ET.Analog.selectPin(null); renderContent(); return; }
+    if (t.closest("#back-globe")) { go(state.route, { intro: true, candidateId: null }); return; }
+    var mode = t.closest("[data-view-mode]");
+    if (mode) { state.viewMode = mode.dataset.viewMode; renderResultView(false); return; }
     if (t.closest("#open-why")) { go("why-not-others"); return; }
     var chip = t.closest("[data-why]");
     if (chip) { state.whyFilter = chip.dataset.why; renderContent(); return; }
@@ -217,7 +270,7 @@
       if (item && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); selectCandidate(item.dataset.id); }
       if (e.key === "Escape") {
         closeMenu();
-        if (state.candidateId && ROUTES[state.route].view === "analogs") { state.candidateId = null; ET.Maps.selectCandidate(null); renderContent(); }
+        if (state.candidateId && ROUTES[state.route].view === "analogs" && !state.intro) { state.candidateId = null; if (maps.ready) ET.Maps.selectCandidate(null); ET.Analog.selectPin(null); renderContent(); }
       }
     });
     document.addEventListener("mouseover", function (e) {
@@ -252,6 +305,7 @@
       data.results = { "artemis-iv": r[6], "skyfall": r[7] };
       data.coords = r[8];
       data.worlds = r[9];
+      ET.Analog.init(data, { choose: chooseLocation, selectCandidate: selectCandidate });
       document.getElementById("sample-badge").hidden = !(r[6].contains_sample || r[7].contains_sample);
       bind();
       applyHash();

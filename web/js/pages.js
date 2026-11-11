@@ -271,6 +271,9 @@
       ["Home solar system (Sun, planets, Moon, nebula, comets)", "Generated in the browser from seeded noise (web/js/solar-art.js, solar.js). No image files.", "Team PLANEX, procedural"],
       ["Page backgrounds: Moon, Mars, Sources, base star field", "Generated in the browser (web/js/backdrop.js), drawn from written descriptions of the team's reference images. No image files.", "Team PLANEX, procedural"],
       ["Moon map base: LROC WAC mosaic, natural greys", "NASA/ASU LROC via USGS Astrogeology WMS, with a light CSS grade (grayscale, slight warm tint).", "NASA / USGS, public domain"],
+      ["Globe texture: Earth", "NASA Blue Marble Next Generation, 2048 × 1024 equirectangular, from NASA GIBS (WMS EPSG:4326). Stored as web/img/globe/earth_bluemarble_2048.jpg.", "NASA, public domain"],
+      ["Globe texture: Moon", "LROC WAC global mosaic (USGS Astrogeology WMS, layer LROC_WAC), with the cap south of 74°S replaced by the USGS LOLA south-pole relief image already in the app (the WAC mosaic smears at the pole). web/img/globe/moon_lroc_wac_lola_2048.jpg.", "NASA/ASU LROC, NASA/GSFC LOLA, USGS; public domain"],
+      ["Globe texture: Mars", "Viking MDIM 2.1 colour mosaic from NASA Mars Trek (the map fallback image, reused).", "NASA/USGS, public domain"],
       ["Typeface: Sora", "Self-hosted from Google Fonts (web/fonts/), SIL Open Font License 1.1 (web/fonts/OFL-Sora.txt).", "The Sora Project Authors"]
     ];
     return '<section class="block"><h2>Visual assets</h2><table class="grid"><thead><tr><th>Asset</th><th>How it is made</th><th>Credit · licence</th></tr></thead><tbody>' +

@@ -201,3 +201,106 @@ body.on-home main { inset: 0; }                                    /* the solar 
 /* Map titles stay readable over the bright natural-grey Moon base */
 #view-analogs .mapwrap:first-child::after { background: linear-gradient(to bottom, rgba(7, 10, 18, 0.78), rgba(7, 10, 18, 0)); }
 .maphead .title, .maphead .label { text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9), 0 0 2px rgba(0, 0, 0, 0.8); }
+
+/* ================================================================ Moon / Mars Analog: globe screen + search */
+/* Header grows a second row for the search bar on the globe screen only */
+body.on-intro .nav { height: calc(var(--header-h) + 62px); grid-template-rows: var(--header-h) 62px; align-content: start;
+  background: linear-gradient(to bottom, rgba(7, 10, 18, 0.85), rgba(7, 10, 18, 0)); border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+body.on-intro .nav > * { grid-row: 1; align-self: center; }
+body.on-intro .nav > .nav-search { grid-row: 2; }
+body.on-intro .backdrop { display: none; }
+body.on-intro main { inset: 0; }
+
+.nav-search {
+  grid-column: 1 / -1; justify-self: center; align-self: start; position: relative; width: min(560px, 92vw); height: 46px;
+  display: flex; align-items: center; gap: 10px; padding: 0 18px;
+  background: rgba(255, 255, 255, 0.96); border-radius: 24px; color: #3c4043;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.3); font-family: var(--font);
+}
+.nav-search[hidden] { display: none; }
+.nav-search.open { border-radius: 24px 24px 0 0; }
+.search-icon { width: 18px; height: 18px; flex: none; color: #5f6368; }
+.nav-search input {
+  flex: 1; height: 100%; border: 0; outline: 0; background: transparent; font: 400 15px var(--font); color: #202124; letter-spacing: 0;
+}
+.nav-search input::placeholder { color: #70757a; }
+.nav-search input::-webkit-search-cancel-button { display: none; }
+.nav-search:focus-within { box-shadow: 0 0 0 2px var(--accent), 0 8px 24px rgba(0, 0, 0, 0.35); }
+.search-list {
+  position: absolute; left: 0; right: 0; top: 100%; margin: 0; padding: 6px 0 8px; list-style: none; max-height: min(60vh, 460px); overflow-y: auto;
+  background: #fff; border-radius: 0 0 24px 24px; box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35); border-top: 1px solid #e8eaed;
+}
+.search-group { padding: 10px 20px 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5f6368; }
+.search-item { display: flex; align-items: center; gap: 12px; padding: 9px 20px; cursor: pointer; }
+.search-item.active { background: #e8f0fe; }
+.search-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; background: #1a73e8; }
+.search-dot.target { background: #e8a90c; }
+.search-name { display: block; font-size: 14px; color: #202124; }
+.search-sub { display: block; font-size: 12px; color: #5f6368; }
+.search-empty { padding: 14px 20px; font-size: 13px; color: #5f6368; }
+
+.analog-intro { position: fixed; inset: 0; z-index: 1; background: #070a12; transition: transform var(--zoom-ms, 1300ms) cubic-bezier(.55, 0, .7, .2), opacity var(--zoom-ms, 1300ms) ease-in; }
+.analog-intro[hidden] { display: none; }
+.analog-intro.zooming { transform: scale(2.6); opacity: 0; }
+#intro-globe { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.intro-hint { position: absolute; left: 0; right: 0; bottom: 20px; margin: 0; text-align: center; pointer-events: none; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--space-hint); }
+
+/* ================================================================ result screen: globes */
+#view-analogs { position: absolute; }
+#view-analogs.entering { animation: result-in 600ms ease-out; }
+@keyframes result-in { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: none; } }
+/* explicit placement: the globe pane covers both map columns; the maps stay underneath for the Map view */
+#view-analogs .mw-target { grid-column: 1; grid-row: 1; }
+#view-analogs .mw-earth { grid-column: 2; grid-row: 1; }
+#view-analogs .side { grid-column: 3; grid-row: 1; }
+.globe-pane { grid-column: 1 / 3; grid-row: 1; position: relative; z-index: 3; background: #070a12; overflow: hidden; }
+@media (max-width: 1100px) {
+  #view-analogs .mw-target { grid-column: 1; grid-row: 1; border-bottom: 1px solid var(--line); }
+  #view-analogs .mw-earth { grid-column: 1; grid-row: 2; }
+  #view-analogs .globe-pane { grid-column: 1; grid-row: 1 / 3; }
+  #view-analogs .side { grid-column: 2; grid-row: 1 / 3; }
+}
+.globe-pane[hidden] { display: none; }
+#result-globe { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.globe-head { position: absolute; left: 18px; right: 18px; top: 14px; display: flex; justify-content: space-between; pointer-events: none; }
+.globe-head .title { font-size: 22px; font-weight: 200; }
+.globe-earth-head { text-align: right; }
+.globe-tip { position: absolute; left: 0; top: 0; z-index: 4; pointer-events: none; padding: 6px 10px; font-size: 12px; white-space: nowrap;
+  background: rgba(7, 10, 18, 0.92); border: 1px solid var(--line-2); color: var(--text); }
+.globe-note { position: absolute; left: 18px; bottom: 54px; margin: 0; font-size: 12px; color: var(--muted); max-width: 46%; }
+.view-toggle { position: absolute; left: 18px; bottom: 16px; z-index: 1100;   /* above Leaflet panes (400) and controls (800–1000), below the nav (1200) */ display: inline-flex; border: 1px solid var(--glass-line); border-radius: 999px; padding: 3px; background: rgba(7, 10, 18, 0.75); }
+.view-toggle button { font-family: var(--nav-font); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); padding: 6px 14px; border-radius: 999px; }
+.view-toggle button[aria-pressed="true"] { background: var(--text); color: #070a12; }
+
+.analog-head { display: flex; align-items: center; gap: 14px; }
+.back-globe { font-family: var(--nav-font); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text);
+  border: 1px solid var(--glass-line); border-radius: 999px; padding: 6px 12px; }
+.back-globe:hover { border-color: var(--accent); color: #fff; }
+.target-name { font-size: 22px; font-weight: 200; margin-top: 2px; }
+
+@media (max-width: 767px) {
+  body.on-intro .nav { height: calc(var(--header-h) + 58px); grid-template-rows: var(--header-h) 58px; }
+  .nav-search { width: calc(100vw - 24px); }
+  .globe-pane { height: 62vh; }
+  .globe-head .title { font-size: 16px; }
+  .globe-note { max-width: 90%; }
+  .view-toggle { position: absolute; top: calc(62vh - 44px); bottom: auto; }
+  #view-analogs:not(.globe-mode) .view-toggle { top: calc(48vh - 44px); }        /* Map view: bottom-left of the first map */
+  #view-analogs { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #view-analogs.entering { animation: none; }
+}
+
+/* Globe view: the Leaflet maps stay in the page (for the Map view) but are hidden underneath */
+#view-analogs.globe-mode .mapwrap { display: none; }
+
+/* The OTHERS menu opens over the header search bar (the bar comes later in the page, so it needs a lower layer) */
+.nav-links { position: relative; z-index: 3; }
+.nav-drop-menu { z-index: 4; }
+.nav-search { z-index: 2; }
+@media (max-width: 767px) { .nav-links { position: fixed; z-index: 3; } }
+
+#view-analogs:not(.globe-mode) .view-toggle { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+.globe-hint { position: absolute; right: 18px; bottom: 18px; margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--space-hint); pointer-events: none; }
+@media (max-width: 767px) { .globe-hint { display: none; } }

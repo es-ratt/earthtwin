@@ -25,39 +25,39 @@
   }
 
   /* ------------------------------------------------------------ header + site */
-  /** Plain heading so the user knows which interface is open. */
+  /** Heading with the Back button (returns to the globes and the search bar: the only way to pick another location). */
   function analogHeading(mission) {
-    return '<div class="sec analog-head"><h1 class="analog-title">' + (mission.body === "moon" ? "Moon Analog · Artemis" : "Mars Analog · SkyFall") + "</h1></div>";
+    return '<div class="sec analog-head"><button class="back-globe" id="back-globe" aria-label="Back to the globes to choose another location">← Back</button>' +
+      '<h1 class="analog-title">' + (mission.body === "moon" ? "Moon Analog · Artemis" : "Mars Analog · SkyFall") + "</h1></div>";
   }
 
-  function siteBlock(mission, site, siteRes, data) {
-    var opts = mission.target_site_ids.concat(mission.reference_site_ids || []).map(function (id) {
-      var s = data.sitesById[id];
-      var ref = (mission.reference_site_ids || []).indexOf(id) >= 0 ? " (reference, not a mission region)" : "";
-      return '<option value="' + esc(id) + '"' + (id === site.id ? " selected" : "") + ">" + esc(s.name + ref) + "</option>";
-    }).join("");
+  /** The chosen target (read-only: the location is picked in the search bar on the globe screen). */
+  function targetSummary(mission, site, siteRes) {
     var cov = siteRes.target_coverage;
     var flags = (site.flags || []).map(function (f) { return '<span class="badge">' + esc(f.replace(/_/g, " ")) + "</span>"; }).join("");
+    var pos = site.position || {};
+    var where = pos.lat === null || pos.lat === undefined ? "Position not in the sources yet" : Math.abs(pos.lat).toFixed(2) + "°" + (pos.lat < 0 ? "S" : "N") + ", " + Math.abs(pos.lon).toFixed(2) + "°" + (pos.lon < 0 ? "W" : "E");
+    var ref = (mission.reference_site_ids || []).indexOf(site.id) >= 0 ? " (reference, not a mission region)" : "";
     return '<div class="sec">' +
-      '<label class="label" for="site-select">Target site · ' + (mission.body === "moon" ? "Moon" : "Mars") + "</label>" +
-      '<select class="site" id="site-select">' + opts + "</select>" +
+      '<span class="label">Chosen target · ' + (mission.body === "moon" ? "Moon" : "Mars") + "</span>" +
+      '<div class="target-name">' + esc(site.name + ref) + '</div><div class="faint" style="font-size:12px">' + esc(where) + "</div>" +
       '<div class="site-meta">' + ET.statusBadge(site.status) + " " + '<span class="badge">' + esc(site.role.replace(/_/g, " ")) + "</span>" + flags + "</div>" +
       '<div class="coverage" data-tip="Share of the scoring weight for which this target site has a value in the team documents. Features without data are left out, never guessed.">Target data coverage <b class="num" style="color:#e9ecef">' + ET.pct(cov) + '</b><div class="meter"><i style="width:' + Math.round(cov * 100) + '%"></i></div></div>' +
-      "</div>" + targetContext(siteRes, data);
+      "</div>";
   }
 
   /** Target-side context (Diviner model temperatures, ice stability, USGS map units): shown, never scored. */
   function targetContext(siteRes, data) {
     var ctx = siteRes.target_context || {};
     var ids = Object.keys(ctx);
-    if (!ids.length) return "";
+    if (!ids.length) return '<div class="sec"><span class="label">Target context · not scored</span><p class="faint" style="font-size:12px;margin:0">No context values for this target yet (no position, or no source). Context never affects any score.</p></div>';
     var rows = ids.map(function (fid) {
       var m = ctx[fid];
       var val = m.value === null || m.value === undefined ? "No data" : m.display;
       return '<div class="feat"><div class="feat-head"><span>' + featureLabel(fid, data) + '</span><span class="w">not scored</span></div>' +
         '<div class="feat-vals"><span><b' + noteTip(m) + ">" + esc(val) + "</b> " + ET.statusBadge(m.status) + "</span></div></div>";
     }).join("");
-    return '<div class="sec"><span class="label">Target context · not scored</span><p class="faint" style="font-size:11px;margin:0 0 4px">Model temperatures, ice stability and map units at the target. Hover for the source and method.</p>' + rows + "</div>";
+    return '<div class="sec"><span class="label">Target context · not scored</span><p class="faint" style="font-size:11px;margin:0 0 4px">Descriptive facts about the chosen target: model temperatures, ice stability and map units. Shown for context only; they do not affect any score. Hover for the source and method.</p>' + rows + "</div>";
   }
 
   /* ------------------------------------------------------------ ranked list */
@@ -136,8 +136,8 @@
     var lim = entry.limitations;
     function list(arr) { return arr.length ? arr.map(esc).join(", ") : '<span class="faint">—</span>'; }
     var card = entry.card;
-    return '<div class="sec">' +
-      '<button class="back" id="back-list">← All analogs</button>' +
+    return '<div class="sec detail-anchor">' +
+      '<button class="back" id="back-list">× Close site</button>' +
       '<span class="label" style="display:block">' + esc(c.country) + (c.is_baseline ? " · baseline analog" : " · new candidate") + "</span>" +
       '<div class="detail-name">' + esc(c.name) + "</div>" +
       '<p class="muted" style="font-size:13px;margin:6px 0 0">' + esc(c.why_candidate) + "</p>" +
@@ -166,13 +166,14 @@
     var mission = data.missionsById[state.missionId];
     var site = data.sitesById[state.siteId];
     var siteRes = data.results[state.missionId].sites[state.siteId];
-    var html = analogHeading(mission);
-    html += siteBlock(mission, site, siteRes, data);
     var entry = state.candidateId && siteRes.candidates.find(function (e) { return e.id === state.candidateId; });
-    html += entry ? detailBlock(entry, siteRes, data) : listBlock(siteRes, state, data);
+    // Order (fixed): 1 Top 5 Earth analogs · 2 supporting sections (selected site, chosen target) · 3 Target context, always last.
+    var html = analogHeading(mission) + listBlock(siteRes, state, data) + (entry ? detailBlock(entry, siteRes, data) : "") +
+      targetSummary(mission, site, siteRes) + targetContext(siteRes, data);
     var side = document.getElementById("side");
-    var keepScroll = entry ? 0 : side.scrollTop;
+    var keepScroll = side.scrollTop;
     side.innerHTML = html;
-    side.scrollTop = keepScroll;
+    var sel = entry && side.querySelector(".detail-anchor");
+    side.scrollTop = sel ? sel.offsetTop - 8 : keepScroll;
   };
 })(window.ET);

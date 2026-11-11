@@ -31,12 +31,18 @@
         <div class="nav-drop-menu" id="nav-drop-menu" role="menu" aria-label="Others">
           <a role="menuitem" tabindex="-1" href="#why-not-others" data-route="why-not-others">Why not others</a>
           <a role="menuitem" tabindex="-1" href="#limitations" data-route="limitations">Limitations</a>
-          <a role="menuitem" tabindex="-1" href="#sources" data-route="sources">Sources</a>
           <a role="menuitem" tabindex="-1" href="#method" data-route="method">Method</a>
+          <a role="menuitem" tabindex="-1" href="#sources" data-route="sources">Sources</a>
         </div>
       </div>
       <span class="nav-credit nav-credit-mobile">PLANEX</span>
     </nav>
+    <div class="nav-search" id="nav-search" role="search" hidden>
+      <svg class="search-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.6 12.6L17 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search Moon targets or Earth sites"
+        role="combobox" aria-label="Search locations" aria-expanded="false" aria-controls="search-list" aria-autocomplete="list">
+      <ul class="search-list" id="search-list" role="listbox" aria-label="Locations" hidden></ul>
+    </div>
     <div class="nav-right">
       <span class="badge sample" id="sample-badge" hidden data-tip="Some Earth values are still placeholders until the team adds real data.">Partly sample data</span>
       <span class="nav-credit">PLANEX</span>
@@ -51,15 +57,31 @@
       <div class="sr-only"><a href="#moon-analog">Explore Moon analogs (Artemis)</a> <a href="#mars-analog">Explore Mars analogs (SkyFall)</a></div>
     </section>
 
+    <section class="analog-intro" id="analog-intro" aria-label="Choose a location" hidden>
+      <canvas id="intro-globe" aria-label="Globes of the target body and the Earth. Use the search bar at the top to choose a location."></canvas>
+      <p class="intro-hint">Search a target or an Earth site in the bar above · drag a globe to turn it</p>
+    </section>
+
     <section class="view" id="view-analogs" aria-label="Analogs">
-      <div class="mapwrap">
+      <div class="globe-pane" id="globe-pane" hidden>
+        <canvas id="result-globe" aria-label="Target body with the chosen target pinned, and the Earth with pins 1 to 5 for the top analogs."></canvas>
+        <div class="globe-head">
+          <div><div class="label" id="gtarget-kicker">Target</div><div class="title" id="gtarget-title">—</div></div>
+          <div class="globe-earth-head"><div class="label">Earth · Top analogs</div><div class="title" id="gearth-title">—</div></div>
+        </div>
+        <div class="globe-tip" id="globe-tip" role="tooltip" hidden></div>
+        <p class="globe-note" id="globe-note"></p>
+        <p class="globe-hint">Drag a globe to turn it · click a number to open that site</p>
+      </div>
+      <div class="view-toggle" role="group" aria-label="Result view"><button data-view-mode="globe" aria-pressed="true">Globe</button><button data-view-mode="map" aria-pressed="false">Map</button></div>
+      <div class="mapwrap mw-target">
         <div class="map" id="map-target"></div>
         <div class="maphead">
           <div><div class="label" id="target-kicker">Target</div><div class="title" id="target-title">—</div></div>
           <div class="layerstate" id="target-layerstate"></div>
         </div>
       </div>
-      <div class="mapwrap">
+      <div class="mapwrap mw-earth">
         <div class="map" id="map-earth"></div>
         <div class="maphead">
           <div><div class="label">Earth</div><div class="title" id="earth-title">Analog candidates</div></div>
@@ -90,6 +112,8 @@
   <script src="js/nav.js"></script>
   <script src="js/solar-art.js"></script>
   <script src="js/solar.js"></script>
+  <script src="js/globe.js"></script>
+  <script src="js/analog.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
