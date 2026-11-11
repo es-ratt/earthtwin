@@ -1,6 +1,6 @@
 /* App wiring: load data, hash routing between the views, keep state in the URL, render, handle clicks.
  *
- * Routes (hash):  #home  #moon-analog  #mars-analog  #why-not-others  #method  #limitations  #sources  #planex
+ * Routes (hash):  (none) or #home = home page, shown as the clean address  #moon-analog  #mars-analog  #why-not-others  #method  #limitations  #sources  #planex
  * Extra state after the route, e.g. #moon-analog&s=haworth&c=mcmurdo-dry-valleys  or  #method&m=skyfall&s=ap-105
  * Old links (#m=…&s=…&t=…) are still understood. */
 (function (ET) {
@@ -50,7 +50,15 @@
     return "#" + parts.join("&");
   }
 
-  function writeHash() { if (location.hash !== buildHash()) history.replaceState(null, "", buildHash()); }
+  /** Keep the URL in sync. The home page uses the clean address (…/web/) with no "#home". */
+  function writeHash() {
+    var target = buildHash();
+    if (target === "#home") {
+      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+      return;
+    }
+    if (location.hash !== target) history.replaceState(null, "", target);
+  }
 
   /** Change view: pushes a history entry so the Back button works. */
   function go(route, extra) {
