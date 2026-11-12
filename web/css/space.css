@@ -322,15 +322,15 @@ body.on-intro main { inset: 0; }
 .search-dot.target { background: #fdd663; }
 .search-list { scrollbar-color: #5f6368 transparent; }
 
-/* ================================================================ fonts: D-DIN (menu, OTHERS, PLANEX), Bradley Hand (logo) */
+/* ================================================================ fonts: D-DIN (menu, OTHERS, PLANEX), Comic Sans (logo) */
 @font-face { font-family: "D-DIN"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/d-din-regular.woff2") format("woff2"); }
 @font-face { font-family: "D-DIN"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/d-din-bold.woff2") format("woff2"); }
 :root {
   --menu-font: "D-DIN", "DIN Alternate", "Bahnschrift", Arial, sans-serif;
-  --logo-font: "Bradley Hand ITC", "Bradley Hand", "Segoe Print", cursive;   /* not shipped: Bradley Hand ITC is a commercial font */
+  --logo-font: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;   /* not shipped: system font (Windows, Mac, iOS). Android/Linux fall back to Comic Neue or cursive */
 }
 .nav-item, .nav-item .nav-label, .nav-item .nav-sub, .nav-drop-btn, .nav-drop-menu a, .nav-credit { font-family: var(--menu-font); font-weight: 400; }
-.nav-brand { font-family: var(--logo-font); font-weight: 700; letter-spacing: 0.08em; }   /* wide tracking breaks a script face */
+.nav-brand { font-family: var(--logo-font); font-weight: 700; letter-spacing: 0.1em; }   /* Comic Sans is already wide */
 
 /* ================================================================ search bar: slimmer, in its own band under the menu */
 .nav-search { height: 40px; width: min(480px, 90vw); padding: 0 16px; border-radius: 20px; }
