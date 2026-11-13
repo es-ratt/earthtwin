@@ -1,4 +1,4 @@
-# EarthTwin
+<img width="797" height="316" alt="image" src="https://github.com/user-attachments/assets/667977e7-f76f-4894-8d2a-df01559981f9" /># EarthTwin
 
 **Finding Earth's best analogs for the Moon and Mars, with the evidence behind every match.**
 
@@ -477,7 +477,7 @@ Details and the decisions made are in [docs/MISSING_DATA.md](docs/MISSING_DATA.m
 | Sharmin Sultana | Researcher |
 | Md. Rezwanul Islam | Data Scientist |
 | Tasnem Rahman | Video Editor, Presenter and Storyteller |
-| Nobin Uddin Alif | Developer |
+| Alif Uddin Nobin | Developer |
 
 ---
 
