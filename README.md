@@ -1,4 +1,4 @@
-<img width="797" height="316" alt="image" src="https://github.com/user-attachments/assets/667977e7-f76f-4894-8d2a-df01559981f9" /># EarthTwin
+EarthTwin
 
 **Finding Earth's best analogs for the Moon and Mars, with the evidence behind every match.**
 
