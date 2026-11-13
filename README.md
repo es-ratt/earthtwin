@@ -1,4 +1,4 @@
-EarthTwin
+# EarthTwin
 
 **Finding Earth's best analogs for the Moon and Mars, with the evidence behind every match.**
 
